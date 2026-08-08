@@ -26,6 +26,10 @@
   article h3 { font-size:1.1rem; margin-top:2em; }
   article p { margin:1em 0; }
   article blockquote { margin:1.4em 0; padding:0.2em 1em; border-left:3px solid var(--accent); color:var(--soft); }
+  article img { max-width:100%; height:auto; border:1px solid var(--line); border-radius:8px; }
+  article table { border-collapse:collapse; width:100%; margin:1.2em 0; font-size:0.92em; }
+  article th, article td { border:1px solid var(--line); padding:0.5em 0.7em; text-align:left; }
+  article th { background:rgba(14,116,144,0.08); }
   hr { border:none; border-top:1px solid var(--line); margin:2rem 0; }
 </style>
 </head>
@@ -33,7 +37,8 @@
 <div class="wrap">
   <div class="meta">
     블로그 글 초안 · 2026-08-08 · 카테고리 제안: 배움의 끈, 주간 저널클럽<br>
-    검토 후 수정할 부분이 있으면 편하게 고쳐서 올려주세요.
+    검토 후 수정할 부분이 있으면 편하게 고쳐서 올려주세요.<br>
+    그림이 붙여넣기에 포함되지 않으면, 그림을 길게 눌러(또는 우클릭) 저장한 뒤 에디터에서 삽입해 주세요.
   </div>
   <div class="btns">
     <button id="copyTitle" type="button">제목 복사</button>
@@ -51,6 +56,14 @@
 <p>간헐적 혈액투석(IHD)은 몇 시간 안에 노폐물을 빠르게 제거합니다. 효율이 좋은 대신, 몸 상태가 급격히 변하는 부담이 있습니다. 반면 CRRT는 하루 가까운 시간에 걸쳐 천천히, 지속적으로 노폐물과 수분을 제거합니다.</p>
 <p>혈압이 불안정한 중환자, 급격한 변화를 견디기 어려운 환자에게 CRRT가 중요한 선택지가 되는 이유입니다.</p>
 <blockquote>빠르게 많이 거르는 것이 항상 좋은 것은 아닙니다. 환자가 견딜 수 있는 속도로 거르는 것이 중요합니다.</blockquote>
+<p><img src="https://vet-briefing.vercel.app/drafts/img/2026-08-08-modalities.png" alt="체외혈액정화 방식별 치료 지속 시간 모식도 - IHD는 세션당 수 시간, PIRRT는 6~12시간, transitional CRRT는 12~24시간, CRRT는 24시간 내외 지속"></p>
+<p>세 방식을 간단히 비교하면 다음과 같습니다.</p>
+<table>
+<tr><th>구분</th><th>치료 시간</th><th>제거 속도</th><th>주로 고려하는 상황</th></tr>
+<tr><td>IHD</td><td>세션당 수 시간</td><td>빠름</td><td>급격한 변화를 견딜 수 있는 환자의 효율적 치료</td></tr>
+<tr><td>하이브리드 (PIRRT, transitional CRRT)</td><td>6~12시간 / 12~24시간</td><td>중간</td><td>두 방식의 장점을 절충해야 할 때</td></tr>
+<tr><td>CRRT</td><td>24시간 내외 지속</td><td>천천히</td><td>혈압이 불안정한 중환자</td></tr>
+</table>
 <h3>지금까지는 각자의 경험으로 버텨왔습니다</h3>
 <p>그런데 개와 고양이의 CRRT에는 그동안 국제적으로 합의된 진료 기준이 없었습니다.</p>
 <p>사람 의학의 기준을 빌려 쓰거나, 각 병원이 쌓아온 경험에 기대어 판단해야 했습니다. 하지만 개와 고양이는 사람보다 몸집이 훨씬 작고 혈액량도 적어서, 사람의 기준을 그대로 옮겨 쓰기 어려운 부분이 많습니다.</p>
