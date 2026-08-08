@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>브리핑 네이버 블로그용 초안</title>
+<style>
+  :root { --ink:#22303b; --soft:#5b6b76; --accent:#0e7490; --line:#dde4e7; --bg:#fafaf8; }
+  @media (prefers-color-scheme: dark) {
+    :root { --ink:#d9e2e8; --soft:#8fa1ac; --accent:#4cc4dd; --line:#26333d; --bg:#10171d; }
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); line-height:1.8;
+    font-family:"Apple SD Gothic Neo","Pretendard","Noto Sans KR",sans-serif; }
+  .wrap { max-width:42rem; margin:0 auto; padding:1.5rem 1.25rem 4rem; }
+  .meta { font-size:0.85rem; color:var(--soft); border:1px solid var(--line);
+    border-radius:10px; padding:0.8rem 1rem; margin-bottom:1.2rem; }
+  .btns { display:flex; gap:0.6rem; flex-wrap:wrap; margin-bottom:1.6rem; }
+  button { font:inherit; font-size:0.9rem; font-weight:600; color:#fff;
+    background:var(--accent); border:none; border-radius:8px; padding:0.6rem 1.1rem; cursor:pointer; }
+  button.secondary { color:var(--accent); background:transparent; border:1.5px solid var(--accent); }
+  h1 { font-size:1.4rem; line-height:1.4; }
+  article h2 { font-size:1.15rem; margin-top:2em; }
+  article h3 { font-size:1.02rem; margin-top:1.6em; }
+  article a { color:var(--accent); }
+  article blockquote { margin:1.2em 0; padding:0.2em 1em; border-left:3px solid var(--accent); color:var(--soft); }
+  article hr { border:none; border-top:1px solid var(--line); margin:1.8em 0; }
+  #status { color:var(--soft); font-size:0.9rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="meta">
+    수의학 데일리 브리핑 — 네이버 블로그용 초안<br>
+    [본문 복사] 후 네이버 에디터에 붙여넣으면 소제목·목록·링크 서식이 유지됩니다. 제목은 따로 복사해 제목란에 넣어주세요.
+  </div>
+  <div class="btns">
+    <button id="copyTitle" type="button">제목 복사</button>
+    <button id="copyBody" class="secondary" type="button">본문 복사 (서식 유지)</button>
+  </div>
+  <h1 id="title"></h1>
+  <hr>
+  <p id="status">브리핑을 불러오는 중…</p>
+  <article id="body"></article>
+</div>
+<script src="../assets/marked.min.js"></script>
+<script>
+(function () {
+  var status = document.getElementById("status");
+  var bodyEl = document.getElementById("body");
+  var titleEl = document.getElementById("title");
+
+  var TAIL = '<hr><p>※ 이 글은 PubMed 등재 문헌을 바탕으로 정리한 일반적인 정보이며, 개별 환자의 진단과 치료는 담당 수의사와 상담해 판단해야 합니다.</p>' +
+             '<p><b>매일 아침 업데이트되는 전체 브리핑 아카이브</b><br><a href="https://vet-briefing.vercel.app/">https://vet-briefing.vercel.app/</a></p>';
+
+  function flash(btn, label) {
+    var old = btn.textContent;
+    btn.textContent = label;
+    setTimeout(function () { btn.textContent = old; }, 1500);
+  }
+
+  document.getElementById("copyTitle").addEventListener("click", function () {
+    var btn = this;
+    navigator.clipboard.writeText(titleEl.textContent).then(function () { flash(btn, "복사되었습니다"); });
+  });
+  document.getElementById("copyBody").addEventListener("click", function () {
+    var btn = this;
+    var htmlBlob = new Blob([bodyEl.innerHTML], { type: "text/html" });
+    var textBlob = new Blob([bodyEl.innerText], { type: "text/plain" });
+    if (window.ClipboardItem) {
+      navigator.clipboard.write([new ClipboardItem({ "text/html": htmlBlob, "text/plain": textBlob })])
+        .then(function () { flash(btn, "복사되었습니다"); },
+              function () { navigator.clipboard.writeText(bodyEl.innerText).then(function () { flash(btn, "텍스트로 복사됨"); }); });
+    } else {
+      navigator.clipboard.writeText(bodyEl.innerText).then(function () { flash(btn, "텍스트로 복사됨"); });
+    }
+  });
+
+  function load(d) {
+    fetch("../reports/" + d + ".md", { cache: "no-store" })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+      .then(function (md) {
+        bodyEl.innerHTML = marked.parse(md) + TAIL;
+        var h1 = bodyEl.querySelector("h1");
+        if (h1) { titleEl.textContent = h1.textContent; h1.remove(); }
+        else { titleEl.textContent = "수의학 데일리 브리핑 " + d; }
+        status.textContent = "";
+      })
+      .catch(function () { status.textContent = "이 날짜의 브리핑을 불러오지 못했습니다."; });
+  }
+
+  var want = new URLSearchParams(location.search).get("d");
+  if (want) { load(want); }
+  else {
+    fetch("../archive.json", { cache: "no-store" })
+      .then(function (r) { return r.json(); })
+      .then(function (a) { load(a.latest); })
+      .catch(function () { status.textContent = "목록을 불러오지 못했습니다."; });
+  }
+})();
+</script>
+</body>
+</html>
