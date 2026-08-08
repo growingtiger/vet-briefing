@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>수의학 데일리 브리핑</title>
+<meta name="description" content="신장·투석·응급중환자 중심 수의학 최신 문헌 데일리 브리핑">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🩺</text></svg>">
+<style>
+  :root {
+    --bg: #fafaf8;
+    --surface: #ffffff;
+    --ink: #22303b;
+    --ink-soft: #5b6b76;
+    --accent: #0e7490;
+    --accent-soft: #e6f2f5;
+    --line: #dde4e7;
+    --code-bg: #f0f3f4;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #10171d;
+      --surface: #17212a;
+      --ink: #d9e2e8;
+      --ink-soft: #8fa1ac;
+      --accent: #4cc4dd;
+      --accent-soft: #16303a;
+      --line: #26333d;
+      --code-bg: #1d2933;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Apple SD Gothic Neo", "Pretendard", "Noto Sans KR", "Malgun Gothic", sans-serif;
+    line-height: 1.75;
+    font-size: 16px;
+  }
+  header {
+    border-bottom: 1px solid var(--line);
+    background: var(--surface);
+  }
+  .head-inner {
+    max-width: 44rem;
+    margin: 0 auto;
+    padding: 1.1rem 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .site-title { font-size: 1.05rem; font-weight: 700; letter-spacing: -0.01em; }
+  .site-title .sub {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--ink-soft);
+    letter-spacing: 0.02em;
+  }
+  select {
+    font: inherit;
+    font-size: 0.85rem;
+    color: var(--ink);
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 0.35rem 0.6rem;
+  }
+  select:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+  main {
+    max-width: 44rem;
+    margin: 0 auto;
+    padding: 1.5rem 1.25rem 4rem;
+  }
+  #status { color: var(--ink-soft); font-size: 0.9rem; }
+  article h1 { font-size: 1.45rem; line-height: 1.35; letter-spacing: -0.02em; text-wrap: balance; }
+  article h2 {
+    font-size: 1.12rem;
+    margin-top: 2.2em;
+    padding-top: 1.1em;
+    border-top: 1px solid var(--line);
+    letter-spacing: -0.01em;
+  }
+  article h3 { font-size: 1rem; margin-top: 1.6em; }
+  article a { color: var(--accent); text-underline-offset: 3px; }
+  article blockquote {
+    margin: 1em 0;
+    padding: 0.6em 1em;
+    border-left: 3px solid var(--accent);
+    background: var(--accent-soft);
+    border-radius: 0 8px 8px 0;
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+  }
+  article blockquote p { margin: 0.3em 0; }
+  article code {
+    background: var(--code-bg);
+    border-radius: 4px;
+    padding: 0.1em 0.4em;
+    font-size: 0.88em;
+  }
+  article pre { background: var(--code-bg); border-radius: 8px; padding: 1em; overflow-x: auto; }
+  article pre code { background: none; padding: 0; }
+  article hr { border: none; border-top: 1px solid var(--line); margin: 2.2em 0; }
+  article ul, article ol { padding-left: 1.4em; }
+  article li { margin: 0.35em 0; }
+  article table { border-collapse: collapse; width: 100%; display: block; overflow-x: auto; }
+  article th, article td { border: 1px solid var(--line); padding: 0.45em 0.7em; font-size: 0.92rem; }
+  footer {
+    max-width: 44rem;
+    margin: 0 auto;
+    padding: 0 1.25rem 2.5rem;
+    color: var(--ink-soft);
+    font-size: 0.8rem;
+    border-top: none;
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="head-inner">
+    <div class="site-title">🩺 수의학 데일리 브리핑
+      <span class="sub">신장 · 투석 · 응급중환자 — AI 문헌 조사</span>
+    </div>
+    <label>지난 브리핑
+      <select id="datePicker" aria-label="브리핑 날짜 선택"></select>
+    </label>
+  </div>
+</header>
+<main>
+  <p id="status">브리핑을 불러오는 중…</p>
+  <article id="content"></article>
+</main>
+<footer>
+  매일 아침 AI 비서가 PubMed 등 문헌을 조사해 자동 게시합니다.
+  요약·해석에 오류가 있을 수 있으니 원문(출처 링크)을 확인하세요. 진료 조언이 아닙니다.
+</footer>
+<script src="assets/marked.min.js"></script>
+<script>
+(function () {
+  var status = document.getElementById("status");
+  var content = document.getElementById("content");
+  var picker = document.getElementById("datePicker");
+
+  function show(md) {
+    content.innerHTML = marked.parse(md);
+    status.textContent = "";
+  }
+
+  function loadDate(d) {
+    status.textContent = "브리핑을 불러오는 중…";
+    fetch("reports/" + d + ".md", { cache: "no-store" })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+      .then(show)
+      .catch(function () { status.textContent = "이 날짜의 브리핑을 불러오지 못했습니다."; });
+  }
+
+  fetch("archive.json", { cache: "no-store" })
+    .then(function (r) { return r.json(); })
+    .then(function (a) {
+      var params = new URLSearchParams(location.search);
+      var want = params.get("d");
+      var current = (want && a.dates.indexOf(want) !== -1) ? want : a.latest;
+      a.dates.slice().sort().reverse().forEach(function (d) {
+        var o = document.createElement("option");
+        o.value = d;
+        o.textContent = d + (d === a.latest ? " (최신)" : "");
+        picker.appendChild(o);
+      });
+      picker.value = current;
+      picker.addEventListener("change", function () {
+        loadDate(picker.value);
+        history.replaceState(null, "", "?d=" + picker.value);
+      });
+      loadDate(current);
+    })
+    .catch(function () { status.textContent = "목록을 불러오지 못했습니다."; });
+})();
+</script>
+</body>
+</html>
