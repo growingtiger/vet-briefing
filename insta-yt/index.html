@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>유튜브 카드 - 수의사 이태호</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🩺</text></svg>">
+<style>
+  :root {
+    --bg: #fafaf8; --surface: #ffffff; --ink: #22303b; --ink-soft: #5b6b76;
+    --accent: #0e7490; --line: #dde4e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #10171d; --surface: #17212a; --ink: #d9e2e8; --ink-soft: #8fa1ac; --accent: #4cc4dd; --line: #26333d; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+    font-family: "Apple SD Gothic Neo", "Pretendard", "Noto Sans KR", sans-serif; line-height: 1.6; }
+  header { border-bottom: 1px solid var(--line); background: var(--surface); }
+  .inner { max-width: 34rem; margin: 0 auto; padding: 1rem 1.25rem; }
+  .title { font-weight: 700; font-size: 1rem; }
+  .title a { color: var(--ink-soft); text-decoration: none; font-weight: 500; font-size: 0.8rem; }
+  main { max-width: 34rem; margin: 0 auto; padding: 1.25rem 1.25rem 4rem; }
+  .hint { font-size: 0.85rem; color: var(--ink-soft); background: var(--surface);
+    border: 1px solid var(--line); border-radius: 10px; padding: 0.7rem 1rem; margin-bottom: 1.2rem; }
+  select { font: inherit; font-size: 0.85rem; color: var(--ink); background: var(--bg);
+    border: 1px solid var(--line); border-radius: 6px; padding: 0.3rem 0.5rem; margin-left: 0.5rem; }
+  .card { width: 100%; border-radius: 12px; border: 1px solid var(--line); margin-bottom: 1rem; display: block; }
+  #status { color: var(--ink-soft); font-size: 0.9rem; }
+  .toolbar { display: flex; gap: 0.6rem; margin-bottom: 1.2rem; flex-wrap: wrap; }
+  .btn { display: inline-block; font: inherit; font-size: 0.9rem; font-weight: 600;
+    color: #fff; background: var(--accent); border: none; border-radius: 8px;
+    padding: 0.6rem 1.1rem; cursor: pointer; text-decoration: none; }
+  .btn.secondary { color: var(--accent); background: transparent; border: 1.5px solid var(--accent); }
+  #captionBox { display: none; margin-bottom: 1.2rem; }
+  #captionText { width: 100%; height: 11rem; font: inherit; font-size: 0.85rem;
+    color: var(--ink); background: var(--surface); border: 1px solid var(--line);
+    border-radius: 10px; padding: 0.8rem; resize: vertical; }
+  .cap-label { font-size: 0.85rem; font-weight: 700; margin-bottom: 0.4rem; }
+</style>
+</head>
+<body>
+<header>
+  <div class="inner">
+    <div class="title">인스타그램 카드
+      <label style="float:right">날짜<select id="datePicker"></select></label>
+      <div><a href="../">&#8592; 브리핑 본문 보기</a></div>
+    </div>
+  </div>
+</header>
+<main>
+  <div class="hint">이미지를 저장한 뒤 인스타그램에서 여러 장 선택(캐러셀)으로 업로드하세요. 표지가 첫 장입니다. 한 장씩 저장하려면 이미지를 길게 누르세요.</div>
+  <div class="toolbar">
+    <a id="zipBtn" class="btn" href="#" download>이미지 전체 다운로드 (ZIP)</a>
+    <button id="capBtn" class="btn secondary" type="button" style="display:none">게시글 텍스트 복사</button>
+  </div>
+  <div id="captionBox">
+    <div class="cap-label">게시글 본문 (복사해서 인스타그램에 붙여넣기)</div>
+    <textarea id="captionText" readonly></textarea>
+  </div>
+  <p id="status">불러오는 중…</p>
+  <div id="cards"></div>
+</main>
+<script>
+(function () {
+  var status = document.getElementById("status");
+  var cards = document.getElementById("cards");
+  var picker = document.getElementById("datePicker");
+
+  var zipBtn = document.getElementById("zipBtn");
+  var capBtn = document.getElementById("capBtn");
+  var captionBox = document.getElementById("captionBox");
+  var captionText = document.getElementById("captionText");
+
+  capBtn.addEventListener("click", function () {
+    captionText.select();
+    var done = function () { capBtn.textContent = "복사되었습니다"; setTimeout(function () { capBtn.textContent = "게시글 텍스트 복사"; }, 1500); };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(captionText.value).then(done, function () { document.execCommand("copy"); done(); });
+    } else { document.execCommand("copy"); done(); }
+  });
+
+  function load(entry) {
+    cards.innerHTML = "";
+    status.textContent = "";
+    zipBtn.href = entry.date + "/cards.zip";
+    zipBtn.setAttribute("download", "briefing-cards-" + entry.date + ".zip");
+
+    capBtn.style.display = "none";
+    captionBox.style.display = "none";
+    fetch(entry.date + "/caption.txt", { cache: "no-store" })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+      .then(function (t) {
+        captionText.value = t;
+        capBtn.style.display = "inline-block";
+        captionBox.style.display = "block";
+      })
+      .catch(function () {});
+
+    var names = ["00-cover.png"];
+    for (var i = 1; i < entry.cards; i++) names.push((i < 10 ? "0" + i : "" + i) + ".png");
+    names.forEach(function (n) {
+      var img = document.createElement("img");
+      img.src = entry.date + "/" + n;
+      img.alt = entry.date + " 카드 " + n;
+      img.className = "card";
+      img.loading = "lazy";
+      cards.appendChild(img);
+    });
+  }
+
+  fetch("manifest.json", { cache: "no-store" })
+    .then(function (r) { return r.json(); })
+    .then(function (m) {
+      var entries = m.dates.slice().sort(function (a, b) { return a.date < b.date ? 1 : -1; });
+      entries.forEach(function (e) {
+        var o = document.createElement("option");
+        o.value = e.date;
+        o.textContent = e.date + (e.date === m.latest ? " (최신)" : "");
+        picker.appendChild(o);
+      });
+      function pick(d) {
+        var e = entries.filter(function (x) { return x.date === d; })[0] || entries[0];
+        load(e);
+      }
+      picker.value = m.latest;
+      picker.addEventListener("change", function () { pick(picker.value); });
+      pick(m.latest);
+    })
+    .catch(function () { status.textContent = "목록을 불러오지 못했습니다."; });
+})();
+</script>
+</body>
+</html>
