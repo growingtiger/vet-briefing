@@ -153,7 +153,9 @@
 <header>
   <div class="head-inner">
     <div class="brand">
-      <span class="logo-chip"><img src="assets/kaha-logo.svg" alt="KAHA 한국동물병원협회 로고"></span>
+      <!-- 협회 공식 로고 파일을 assets/kaha-logo.png 로 넣으면 자동 표시됩니다 (없으면 숨김) -->
+      <span class="logo-chip" hidden><img src="assets/kaha-logo.png" alt="KAHA 한국동물병원협회 로고"
+        onload="this.parentElement.hidden=false"></span>
       <div class="titles">
         <div class="site-title">KAHA 회원병원 실무 소식지
           <span class="sub">한국동물병원협회 정책기획위원회 · 요일별 발행</span>
