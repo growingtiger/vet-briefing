@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>블로그 초안 2026-08-11</title>
+<style>
+  :root { --ink:#22303b; --soft:#5b6b76; --accent:#0e7490; --line:#dde4e7; --bg:#fafaf8; }
+  @media (prefers-color-scheme: dark) {
+    :root { --ink:#d9e2e8; --soft:#8fa1ac; --accent:#4cc4dd; --line:#26333d; --bg:#10171d; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); line-height:1.8;
+    font-family:"Apple SD Gothic Neo","Pretendard","Noto Sans KR",sans-serif; }
+  .wrap { max-width:42rem; margin:0 auto; padding:1.5rem 1.25rem 4rem; }
+  .meta { font-size:0.85rem; color:var(--soft); border:1px solid var(--line);
+    border-radius:10px; padding:0.8rem 1rem; margin-bottom:1.2rem; }
+  .btns { display:flex; gap:0.6rem; flex-wrap:wrap; margin-bottom:1.6rem; }
+  button { font:inherit; font-size:0.9rem; font-weight:600; color:#fff;
+    background:var(--accent); border:none; border-radius:8px;
+    padding:0.6rem 1.1rem; cursor:pointer; }
+  button.secondary { color:var(--accent); background:transparent;
+    border:1.5px solid var(--accent); }
+  h1 { font-size:1.5rem; line-height:1.4; }
+  article h3 { font-size:1.1rem; margin-top:2em; }
+  article p { margin:1em 0; }
+  article blockquote { margin:1.4em 0; padding:0.2em 1em; border-left:3px solid var(--accent); color:var(--soft); }
+  article img { max-width:100%; height:auto; border:1px solid var(--line); border-radius:8px; }
+  article table { border-collapse:collapse; width:100%; margin:1.2em 0; font-size:0.92em; }
+  article th, article td { border:1px solid var(--line); padding:0.5em 0.7em; text-align:left; }
+  article th { background:rgba(14,116,144,0.08); }
+  hr { border:none; border-top:1px solid var(--line); margin:2rem 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="meta">
+    블로그 글 초안 · 2026-08-11 · 카테고리 제안: 배움의 끈, 주간 저널클럽<br>
+    검토 후 수정할 부분이 있으면 편하게 고쳐서 올려주세요.<br>
+    그림이 붙여넣기에 포함되지 않으면, 그림을 길게 눌러(또는 우클릭) 저장한 뒤 에디터에서 삽입해 주세요.
+  </div>
+  <div class="btns">
+    <button id="copyTitle" type="button">제목 복사</button>
+    <button id="copyBody" class="secondary" type="button">본문 복사 (서식 유지)</button>
+  </div>
+  <h1 id="title">개·고양이 패혈증, 새 국제 합의 정의가 나왔습니다 — 무엇이, 왜 달라지는가</h1>
+  <hr>
+  <article id="body">
+<p>안녕하세요. 신장질환과 혈액투석, 응급중환자 진료를 하는 수의사 안운찬입니다.</p><p>패혈증은 응급중환자실에서 가장 자주 마주치는, 그리고 가장 빨리 나빠질 수 있는 병입니다. 그런데 정작 "패혈증을 어떻게 정의할 것인가"에 대해서는 수의학 안에서도 병원마다, 논문마다 기준이 조금씩 달랐습니다. 얼마 전 국제 학술지 Journal of Veterinary Emergency and Critical Care에 개와 고양이 패혈증의 새로운 국제 합의 정의(consensus definition)가 발표되어, 오늘은 이 내용을 정리해보려 합니다.</p><h3>"패혈증 진단 기준이 병원마다 다르다"는 것, 알고 계셨나요?</h3><p>사람 의학에서는 패혈증의 정의가 지금까지 세 차례 공식적으로 개정되었습니다. 가장 최근 개정은 2016년의 이른바 "Sepsis-3"입니다. 반면 수의학에서는 오랫동안 1991년과 2001년의 사람 기준을 변형해서 그대로 가져다 쓰고 있었습니다.</p><p>이 문제는 이미 2024년에 같은 저자 그룹이 발표한 리뷰 논문에서 지적된 바 있습니다. 사람과 수의학의 정의가 서로 어긋나 있고, 진단 기준에 대한 합의가 없어 연구 간 비교가 어렵고, 병태생리 연구 결과를 실제 진료로 옮기기도 어렵다는 내용이었습니다. 이번에 나온 두 편의 논문은 그 문제의식에 대한 답이라고 할 수 있습니다.</p><h3>새 정의: "감염에 대한 몸의 반응이 정도를 벗어나, 장기가 상하기 시작한 상태"</h3><p>새 합의 정의에 따르면, 패혈증은 다음과 같이 정리됩니다.</p><blockquote>감염에 대한 숙주 반응이 조절되지 않아(dysregulated host response) 장기 기능 이상(organ dysfunction)으로 이어지는, 생명을 위협하는 증후군.</blockquote><p>여기서 핵심은 <b>장기 기능 이상이 확인되어야 패혈증으로 진단한다</b>는 부분입니다. 단순히 감염이 있고 체온·심박수 같은 전신 염증 반응(SIRS) 몇 가지가 기준을 넘는다고 해서 패혈증이라고 부르지 않겠다는 뜻입니다. 이는 사람의 Sepsis-3 정의와 방향을 같이합니다.</p><p>실무적으로는, 감염이 있는 개·고양이에서 공식적인 질병 중증도 평가 도구(validated, structured score)를 이용해 장기 기능 이상 여부를 확인하는 것을 권고합니다. 이를 위해 필요한 생리학적 지표와 검사 수치를 빠짐없이 측정해야 한다는 점도 함께 강조되었습니다.</p><h3>패혈성 쇼크: "수액을 충분히 줬는데도 순환이 안 잡히는 상태"</h3><p>같은 저자 그룹이 함께 발표한 두 번째 논문은 패혈성 쇼크(septic shock)와 예후를 다룹니다. 패혈성 쇼크는 패혈증 중에서도 사망률이 특히 높은 아형으로, <b>적절한 수액 소생(fluid resuscitation)에도 불구하고</b> 심혈관계가 불안정하고 조직 관류 장애를 시사하는 대사 이상이 동반되는 상태로 정의되었습니다.</p><p>임상적으로는 고젖산혈증(hyperlactatemia), 지속되는 저혈압, 진행하는 장기 기능 이상으로 나타날 수 있습니다. 예후 평가를 위해서는 젖산, 이온화칼슘, 일반혈액검사와 생화학검사를 기본으로 하고, 가능하다면 단백질 C·안티트롬빈 활성도, 급성기 단백, 사이토카인 농도의 연속 측정도 고려하도록 권고하고 있습니다.</p><h3>정직하게 짚어야 할 한계: 고양이 자료는 아직 부족합니다</h3><p>이 부분이 오늘 글에서 가장 강조하고 싶은 지점입니다. 두 논문 모두 근거의 상당수가 개를 대상으로 한 연구에서 나왔습니다. 저자들도 고양이에 대해서는 <b>"유사한 결론에 도달했지만, 제한적인 권고만 가능했다"</b>고 명시하고 있습니다.</p><p>진료 현장에서 고양이 패혈증 환자를 만날 때 개의 기준을 그대로 적용하기 어려운 이유가 여기에 있습니다. 새 합의 정의가 나왔다고 해서 고양이 패혈증 진단과 예후 판단이 개만큼 명확해진 것은 아닙니다. 앞으로 채워져야 할 연구 공백으로 남아 있습니다.</p><table><tr><th>구분</th><th>기존 방식 (1991·2001 기준 준용)</th><th>2026 합의 정의</th></tr><tr><td>진단 기준</td><td>감염 + SIRS 항목 다수 충족</td><td>감염 + 장기 기능 이상 확인</td></tr><tr><td>중증도 평가</td><td>병원·저자마다 상이</td><td>공식 질병 중증도 평가 도구 사용 권고</td></tr><tr><td>사람 의학과의 정합성</td><td>Sepsis-3(2016) 이전 기준과 유사</td><td>Sepsis-3 방향과 정합</td></tr><tr><td>고양이 근거 수준</td><td>개 기준을 준용</td><td>제한적 권고 (근거 부족 명시)</td></tr></table><p>이 표는 두 논문에서 제시한 정의와 권고 사항을 바탕으로 제가 정리한 것으로, 원문의 공식 표는 아닙니다.</p><h3>진료 현장에는 무엇이 달라질까요</h3><p>단기적으로 검사 항목이 갑자기 늘어나거나 하지는 않을 것입니다. 다만 감염이 의심되는 환자에서 "장기 기능 이상이 있는가"를 의식적으로 확인하는 습관, 그리고 가능하다면 구조화된 중증도 점수를 기록해두는 습관이 조금씩 자리 잡을 것으로 생각합니다.</p><p>무엇보다 이번 합의는 앞으로 나올 수의학 패혈증 연구들이 같은 기준으로 환자를 정의하고 비교할 수 있게 해준다는 점에서 의미가 있습니다. 저 역시 응급중환자 진료를 하면서 "이 환자가 패혈증인가, 아닌가"를 판단이 애매했던 순간들이 있었습니다. 완벽한 답을 주는 기준은 아니지만, 적어도 같은 언어로 이야기할 수 있는 출발점이 생겼다고 생각합니다.</p><p>이 글을 읽는 동료 수의사 한 분이 다음에 패혈증이 의심되는 환자를 만났을 때, 장기 기능 이상을 확인하는 절차를 한 번 더 떠올릴 수 있다면 충분합니다.</p><p>읽어주셔서 감사합니다.</p><p>신장과 투석을 공부하는 수의사<br>안운찬 드림</p><p><b>[출처]</b><br>Goggs R, Cortellini S, DeClue AE, et al. Sepsis in Dogs and Cats-Consensus Definition and Clinical Criteria. J Vet Emerg Crit Care (San Antonio). 2026. <a href="https://doi.org/10.1111/vec.70129">https://doi.org/10.1111/vec.70129</a><br>Goggs R, Cortellini S, DeClue AE, et al. Septic Shock and Prognosis in Dogs and Cats With Sepsis-Consensus Definition and Clinical Criteria. J Vet Emerg Crit Care (San Antonio). 2026. <a href="https://doi.org/10.1111/vec.70130">https://doi.org/10.1111/vec.70130</a><br>Cortellini S, DeClue AE, Giunti M, et al. Defining sepsis in small animals. J Vet Emerg Crit Care (San Antonio). 2024;34(2):97-109. <a href="https://doi.org/10.1111/vec.13359">https://doi.org/10.1111/vec.13359</a><br>(PubMed 검색 및 서지 확인)</p>
+<p><b>개인 홈페이지</b><br><a href="https://www.ahnwoonchan.com/">https://www.ahnwoonchan.com/</a></p>
+<p>※ 이 글은 동물의 신장질환과 혈액투석에 관한 일반적인 정보를 전달하기 위한 글입니다. 개별 환자의 치료 필요성과 예후는 검사 결과와 전신 상태를 종합하여 담당 수의사와 상담해 판단해야 합니다.</p>
+  </article>
+</div>
+<script>
+function flash(btn, label) {
+  var old = btn.textContent;
+  btn.textContent = label;
+  setTimeout(function () { btn.textContent = old; }, 1500);
+}
+document.getElementById("copyTitle").addEventListener("click", function () {
+  var t = document.getElementById("title").textContent;
+  navigator.clipboard.writeText(t).then(flash(this, "복사되었습니다"));
+});
+document.getElementById("copyBody").addEventListener("click", function () {
+  var el = document.getElementById("body");
+  var htmlBlob = new Blob([el.innerHTML], { type: "text/html" });
+  var textBlob = new Blob([el.innerText], { type: "text/plain" });
+  var btn = this;
+  if (window.ClipboardItem) {
+    navigator.clipboard.write([new ClipboardItem({ "text/html": htmlBlob, "text/plain": textBlob })])
+      .then(function () { flash(btn, "복사되었습니다"); },
+            function () { navigator.clipboard.writeText(el.innerText).then(function () { flash(btn, "텍스트로 복사됨"); }); });
+  } else {
+    navigator.clipboard.writeText(el.innerText).then(function () { flash(btn, "텍스트로 복사됨"); });
+  }
+});
+</script>
+</body>
+</html>
