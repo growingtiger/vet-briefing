@@ -76,6 +76,54 @@
     margin: 0 auto;
     padding: 1.5rem 1.25rem 4rem;
   }
+  .search-wrap { position: relative; margin-bottom: 1.4rem; }
+  #searchBox {
+    width: 100%;
+    font: inherit;
+    font-size: 0.95rem;
+    color: var(--ink);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 0.65rem 0.9rem;
+  }
+  #searchBox:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+  .search-results {
+    position: absolute;
+    top: calc(100% + 0.4rem);
+    left: 0;
+    right: 0;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    max-height: 60vh;
+    overflow-y: auto;
+    z-index: 10;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
+  }
+  .search-results .hint { padding: 0.75rem 0.9rem; color: var(--ink-soft); font-size: 0.85rem; }
+  .search-result-item {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    border-top: 1px solid var(--line);
+    padding: 0.7rem 0.9rem;
+    cursor: pointer;
+    color: var(--ink);
+    font: inherit;
+  }
+  .search-result-item:first-child { border-top: none; }
+  .search-result-item:hover, .search-result-item:focus { background: var(--accent-soft); }
+  .search-result-date { font-size: 0.78rem; color: var(--accent); font-weight: 700; margin-bottom: 0.2rem; }
+  .search-result-snippet { font-size: 0.86rem; color: var(--ink-soft); line-height: 1.5; }
+  .search-result-snippet mark, article mark {
+    background: var(--accent-soft);
+    color: var(--accent);
+    padding: 0 0.15em;
+    border-radius: 3px;
+  }
   #status { color: var(--ink-soft); font-size: 0.9rem; }
   article h1 { font-size: 1.45rem; line-height: 1.35; letter-spacing: -0.02em; text-wrap: balance; }
   article h2 {
@@ -132,6 +180,10 @@
   </div>
 </header>
 <main>
+  <div class="search-wrap">
+    <input type="search" id="searchBox" placeholder="지난 브리핑 검색 (질환명, 약물명, 저자, PMID 등)" aria-label="지난 브리핑 검색" autocomplete="off">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
   <p id="status">브리핑을 불러오는 중…</p>
   <article id="content"></article>
 </main>
@@ -145,6 +197,13 @@
   var status = document.getElementById("status");
   var content = document.getElementById("content");
   var picker = document.getElementById("datePicker");
+  var searchBox = document.getElementById("searchBox");
+  var searchResults = document.getElementById("searchResults");
+
+  var reportCache = {};   // date -> raw markdown text
+  var archiveDates = [];
+  var searchTimer = null;
+  var pendingHighlight = null;
 
   marked.use({
     renderer: {
@@ -158,19 +217,128 @@
   function show(md) {
     content.innerHTML = marked.parse(md);
     status.textContent = "";
+    if (pendingHighlight) {
+      highlightTerm(pendingHighlight);
+      pendingHighlight = null;
+    }
+  }
+
+  function escapeRe(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); }
+
+  function highlightTerm(term) {
+    if (!term) return;
+    var re = new RegExp("(" + escapeRe(term) + ")", "i");
+    var walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+    var nodes = [];
+    var node;
+    while ((node = walker.nextNode())) nodes.push(node);
+    var first = null;
+    nodes.forEach(function (n) {
+      if (!re.test(n.nodeValue)) return;
+      var span = document.createElement("span");
+      span.innerHTML = n.nodeValue.replace(new RegExp(escapeRe(term), "gi"), "<mark>$&</mark>");
+      n.parentNode.replaceChild(span, n);
+      if (!first) first = span.querySelector("mark");
+    });
+    if (first) first.scrollIntoView({ behavior: "smooth", block: "center" });
   }
 
   function loadDate(d) {
     status.textContent = "브리핑을 불러오는 중…";
-    fetch("reports/" + d + ".md", { cache: "no-store" })
-      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
-      .then(show)
-      .catch(function () { status.textContent = "이 날짜의 브리핑을 불러오지 못했습니다."; });
+    fetchReport(d).then(function (md) {
+      if (md === null) { status.textContent = "이 날짜의 브리핑을 불러오지 못했습니다."; return; }
+      show(md);
+    });
   }
+
+  function fetchReport(d) {
+    if (reportCache[d] !== undefined) return Promise.resolve(reportCache[d]);
+    return fetch("reports/" + d + ".md", { cache: "no-store" })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+      .then(function (md) { reportCache[d] = md; return md; })
+      .catch(function () { reportCache[d] = null; return null; });
+  }
+
+  function stripMd(md) {
+    return md
+      .replace(/```[\s\S]*?```/g, " ")
+      .replace(/`([^`]+)`/g, "$1")
+      .replace(/!\[[^\]]*\]\([^)]*\)/g, " ")
+      .replace(/\[([^\]]+)\]\([^)]*\)/g, "$1")
+      .replace(/[#>*_~]/g, " ")
+      .replace(/\s+/g, " ")
+      .trim();
+  }
+
+  function runSearch(query) {
+    var keywords = query.trim().split(/\s+/).filter(Boolean);
+    if (!keywords.length) {
+      searchResults.hidden = true;
+      searchResults.innerHTML = "";
+      return;
+    }
+    searchResults.hidden = false;
+    searchResults.innerHTML = '<div class="hint">검색 중…</div>';
+    Promise.all(archiveDates.map(fetchReport)).then(function () {
+      var re = new RegExp("(" + keywords.map(escapeRe).join("|") + ")", "gi");
+      var matches = [];
+      archiveDates.slice().sort().reverse().forEach(function (d) {
+        var raw = reportCache[d];
+        if (!raw) return;
+        var text = stripMd(raw);
+        var lower = text.toLowerCase();
+        var ok = keywords.every(function (k) { return lower.indexOf(k.toLowerCase()) !== -1; });
+        if (!ok) return;
+        var idx = lower.indexOf(keywords[0].toLowerCase());
+        var start = Math.max(0, idx - 40);
+        var snippet = (start > 0 ? "…" : "") + text.slice(start, start + 140) + "…";
+        matches.push({ date: d, snippet: snippet.replace(re, "<mark>$1</mark>") });
+      });
+      if (!matches.length) {
+        searchResults.innerHTML = '<div class="hint">일치하는 브리핑이 없습니다.</div>';
+        return;
+      }
+      searchResults.innerHTML = "";
+      matches.forEach(function (m) {
+        var item = document.createElement("button");
+        item.type = "button";
+        item.className = "search-result-item";
+        item.innerHTML = '<div class="search-result-date">' + m.date + '</div><div class="search-result-snippet">' + m.snippet + "</div>";
+        item.addEventListener("click", function () {
+          pendingHighlight = keywords[0];
+          picker.value = m.date;
+          loadDate(m.date);
+          history.replaceState(null, "", "?d=" + m.date);
+          searchResults.hidden = true;
+        });
+        searchResults.appendChild(item);
+      });
+    });
+  }
+
+  searchBox.addEventListener("input", function () {
+    clearTimeout(searchTimer);
+    var q = searchBox.value;
+    searchTimer = setTimeout(function () { runSearch(q); }, 200);
+  });
+  searchBox.addEventListener("focus", function () {
+    if (searchBox.value.trim()) searchResults.hidden = false;
+  });
+  searchBox.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") { searchResults.hidden = true; searchBox.blur(); }
+    if (e.key === "Enter") {
+      var first = searchResults.querySelector(".search-result-item");
+      if (first) first.click();
+    }
+  });
+  document.addEventListener("click", function (e) {
+    if (e.target !== searchBox && !searchResults.contains(e.target)) searchResults.hidden = true;
+  });
 
   fetch("archive.json", { cache: "no-store" })
     .then(function (r) { return r.json(); })
     .then(function (a) {
+      archiveDates = a.dates;
       var params = new URLSearchParams(location.search);
       var want = params.get("d");
       var current = (want && a.dates.indexOf(want) !== -1) ? want : a.latest;
