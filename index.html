@@ -146,6 +146,15 @@
   var content = document.getElementById("content");
   var picker = document.getElementById("datePicker");
 
+  marked.use({
+    renderer: {
+      link: function (href, title, text) {
+        var titleAttr = title ? ' title="' + title + '"' : "";
+        return '<a href="' + href + '" target="_blank" rel="noopener noreferrer"' + titleAttr + '>' + text + '</a>';
+      }
+    }
+  });
+
   function show(md) {
     content.innerHTML = marked.parse(md);
     status.textContent = "";

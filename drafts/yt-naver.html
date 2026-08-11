@@ -87,7 +87,7 @@
       html += "<p>" + esc(it.body) + "</p>";
     });
     if (p.video_url) {
-      html += "<p><b>전체 영상 보러가기</b><br><a href=\"" + p.video_url + "\">" + p.video_url + "</a></p>";
+      html += "<p><b>전체 영상 보러가기</b><br><a href=\"" + p.video_url + "\" target=\"_blank\" rel=\"noopener noreferrer\">" + p.video_url + "</a></p>";
     }
     html += "<p>유튜브에서 '수의사 이태호'를 검색하시면 더 많은 영상을 보실 수 있습니다.</p>";
     bodyEl.innerHTML = html;
