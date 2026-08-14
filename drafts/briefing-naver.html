@@ -27,6 +27,15 @@
   article blockquote { margin:1.2em 0; padding:0.2em 1em; border-left:3px solid var(--accent); color:var(--soft); }
   article hr { border:none; border-top:1px solid var(--line); margin:1.8em 0; }
   #status { color:var(--soft); font-size:0.9rem; }
+  #tagsec { margin-top:2.5rem; border-top:1px solid var(--line); padding-top:1.5rem; }
+  #tagsec h2 { font-size:1.05rem; margin:0 0 0.4rem; }
+  #tagsec .hint { font-size:0.85rem; color:var(--soft); margin:0 0 0.9rem; }
+  #tagList { display:flex; flex-wrap:wrap; gap:0.4rem; margin-bottom:1rem; }
+  #tagList span { font-size:0.85rem; color:var(--accent); border:1px solid var(--line);
+    border-radius:999px; padding:0.25rem 0.7rem; background:transparent; }
+  #tagRaw { width:100%; font:inherit; font-size:0.85rem; line-height:1.7; color:var(--ink);
+    background:transparent; border:1px solid var(--line); border-radius:8px;
+    padding:0.7rem 0.8rem; margin-bottom:0.9rem; resize:vertical; }
 </style>
 </head>
 <body>
@@ -34,6 +43,7 @@
   <div class="meta">
     수의학 데일리 브리핑 — 네이버 블로그용 초안<br>
     [본문 복사] 후 네이버 에디터에 붙여넣으면 소제목·목록·링크 서식이 유지됩니다. 제목은 따로 복사해 제목란에 넣어주세요.
+    태그는 맨 아래에서 [태그 복사]로 가져가 네이버 [태그 편집]란에 붙여넣으면 됩니다.
   </div>
   <div class="btns">
     <button id="copyTitle" type="button">제목 복사</button>
@@ -43,6 +53,17 @@
   <hr>
   <p id="status">브리핑을 불러오는 중…</p>
   <article id="body"></article>
+
+  <section id="tagsec" hidden>
+    <h2>태그</h2>
+    <p class="hint">네이버 [태그 편집]란에 붙여넣으면 쉼표 기준으로 자동 분리됩니다. 필요 없는 태그는 아래 칸에서 직접 지우고 복사하세요.</p>
+    <div id="tagList"></div>
+    <textarea id="tagRaw" rows="3" spellcheck="false"></textarea>
+    <div class="btns">
+      <button id="copyTags" type="button">태그 복사</button>
+      <button id="copyTagsHash" class="secondary" type="button"># 붙여서 복사</button>
+    </div>
+  </section>
 </div>
 <script src="../assets/marked.min.js"></script>
 <script>
@@ -62,6 +83,86 @@
 
   var TAIL = '<hr><p>※ 이 글은 PubMed 등재 문헌을 바탕으로 정리한 일반적인 정보이며, 개별 환자의 진단과 치료는 담당 수의사와 상담해 판단해야 합니다.</p>' +
              '<p><b>매일 아침 업데이트되는 전체 브리핑 아카이브</b><br><a href="https://vet-briefing.vercel.app/" target="_blank" rel="noopener noreferrer">https://vet-briefing.vercel.app/</a></p>';
+
+  // 어느 날짜에나 쓰이는 고정 태그 + 보고서 본문에 실제로 등장한 주제만 골라 붙인다.
+  var BASE_TAGS = ["수의학", "수의사", "시그니처동물의료센터", "동물병원", "반려동물건강", "임상연구", "논문리뷰"];
+  var TAG_RULES = [
+    [/만성\s?신장병|만성신부전|\bCKD\b/i, ["만성신장병", "반려동물신장병"]],
+    [/급성\s?신손상|급성신부전|\bAKI\b/i, ["급성신손상"]],
+    [/혈액투석|복막투석|혈액관류/, ["반려동물혈액투석"]],
+    [/\bCRRT\b/i, ["CRRT"]],
+    [/단백뇨|\bUPC\b/i, ["단백뇨"]],
+    [/\bSDMA\b/i, ["SDMA"]],
+    [/요로감염|방광염|요로결석/, ["반려동물요로감염"]],
+    [/요관\s?폐색|요관\s?결석|수신증/, ["요관폐색"]],
+    [/전염성복막염|\bFIP\b/i, ["FIP", "고양이복막염"]],
+    [/아토피/, ["아토피피부염", "강아지아토피"]],
+    [/외이염/, ["강아지외이염"]],
+    [/소양감|가려움/, ["반려동물가려움증"]],
+    [/농피증|말라세지아|피부사상균/, ["강아지피부병"]],
+    [/피부과|피부염|피부 ?장벽/, ["반려동물피부과"]],
+    [/녹내장|안압/, ["반려동물녹내장"]],
+    [/각막/, ["반려동물각막질환"]],
+    [/백내장/, ["반려동물백내장"]],
+    [/건성각결막염|안구\s?건조|\bKCS\b/i, ["안구건조증"]],
+    [/안과|망막|포도막/, ["반려동물안과"]],
+    [/심부전|\bMMVD\b|이첨판|승모판/i, ["강아지심장병"]],
+    [/\bHCM\b|비대성\s?심근/i, ["고양이심장병"]],
+    [/부정맥|심전도/, ["반려동물부정맥"]],
+    [/당뇨/, ["반려동물당뇨"]],
+    [/쿠싱|부신피질기능항진/, ["쿠싱증후군"]],
+    [/갑상선/, ["반려동물갑상선질환"]],
+    [/림프종/, ["반려동물림프종"]],
+    [/비만세포종/, ["비만세포종"]],
+    [/종양|암종|육종|항암/, ["반려동물종양"]],
+    [/췌장염/, ["반려동물췌장염"]],
+    [/장병증|염증성\s?장질환|위장관|소화기|설사|\bIBD\b/i, ["반려동물소화기질환"]],
+    [/간질환|담낭|담도|간담도/, ["반려동물간질환"]],
+    [/패혈증|쇼크|중환자|응급/, ["동물응급의학"]],
+    [/수혈|자가수혈/, ["반려동물수혈"]],
+    [/마취/, ["반려동물마취"]],
+    [/진통|통증/, ["반려동물통증관리"]],
+    [/발작|뇌전증/, ["강아지발작"]],
+    [/\bIVDD\b|추간판/i, ["반려동물디스크"]],
+    [/십자인대|\bCCL\b/i, ["십자인대파열"]],
+    [/슬개골/, ["슬개골탈구"]],
+    [/초음파|\bCT\b|\bMRI\b|영상의학/i, ["동물영상진단"]],
+    [/치주|발치|구강/, ["반려동물치과"]],
+    [/항생제|내성|스튜어드십/, ["항생제내성"]],
+    [/단두종|퍼그|브라키/, ["단두종증후군"]],
+    [/백신|예방접종/, ["반려동물예방접종"]],
+    [/영양|처방식|사료/, ["반려동물영양"]],
+    [/인공지능|\bAI\b|딥러닝/i, ["수의인공지능"]]
+  ];
+  var MAX_TAGS = 30;
+
+  function buildTags(md) {
+    var tags = BASE_TAGS.slice();
+    TAG_RULES.forEach(function (rule) {
+      if (!rule[0].test(md)) return;
+      rule[1].forEach(function (t) { if (tags.indexOf(t) === -1) tags.push(t); });
+    });
+    return tags.slice(0, MAX_TAGS);
+  }
+
+  function renderTags(md) {
+    var tags = buildTags(md);
+    var list = document.getElementById("tagList");
+    list.innerHTML = "";
+    tags.forEach(function (t) {
+      var el = document.createElement("span");
+      el.textContent = "#" + t;
+      list.appendChild(el);
+    });
+    document.getElementById("tagRaw").value = tags.join(", ");
+    document.getElementById("tagsec").hidden = false;
+  }
+
+  function currentTags() {
+    return document.getElementById("tagRaw").value
+      .split(",").map(function (t) { return t.trim().replace(/^#/, ""); })
+      .filter(Boolean);
+  }
 
   function flash(btn, label) {
     var old = btn.textContent;
@@ -86,6 +187,16 @@
     }
   });
 
+  document.getElementById("copyTags").addEventListener("click", function () {
+    var btn = this;
+    navigator.clipboard.writeText(currentTags().join(", ")).then(function () { flash(btn, "복사되었습니다"); });
+  });
+  document.getElementById("copyTagsHash").addEventListener("click", function () {
+    var btn = this;
+    var text = currentTags().map(function (t) { return "#" + t; }).join(" ");
+    navigator.clipboard.writeText(text).then(function () { flash(btn, "복사되었습니다"); });
+  });
+
   function load(d) {
     fetch("../reports/" + d + ".md", { cache: "no-store" })
       .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
@@ -94,6 +205,7 @@
         var h1 = bodyEl.querySelector("h1");
         if (h1) { titleEl.textContent = h1.textContent; h1.remove(); }
         else { titleEl.textContent = "수의학 데일리 브리핑 " + d; }
+        renderTags(md);
         status.textContent = "";
       })
       .catch(function () { status.textContent = "이 날짜의 브리핑을 불러오지 못했습니다."; });
