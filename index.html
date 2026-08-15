@@ -71,6 +71,14 @@
     padding: 0.35rem 0.6rem;
   }
   select:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+  .head-nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .nav-link { font-size: 0.85rem; color: var(--accent); text-decoration: none; white-space: nowrap; }
+  .nav-link:hover { text-decoration: underline; text-underline-offset: 3px; }
   main {
     max-width: 44rem;
     margin: 0 auto;
@@ -174,9 +182,12 @@
     <div class="site-title">수의사 이태호의 수의학 데일리 브리핑
       <span class="sub">신장·투석 매일 · 요일별 임상 과목 — AI 문헌 조사</span>
     </div>
-    <label>지난 브리핑
-      <select id="datePicker" aria-label="브리핑 날짜 선택"></select>
-    </label>
+    <div class="head-nav">
+      <a class="nav-link" href="drafts/">블로그 초안 보관함 →</a>
+      <label>지난 브리핑
+        <select id="datePicker" aria-label="브리핑 날짜 선택"></select>
+      </label>
+    </div>
   </div>
 </header>
 <main>

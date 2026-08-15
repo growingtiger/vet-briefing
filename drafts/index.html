@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>블로그 초안 보관함</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📝</text></svg>">
+<style>
+  :root {
+    --bg: #fafaf8;
+    --surface: #ffffff;
+    --ink: #22303b;
+    --ink-soft: #5b6b76;
+    --accent: #0e7490;
+    --accent-soft: #e6f2f5;
+    --line: #dde4e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #10171d;
+      --surface: #17212a;
+      --ink: #d9e2e8;
+      --ink-soft: #8fa1ac;
+      --accent: #4cc4dd;
+      --accent-soft: #16303a;
+      --line: #26333d;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Apple SD Gothic Neo", "Pretendard", "Noto Sans KR", "Malgun Gothic", sans-serif;
+    line-height: 1.75;
+    font-size: 16px;
+  }
+  header { border-bottom: 1px solid var(--line); background: var(--surface); }
+  .head-inner {
+    max-width: 44rem;
+    margin: 0 auto;
+    padding: 1.1rem 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .site-title { font-size: 1.05rem; font-weight: 700; letter-spacing: -0.01em; }
+  .site-title .sub {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--ink-soft);
+    letter-spacing: 0.02em;
+  }
+  .back-link { font-size: 0.85rem; color: var(--accent); text-decoration: none; white-space: nowrap; }
+  .back-link:hover { text-decoration: underline; text-underline-offset: 3px; }
+  main { max-width: 44rem; margin: 0 auto; padding: 1.5rem 1.25rem 4rem; }
+  #searchBox {
+    width: 100%;
+    font: inherit;
+    font-size: 0.95rem;
+    color: var(--ink);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 0.65rem 0.9rem;
+  }
+  #searchBox:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+  .filters { display: flex; gap: 0.4rem; flex-wrap: wrap; margin: 0.9rem 0 0.3rem; }
+  .chip {
+    font: inherit;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--ink-soft);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 0.3rem 0.8rem;
+    cursor: pointer;
+  }
+  .chip:hover { border-color: var(--accent); }
+  .chip[aria-pressed="true"] {
+    color: var(--accent);
+    background: var(--accent-soft);
+    border-color: var(--accent);
+  }
+  #status { color: var(--ink-soft); font-size: 0.88rem; margin: 1rem 0 0.5rem; }
+  .month-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--ink-soft);
+    letter-spacing: 0.04em;
+    margin: 1.8rem 0 0.6rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .post {
+    display: block;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 0.85rem 1rem;
+    margin-bottom: 0.6rem;
+    text-decoration: none;
+    color: inherit;
+  }
+  .post:hover { border-color: var(--accent); }
+  .post:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .post-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    font-size: 0.78rem;
+    margin-bottom: 0.25rem;
+  }
+  .post-date { color: var(--accent); font-weight: 700; }
+  .badge {
+    color: var(--ink-soft);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 0 0.5rem;
+  }
+  .post-title {
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.45;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+  .post-snippet {
+    font-size: 0.86rem;
+    color: var(--ink-soft);
+    line-height: 1.6;
+    margin-top: 0.35rem;
+  }
+  mark { background: var(--accent-soft); color: var(--accent); padding: 0 0.15em; border-radius: 3px; }
+  .tools { margin-top: 2.5rem; padding-top: 1.2rem; border-top: 1px solid var(--line); }
+  .tools h2 { font-size: 0.8rem; font-weight: 700; color: var(--ink-soft); letter-spacing: 0.04em; margin: 0 0 0.6rem; }
+  .tools a { display: inline-block; font-size: 0.85rem; color: var(--accent); margin-right: 1rem; }
+  footer {
+    max-width: 44rem;
+    margin: 0 auto;
+    padding: 0 1.25rem 2.5rem;
+    color: var(--ink-soft);
+    font-size: 0.8rem;
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="head-inner">
+    <div class="site-title">블로그 초안 보관함
+      <span class="sub">지금까지 만든 초안을 날짜로 찾거나 본문으로 검색합니다</span>
+    </div>
+    <a class="back-link" href="../">← 데일리 브리핑</a>
+  </div>
+</header>
+<main>
+  <input type="search" id="searchBox" placeholder="초안 검색 (제목, 본문, 질환명, 저자 등)" aria-label="초안 검색" autocomplete="off">
+  <div class="filters" id="filters" role="group" aria-label="작성자 필터"></div>
+  <p id="status">보관함을 불러오는 중…</p>
+  <div id="list"></div>
+  <div class="tools">
+    <h2>상시 도구</h2>
+    <a href="briefing-naver.html">브리핑 → 네이버 초안</a>
+    <a href="yt-naver.html">유튜브 요약 → 네이버 초안</a>
+  </div>
+</main>
+<footer>
+  검토용 초안 페이지입니다. 검색에 노출되지 않으며, 게시 여부는 각 원장님이 직접 결정합니다.
+</footer>
+<script>
+(function () {
+  var status = document.getElementById("status");
+  var list = document.getElementById("list");
+  var filters = document.getElementById("filters");
+  var searchBox = document.getElementById("searchBox");
+
+  var posts = [];
+  var author = "전체";
+  var searchTimer = null;
+
+  function escapeRe(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); }
+  function escapeHtml(s) {
+    return s.replace(/[&<>"]/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
+    });
+  }
+
+  // 첫 키워드가 나온 자리를 잘라 미리보기를 만든다. 검색어가 없으면 글 첫머리.
+  function snippet(text, keywords) {
+    var start = 0;
+    if (keywords.length) {
+      var idx = text.toLowerCase().indexOf(keywords[0].toLowerCase());
+      if (idx > -1) start = Math.max(0, idx - 40);
+    }
+    var cut = text.slice(start, start + 140);
+    var out = escapeHtml((start > 0 ? "…" : "") + cut + (text.length > start + 140 ? "…" : ""));
+    if (keywords.length) {
+      var re = new RegExp("(" + keywords.map(escapeRe).join("|") + ")", "gi");
+      out = out.replace(re, "<mark>$1</mark>");
+    }
+    return out;
+  }
+
+  function monthLabel(date) {
+    var p = date.split("-");
+    return p[0] + "년 " + parseInt(p[1], 10) + "월";
+  }
+
+  function render() {
+    var keywords = searchBox.value.trim().split(/\s+/).filter(Boolean);
+    var matches = posts.filter(function (p) {
+      if (author !== "전체" && p.author !== author) return false;
+      if (!keywords.length) return true;
+      var hay = (p.title + " " + p.category + " " + p.author + " " + p.date + " " + p.text).toLowerCase();
+      return keywords.every(function (k) { return hay.indexOf(k.toLowerCase()) !== -1; });
+    });
+
+    if (!matches.length) {
+      status.textContent = keywords.length ? "일치하는 초안이 없습니다." : "초안이 없습니다.";
+      list.innerHTML = "";
+      return;
+    }
+    status.textContent = keywords.length
+      ? matches.length + "편이 검색되었습니다."
+      : "초안 " + matches.length + "편";
+
+    var html = "";
+    var lastMonth = "";
+    matches.forEach(function (p) {
+      var m = monthLabel(p.date);
+      if (m !== lastMonth) {
+        html += '<div class="month-label">' + m + "</div>";
+        lastMonth = m;
+      }
+      html += '<a class="post" href="' + encodeURI(p.file) + '">' +
+        '<div class="post-meta">' +
+          '<span class="post-date">' + p.date + "</span>" +
+          '<span class="badge">' + escapeHtml(p.author) + " 원장</span>" +
+          (p.category ? '<span class="badge">' + escapeHtml(p.category) + "</span>" : "") +
+        "</div>" +
+        '<div class="post-title">' + escapeHtml(p.title) + "</div>" +
+        '<div class="post-snippet">' + snippet(p.text, keywords) + "</div>" +
+      "</a>";
+    });
+    list.innerHTML = html;
+  }
+
+  function buildFilters() {
+    var names = ["전체"];
+    posts.forEach(function (p) {
+      if (names.indexOf(p.author) === -1) names.push(p.author);
+    });
+    if (names.length <= 2) return;  // 작성자가 한 명뿐이면 필터를 두지 않는다
+    names.forEach(function (n) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "chip";
+      b.textContent = n === "전체" ? "전체" : n + " 원장";
+      b.setAttribute("aria-pressed", String(n === author));
+      b.addEventListener("click", function () {
+        author = n;
+        [].forEach.call(filters.children, function (c) {
+          c.setAttribute("aria-pressed", String(c === b));
+        });
+        render();
+      });
+      filters.appendChild(b);
+    });
+  }
+
+  searchBox.addEventListener("input", function () {
+    clearTimeout(searchTimer);
+    searchTimer = setTimeout(render, 150);
+  });
+  searchBox.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") { searchBox.value = ""; render(); }
+  });
+
+  fetch("manifest.json", { cache: "no-store" })
+    .then(function (r) { return r.json(); })
+    .then(function (m) {
+      posts = m.posts || [];
+      buildFilters();
+      render();
+    })
+    .catch(function () { status.textContent = "보관함 목록을 불러오지 못했습니다."; });
+})();
+</script>
+</body>
+</html>
