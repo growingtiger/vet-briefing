@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>블로그 초안 2026-08-17</title>
+<style>
+  :root { --ink:#22303b; --soft:#5b6b76; --accent:#0e7490; --line:#dde4e7; --bg:#fafaf8; }
+  @media (prefers-color-scheme: dark) {
+    :root { --ink:#d9e2e8; --soft:#8fa1ac; --accent:#4cc4dd; --line:#26333d; --bg:#10171d; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); line-height:1.8;
+    font-family:"Apple SD Gothic Neo","Pretendard","Noto Sans KR",sans-serif; }
+  .wrap { max-width:42rem; margin:0 auto; padding:1.5rem 1.25rem 4rem; }
+  .meta { font-size:0.85rem; color:var(--soft); border:1px solid var(--line);
+    border-radius:10px; padding:0.8rem 1rem; margin-bottom:1.2rem; }
+  .btns { display:flex; gap:0.6rem; flex-wrap:wrap; margin-bottom:1.6rem; }
+  button { font:inherit; font-size:0.9rem; font-weight:600; color:#fff;
+    background:var(--accent); border:none; border-radius:8px;
+    padding:0.6rem 1.1rem; cursor:pointer; }
+  button.secondary { color:var(--accent); background:transparent;
+    border:1.5px solid var(--accent); }
+  h1 { font-size:1.5rem; line-height:1.4; }
+  article h3 { font-size:1.1rem; margin-top:2em; }
+  article p { margin:1em 0; }
+  article blockquote { margin:1.4em 0; padding:0.2em 1em; border-left:3px solid var(--accent); color:var(--soft); }
+  article img { max-width:100%; height:auto; border:1px solid var(--line); border-radius:8px; }
+  article table { border-collapse:collapse; width:100%; margin:1.2em 0; font-size:0.92em; }
+  article th, article td { border:1px solid var(--line); padding:0.5em 0.7em; text-align:left; }
+  article th { background:rgba(14,116,144,0.08); }
+  hr { border:none; border-top:1px solid var(--line); margin:2rem 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="meta">
+    블로그 글 초안 · 2026-08-17 · 카테고리 제안: 가슴 뛰는 신장·중환자·투석<br>
+    검토 후 수정할 부분이 있으면 편하게 고쳐서 올려주세요.<br>
+    그림이 붙여넣기에 포함되지 않으면, 그림을 길게 눌러(또는 우클릭) 저장한 뒤 에디터에서 삽입해 주세요.
+  </div>
+  <div class="btns">
+    <button id="copyTitle" type="button">제목 복사</button>
+    <button id="copyBody" class="secondary" type="button">본문 복사 (서식 유지)</button>
+  </div>
+  <h1 id="title">이미 신장이 나쁜 아이에게 투석이 의미가 있을까요 — 저희가 8년간의 기록을 정리해 본 이유</h1>
+  <hr>
+  <article id="body">
+<p>안녕하세요. 신장질환과 혈액투석, 응급중환자 진료를 하는 수의사 안운찬입니다.</p><p>오늘은 조금 사적인 이야기로 시작하겠습니다. 2017년부터 2024년까지 저희가 혈액투석으로 치료한 개와 고양이 136마리의 기록을 정리한 연구가 지난달 학술지에 실렸습니다.</p><p>논문 한 편이 대단한 일이라고 생각하지는 않습니다. 다만 이 연구는 제가 진료실에서 가장 자주 막혔던 질문에서 출발했기 때문에, 결과를 이곳에도 남겨두고 싶었습니다.</p><h3>"이미 신장이 나쁜 아이인데, 투석이 의미가 있을까요?"</h3><p>신장질환 환자를 진료하면서 보호자에게 가장 많이 들은 질문 중 하나입니다. 그리고 동료 수의사에게도 자주 받는 질문입니다.</p><p>솔직히 말씀드리면, 오랫동안 저는 이 질문에 "경험상 그래도 해볼 만합니다" 정도로 답해왔습니다. 그 답이 늘 마음에 걸렸습니다.</p><p>경험은 기억에 남는 환자 쪽으로 기울기 마련입니다. 잘 회복한 아이는 오래 기억나고, 그렇지 못한 아이는 다른 방식으로 기억에 남습니다. 어느 쪽이든 숫자는 아닙니다.</p><p>그래서 저희가 가진 기록을 처음부터 다시 세어보기로 했습니다.</p><h3>급성신손상과 급성-만성 중첩은 무엇이 다릅니까</h3><p>먼저 용어를 정리하겠습니다.</p><p><b>급성신손상(AKI)</b>은 건강하던 신장이 갑자기 망가진 상태입니다. 원인을 제거하고 시간을 벌어주면 신장이 스스로 재생해 기능을 되찾을 여지가 있습니다.</p><p><b>만성신장병(CKD)</b>은 이미 신장 조직이 되돌릴 수 없이 손상되어 여유분, 즉 예비능이 줄어든 상태입니다.</p><p><b>급성-만성 중첩 신장병(ACKD)</b>은 이 두 가지가 겹친 상태입니다. 원래 신장이 나빴던 아이에게 새로운 급성 손상이 얹힌 경우입니다.</p><p>진료실에서 만나는 위중한 환자 중 상당수가 사실 이 세 번째 유형입니다. 그런데 그동안 나온 연구는 대부분 "순수한" 급성신손상 환자를 다루었습니다.</p><p>ACKD를 다룬 기존 연구들도 대부분 투석까지 가지 않고 내과적 치료로 회복한 환자들이 포함되어 있어, <b>투석이 필요할 만큼 위중했던 ACKD 환자</b>의 데이터는 거의 없었습니다.</p><h3>어떻게 살펴보았나</h3><p>2017년부터 2024년까지 저희 병원에서 신대체요법(RRT)을 받은 개 67마리와 고양이 69마리, 총 136마리의 진료 기록을 후향적으로 검토했습니다.</p><p>과거 CKD 진단 기록, 만성 신손상을 시사하는 검사 소견, 초음파에서 확인되는 만성 변화를 기준으로 ACKD 66마리와 AKI 70마리로 나누었습니다.</p><p>치료는 CRRT 장비를 이용한 지속적 정정맥 혈액투석여과 또는 혈액투석 방식으로, 한 세션당 4~8시간에 걸쳐 시행했습니다.</p><h3>내원할 때는 비슷했지만, 퇴원할 때는 달랐습니다</h3><p>가장 먼저 확인한 것은 두 그룹이 처음 왔을 때 얼마나 아팠는가입니다.</p><table><tr><th>항목</th><th>ACKD (66마리)</th><th>AKI (70마리)</th></tr><tr><td>나이(세)</td><td>10.4 ± 3.9</td><td>6.3 ± 3.3</td></tr><tr><td>내원 시 크레아티닌(mg/dL)</td><td>11.43 ± 6.98</td><td>12.14 ± 8.50</td></tr><tr><td>내원 시 BUN(mg/dL)</td><td>157.1 ± 71.9</td><td>160.5 ± 81.0</td></tr><tr><td>내원 시 인(mg/dL)</td><td>14.84 ± 7.52</td><td>14.04 ± 6.69</td></tr><tr><td>퇴원 시 크레아티닌(mg/dL)</td><td>3.38 ± 1.16</td><td>2.81 ± 2.92</td></tr></table><p>ACKD 환자가 유의하게 나이가 많았습니다. 그 외에 내원 당시의 크레아티닌, BUN, 인, 소변량, 중증도 점수는 두 그룹 사이에 의미 있는 차이가 없었습니다.</p><p>즉 <b>출발선의 상태는 비슷했습니다.</b> 그런데 퇴원할 때의 크레아티닌은 ACKD 군이 더 높았습니다.</p><p>같은 지점에서 출발했는데 도착한 지점이 달랐다는 뜻입니다. 회복의 완성도가 달랐던 것으로 해석하고 있습니다.</p><p>원인 분포도 갈렸습니다. AKI 군에서는 중독이 17마리로 뚜렷한 비중을 차지한 반면, ACKD 군은 <b>원인을 특정하지 못한 경우가 57.6%</b>였습니다. 만성 손상 위에 얹힌 급성 악화는 그만큼 원인이 복잡하고 흐릿하다는 의미로 읽고 있습니다.</p><h3>퇴원 생존율은 ACKD 53%, AKI 70%였습니다</h3><img src="https://vet-briefing.vercel.app/drafts/img/2026-08-17-ackd-aki-rrt.png" alt="신대체요법 후 퇴원 생존율 막대 도표. AKI 전체 70퍼센트, ACKD 전체 53퍼센트."><p>투석을 받은 136마리 전체의 퇴원 생존율은 62%였습니다.</p><p>그룹을 나누면 ACKD 53%, AKI 70%였습니다. 다만 통계적으로는 <b>두 군의 단기 생존 차이가 유의하지 않았습니다</b>(log-rank p=0.089). 생존 곡선은 벌어지는 경향을 보였지만, 그 차이를 확정적이라고 말할 수는 없습니다.</p><blockquote>이미 만성신장병이 있었고, 투석이 필요할 만큼 위중했던 환자의 절반 이상이 살아서 집으로 돌아갔습니다.</blockquote><p>"기저에 만성신장병이 있으니 투석은 소용없다"는 판단은 적어도 저희 데이터에서는 근거를 찾기 어려웠습니다.</p><h3>그러나 퇴원이 곧 장기 생존은 아니었습니다</h3><p>퇴원한 환자들의 이후를 추적했을 때, ACKD 군의 중앙 생존기간은 <b>전체 57일</b>이었습니다. 개만 따로 보면 <b>33일</b>이었습니다.</p><p>반면 ACKD 고양이는 중앙 생존기간을 계산할 수 없었습니다. 퇴원 후 2,400일이 지난 시점까지 절반 이상이 살아 있었기 때문입니다.</p><p>같은 ACKD라도 개와 고양이의 이후 경과가 이렇게 갈렸다는 점은 저희도 예상하지 못한 부분이었습니다.</p><p>다만 장기 생존 역시 두 군 간 차이가 통계적으로 유의하지는 않았습니다(log-rank p=0.21). 추적이 끊긴 환자가 많았고 표본이 크지 않았던 영향이라고 보고 있습니다.</p><h3>기존 예후 점수가 ACKD에서는 잘 맞지 않았습니다</h3><p>투석 환자의 예후 예측에 쓰이는 Segev model C 점수를 저희 환자들에게 적용해 보았습니다.</p><p>전체 환자에서는 쓸 만한 수준이었고(AUC 0.73), AKI 군에서는 성능이 좋았습니다(AUC 0.84). 그런데 <b>ACKD 군에서는 AUC 0.59로 예측력이 부족했습니다.</b></p><p>당연한 결과일지도 모릅니다. 이 점수는 급성 손상의 중증도를 반영하도록 만들어졌는데, ACKD 환자의 예후는 남아 있는 신장 예비능과 만성 손상의 정도까지 함께 작용해 결정되기 때문입니다.</p><p>ACKD 환자를 위한 별도의 예후 도구가 필요하다는 것이 저희 결론입니다.</p><h3>예상과 달랐던 결과, 그리고 한계</h3><p>정직하게 남겨두어야 할 부분들이 있습니다.</p><p><b>소변량 결과는 직관과 반대였습니다.</b> ACKD 군에서 무뇨보다 오히려 정상 소변량을 보인 환자의 장기 예후가 나빴습니다. 소변이 나온다는 것을 회복의 신호로 읽어온 기존 해석과 어긋납니다.</p><p>표본이 작고 신뢰구간이 넓어 저희는 이것을 결론이 아니라 <b>탐색적 신호</b>로만 보고 있습니다. 만성신장병 환자에서 정상으로 보이는 소변량이 기능이 남아 있다는 뜻이 아니라 오히려 농축 능력을 잃었다는 뜻일 수 있다는 해석을 조심스럽게 붙여두었습니다.</p><p><b>입원 기간이 길수록 생존율이 높았다는 결과도 그대로 읽으면 안 됩니다.</b> 오래 입원해서 살아난 것이 아니라, 살아남은 환자가 오래 입원할 수 있었던 것입니다. 생존자 편향입니다.</p><p>그리고 가장 중요한 한계가 있습니다. 이 연구의 모든 환자는 투석을 받았습니다.</p><p>따라서 <b>투석을 한 것이 하지 않은 것보다 나았는지는 이 연구로 답할 수 없습니다.</b> 후향적 단일 병원 자료이고, 비교할 대조군이 없기 때문입니다. 보호자의 경제적 여건이나 안락사 결정처럼 질병 중증도와 무관한 요인이 결과에 섞여 있다는 점도 밝혀두었습니다.</p><h3>그래서 저는 상담실에서 이렇게 말합니다</h3><p>이 연구가 제 진료를 크게 바꾸지는 않았습니다. 다만 상담의 언어를 바꾸었습니다.</p><p>이제는 이렇게 말씀드립니다. 기저에 만성신장병이 있어도 투석이 무의미하지는 않습니다. 저희 환자의 절반 이상이 퇴원했습니다.</p><p>동시에 이렇게도 말씀드립니다. 퇴원이 완치를 뜻하지는 않습니다. 특히 개의 경우 퇴원 이후의 시간이 길지 않을 수 있고, 그 시간을 어떻게 보낼지를 함께 계획해야 합니다.</p><p>희망을 과장하지 않으면서 가능성을 너무 일찍 닫지도 않는 것. 그 사이의 언어를 찾는 일이 술기보다 어렵다고 늘 느낍니다.</p><p>그동안 200마리가 넘는 개와 고양이에게 투석을 시행하며 800회 이상의 세션을 해왔지만, 환자를 많이 만날수록 확신보다 질문이 늘어납니다.</p><p>이 연구도 답이라기보다 다음 질문에 가깝습니다. 단일 병원의 후향적 자료로는 여기까지가 한계이고, 결국 여러 병원이 데이터를 모아야 더 나은 기준을 만들 수 있다고 생각합니다.</p><p>이 글을 읽은 보호자 한 분이 아이의 상태를 조금 더 정확히 이해하시고, 동료 수의사 한 분이 만성신장병 환자의 급성 악화 앞에서 선택지를 조금 더 넓게 떠올릴 수 있다면 충분합니다.</p><p>읽어주셔서 감사합니다.</p><p><b>신장과 투석을 공부하는 수의사</b><br>안운찬 드림</p><h3>출처</h3><ul><li>Ahn W, Kim K, Kim J, Lee Y, Lee T, Her J. Dogs and cats with acute-on-chronic kidney disease have worse outcomes than those with acute kidney injury following renal replacement therapy. Front Vet Sci. 2026;13:1857111.</li></ul>
+<p><b>개인 홈페이지</b><br><a href="https://www.ahnwoonchan.com/">https://www.ahnwoonchan.com/</a></p>
+<p>※ 이 글은 동물의 신장질환과 혈액투석에 관한 일반적인 정보를 전달하기 위한 글입니다. 개별 환자의 치료 필요성과 예후는 검사 결과와 전신 상태를 종합하여 담당 수의사와 상담해 판단해야 합니다.</p>
+  </article>
+</div>
+<script>
+function flash(btn, label) {
+  var old = btn.textContent;
+  btn.textContent = label;
+  setTimeout(function () { btn.textContent = old; }, 1500);
+}
+document.getElementById("copyTitle").addEventListener("click", function () {
+  var t = document.getElementById("title").textContent;
+  navigator.clipboard.writeText(t).then(flash(this, "복사되었습니다"));
+});
+document.getElementById("copyBody").addEventListener("click", function () {
+  var el = document.getElementById("body");
+  var htmlBlob = new Blob([el.innerHTML], { type: "text/html" });
+  var textBlob = new Blob([el.innerText], { type: "text/plain" });
+  var btn = this;
+  if (window.ClipboardItem) {
+    navigator.clipboard.write([new ClipboardItem({ "text/html": htmlBlob, "text/plain": textBlob })])
+      .then(function () { flash(btn, "복사되었습니다"); },
+            function () { navigator.clipboard.writeText(el.innerText).then(function () { flash(btn, "텍스트로 복사됨"); }); });
+  } else {
+    navigator.clipboard.writeText(el.innerText).then(function () { flash(btn, "텍스트로 복사됨"); });
+  }
+});
+</script>
+</body>
+</html>
