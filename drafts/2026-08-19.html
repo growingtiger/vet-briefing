@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>블로그 초안 2026-08-19</title>
+<style>
+  :root { --ink:#22303b; --soft:#5b6b76; --accent:#0e7490; --line:#dde4e7; --bg:#fafaf8; }
+  @media (prefers-color-scheme: dark) {
+    :root { --ink:#d9e2e8; --soft:#8fa1ac; --accent:#4cc4dd; --line:#26333d; --bg:#10171d; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); line-height:1.8;
+    font-family:"Apple SD Gothic Neo","Pretendard","Noto Sans KR",sans-serif; }
+  .wrap { max-width:42rem; margin:0 auto; padding:1.5rem 1.25rem 4rem; }
+  .meta { font-size:0.85rem; color:var(--soft); border:1px solid var(--line);
+    border-radius:10px; padding:0.8rem 1rem; margin-bottom:1.2rem; }
+  .btns { display:flex; gap:0.6rem; flex-wrap:wrap; margin-bottom:1.6rem; }
+  button { font:inherit; font-size:0.9rem; font-weight:600; color:#fff;
+    background:var(--accent); border:none; border-radius:8px;
+    padding:0.6rem 1.1rem; cursor:pointer; }
+  button.secondary { color:var(--accent); background:transparent;
+    border:1.5px solid var(--accent); }
+  h1 { font-size:1.5rem; line-height:1.4; }
+  article h3 { font-size:1.1rem; margin-top:2em; }
+  article p { margin:1em 0; }
+  article blockquote { margin:1.4em 0; padding:0.2em 1em; border-left:3px solid var(--accent); color:var(--soft); }
+  article img { max-width:100%; height:auto; border:1px solid var(--line); border-radius:8px; }
+  article table { border-collapse:collapse; width:100%; margin:1.2em 0; font-size:0.92em; }
+  article th, article td { border:1px solid var(--line); padding:0.5em 0.7em; text-align:left; }
+  article th { background:rgba(14,116,144,0.08); }
+  hr { border:none; border-top:1px solid var(--line); margin:2rem 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="meta">
+    블로그 글 초안 · 2026-08-19 · 카테고리 제안: 배움의 끈, 주간 저널클럽<br>
+    검토 후 수정할 부분이 있으면 편하게 고쳐서 올려주세요.<br>
+    그림이 붙여넣기에 포함되지 않으면, 그림을 길게 눌러(또는 우클릭) 저장한 뒤 에디터에서 삽입해 주세요.
+  </div>
+  <div class="btns">
+    <button id="copyTitle" type="button">제목 복사</button>
+    <button id="copyBody" class="secondary" type="button">본문 복사 (서식 유지)</button>
+  </div>
+  <h1 id="title">FIP 치료가 끝난 뒤, 고양이의 신장은 어떻게 되었을까요 — 80마리를 여섯 달간 추적한 연구를 읽다</h1>
+  <hr>
+  <article id="body">
+<p>안녕하세요. 신장질환과 혈액투석, 응급중환자 진료를 하는 수의사 안운찬입니다.</p><p>고양이 전염성 복막염(FIP)은 오랫동안 손쓸 방법이 없는 병으로 여겨졌습니다. 항바이러스제가 들어오면서 그 전제가 바뀌었습니다. 이제 질문은 치료를 할 것인가가 아니라, 치료를 마친 뒤를 어떻게 볼 것인가 쪽으로 옮겨왔습니다.</p><p>저는 FIP를 전문으로 보는 사람이 아닙니다. 다만 신장을 보는 입장에서 이 약에 대해 오래 마음에 걸리던 질문이 하나 있었고, 얼마 전 그 질문을 정면으로 다룬 논문이 나왔습니다.</p><h3>"FIP 약이 신장에 부담을 준다던데, 사실인가요?"</h3><p>보호자에게서도, 동료 수의사에게서도 들었던 질문입니다. 솔직히 말씀드리면 저도 정확한 답을 갖고 있지 않았습니다.</p><p>GS-441524의 신독성 논란은 근거가 정리되지 않은 채로 이야기만 길게 돌았습니다. 치료를 마친 고양이의 신장 수치가 올라 있는 것을 보면 약 때문인 것 같기도 하고, 애초에 FIP라는 병 자체가 신장을 건드린 것 같기도 합니다.</p><blockquote>같은 결과를 두고 원인을 두 가지로 읽을 수 있을 때, 필요한 것은 경험이 아니라 시간에 따른 기록입니다.</blockquote><h3>80마리의 신장을 여섯 달 동안 들여다본 연구입니다</h3><p>취리히대학 연구진이 확진된 FIP 고양이 80마리를 대상으로 진행한 전향적 종단 관찰 연구입니다.</p><p>모든 고양이에게 경구 GS-441524를 42일간 투여하면서, 치료 전(D1), 치료 중(D7과 D42), 치료 후(D84와 D183)까지 다섯 시점에 신장 관련 검사를 반복했습니다. 마지막 시점은 투약 종료로부터 약 다섯 달 뒤입니다.</p><p>이 연구가 좋았던 점은 크레아티닌 하나로 신장을 판단하지 않았다는 것입니다.</p><table><tr><th>검사</th><th>무엇을 말해주는가</th></tr><tr><td>크레아티닌, SDMA</td><td>신장의 여과 기능. 다만 상당수의 네프론이 상한 뒤에야 올라갑니다</td></tr><tr><td>요비중(USG)</td><td>소변을 농축하는 능력</td></tr><tr><td>요단백/크레아티닌 비(UPC)</td><td>소변으로 빠져나가는 단백질의 양</td></tr><tr><td>요단백 전기영동</td><td>빠져나온 단백질의 크기로 사구체형인지 세뇨관형인지 구분</td></tr><tr><td>요중 시스타틴 B(uCysB)</td><td>기능 저하가 아니라 세뇨관 세포의 손상 자체</td></tr></table><p>연구진은 여기에 "잠재적 신기능 이상"이라는 기준을 따로 정의했습니다. 크레아티닌이 140 µmol/L(약 1.6 mg/dL)를 넘거나 SDMA가 18 µg/dL 이상이면서, 동시에 요비중이 1.035 미만인 경우입니다.</p><p>수치 하나만 보지 않고 농축 능력을 함께 묶어 판단했다는 점에서 합리적인 기준이라고 생각합니다.</p><h3>대부분의 지표는 분명하게 좋아졌습니다</h3><p>먼저 눈에 들어온 것은 회복의 신호였습니다.</p><p>치료 전 단백뇨(UPC 0.2 초과)가 있던 고양이는 91.3퍼센트였습니다. 여섯 달 뒤에는 3.8퍼센트였습니다.</p><p>세뇨관 손상 표지자인 요중 시스타틴 B는 치료 전 83.8퍼센트의 고양이에서 올라가 있었고, 치료 기간 동안 유의하게 감소했습니다(p&lt;0.0001). 시스타틴 B가 100 ng/mL를 넘은 고양이는 UPC도 함께 높았습니다.</p><p>치료 전 요단백 전기영동에서 확인된 패턴은 주로 세뇨관형과 혼합형이었습니다. 대부분의 고양이에서 올라가 있던 급성기 반응 물질(SAA, AGP)도 치료 중에 정상화되었습니다.</p><img src="https://vet-briefing.vercel.app/drafts/img/2026-08-19-fip-kidney.png" alt="FIP 고양이 80마리의 치료 전후 신장 지표 이상 소견 비율 그래프"><p>이 결과들을 한 방향으로 읽으면 이렇게 됩니다.</p><blockquote>치료 전에 확인된 신장 이상의 상당 부분은 약이 만든 것이 아니라, FIP라는 병이 만든 것이었습니다. 그리고 그것은 치료로 되돌아갔습니다.</blockquote><p>한 가지 더 흥미로웠던 것은 바이러스가 있던 자리입니다. 치료 전 시점에서는 혈액보다 소변에서 코로나바이러스 RNA가 더 자주 검출되었습니다(소변 68.8퍼센트, 혈액 61.3퍼센트). 신장과 요로가 이 병에서 구경만 하는 장기가 아니라는 뜻으로 읽었습니다.</p><h3>그런데 반대 방향의 신호가 하나 있었습니다</h3><p>같은 연구 안에 방향이 다른 결과가 함께 들어 있습니다.</p><p>치료 전에는 97.5퍼센트의 고양이가 크레아티닌 140 µmol/L 미만이었습니다. 그런데 여섯 달 뒤에는 23.8퍼센트가 이 기준을 넘었습니다(p&lt;0.0001).</p><p>앞서 설명한 "잠재적 신기능 이상" 기준을 충족한 고양이도 치료 전 2.5퍼센트에서 D183에 8.8퍼센트로 늘었습니다.</p><p>단백뇨와 세뇨관 손상은 회복되었는데, 여과 기능 쪽 지표는 일부에서 오히려 뒤늦게 올라온 것입니다.</p><h3>이 연구가 답하지 못한 것을 그대로 옮깁니다</h3><p>저자들은 이 부분을 흐리지 않고 명시했습니다. 이 소견이 FIP로 인한 지연성 신손상인지, 항바이러스제의 이상반응인지는 알 수 없다는 것입니다.</p><p>저는 이 문장이 논문 전체에서 가장 정직한 문장이라고 생각합니다.</p><p>연구 설계상 이 질문에 답하기는 어렵습니다. 80마리 모두가 치료를 받았고, 치료를 받지 않은 FIP 고양이를 대조군으로 두는 설계는 현실적으로도 윤리적으로도 가능하지 않기 때문입니다. 비교 대상이 없으면 원인을 가를 수 없습니다.</p><p>그럼에도 저자들이 결론에 남긴 실무적 권고는 분명합니다. <b>치료 기간을 불필요하게 연장하지 말 것.</b></p><h3>그래서 진료에서는 무엇이 달라지는가</h3><p>제가 이 논문에서 가져가려는 것은 세 가지입니다.</p><p>첫째, FIP 치료를 마친 고양이의 추적 검사에 크레아티닌만 넣어서는 부족합니다. SDMA와 요비중, UPC를 함께 봐야 이 연구가 정의한 방식으로 신장을 판단할 수 있습니다. 소변 검사가 빠진 추적은 절반만 본 것입니다.</p><p>둘째, 추적을 투약 종료 시점에서 끝내면 안 됩니다. 이 연구에서 크레아티닌이 올라온 것은 치료 중이 아니라 치료가 끝나고 한참 지난 시점이었습니다.</p><p>셋째, 치료 전에 확인되는 단백뇨와 세뇨관 손상은 그 자체로 절망할 근거가 아닙니다. 상당 부분이 되돌아갔습니다.</p><p>세뇨관 손상 표지자에 대해서는 한 가지 단서를 덧붙여야 합니다. 올해 발표된 체계적 문헌고찰과 메타분석에 따르면, 요중 시스타틴 B는 개의 급성신손상에서 뚜렷하게 상승해 세뇨관 손상과 강한 연관을 보이는 유망한 표지자입니다. 다만 고양이 자료는 포함 기준을 충족한 논문이 한 편뿐이어서 정성적으로만 분석되었고, 연구 간 이질성도 컸습니다.</p><p>같은 분석에서 혈청 시스타틴 C는 크레아티닌이나 SDMA에 비해 우월하다는 근거가 확인되지 않았습니다.</p><p>새 표지자를 쓰되, 그 표지자가 어디까지 검증되었는지도 함께 알고 써야 한다는 뜻입니다.</p><h3>마무리하며</h3><p>이 논문은 GS-441524가 신장에 해롭다는 근거가 아닙니다. 동시에 안전하다는 근거도 아닙니다.</p><p>이 논문이 보여주는 것은 그 사이에 있습니다. FIP는 신장을 건드리고, 치료는 그 상당 부분을 되돌리며, 일부에서는 시간이 지난 뒤에 다른 신호가 나타난다는 것. 그리고 그 신호의 정체는 아직 모른다는 것입니다.</p><p>모르는 것이 남아 있을 때 우리가 할 수 있는 일은 계속 재보는 것입니다.</p><p>이 글을 읽으신 보호자 한 분이 치료가 끝난 뒤에도 아이의 신장 검사를 한 번 더 챙기시고, 동료 수의사 한 분이 FIP 완치 판정 이후의 추적 항목에 소변 검사를 넣어 두신다면 충분합니다.</p><h3>참고 문헌</h3><ul><li>de Witt Curtius CC, Meli ML, Crespo Bouzon A, et al. Renal Health in Cats with Feline Infectious Peritonitis treated with GS-441524: Baseline Findings and Longitudinal Effects. Journal of Feline Medicine and Surgery. 2026 (온라인 선공개). PMID 42590897.</li><li>Santos BMA, Migotto BA, Crivellenti SB, Pennacchi CS, Crivellenti LZ. Beyond traditional biomarkers: do serum cystatin C and urinary cystatin B improve diagnostic precision in feline and canine renal disease? A systematic review and meta-analysis. Frontiers in Veterinary Science. 2026;13:1844210. PMID 42491500.</li><li>Rosa S, Silvestre-Ferreira AC, Martins R, Queiroga FP. Understanding the Progression of Chronic Kidney Disease in Cats: From Pathophysiology to Emerging Biomarkers. Veterinary Sciences. 2026;13(2):199. PMID 41745993.</li></ul><p>읽어주셔서 감사합니다.</p><p>신장과 투석을 공부하는 수의사<br>안운찬 드림</p>
+<p><b>개인 홈페이지</b><br><a href="https://www.ahnwoonchan.com/">https://www.ahnwoonchan.com/</a></p>
+<p>※ 이 글은 동물의 신장질환과 혈액투석에 관한 일반적인 정보를 전달하기 위한 글입니다. 개별 환자의 치료 필요성과 예후는 검사 결과와 전신 상태를 종합하여 담당 수의사와 상담해 판단해야 합니다.</p>
+  </article>
+</div>
+<script>
+function flash(btn, label) {
+  var old = btn.textContent;
+  btn.textContent = label;
+  setTimeout(function () { btn.textContent = old; }, 1500);
+}
+document.getElementById("copyTitle").addEventListener("click", function () {
+  var t = document.getElementById("title").textContent;
+  navigator.clipboard.writeText(t).then(flash(this, "복사되었습니다"));
+});
+document.getElementById("copyBody").addEventListener("click", function () {
+  var el = document.getElementById("body");
+  var htmlBlob = new Blob([el.innerHTML], { type: "text/html" });
+  var textBlob = new Blob([el.innerText], { type: "text/plain" });
+  var btn = this;
+  if (window.ClipboardItem) {
+    navigator.clipboard.write([new ClipboardItem({ "text/html": htmlBlob, "text/plain": textBlob })])
+      .then(function () { flash(btn, "복사되었습니다"); },
+            function () { navigator.clipboard.writeText(el.innerText).then(function () { flash(btn, "텍스트로 복사됨"); }); });
+  } else {
+    navigator.clipboard.writeText(el.innerText).then(function () { flash(btn, "텍스트로 복사됨"); });
+  }
+});
+</script>
+</body>
+</html>
