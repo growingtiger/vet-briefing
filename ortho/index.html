@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>외과·정형외과 브리핑</title>
+<meta name="description" content="Veterinary Surgery · VCOT 중심 소동물 외과·정형외과 문헌 브리핑">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦴</text></svg>">
+<style>
+  :root {
+    --bg: #f4f5f3;
+    --surface: #ffffff;
+    --ink: #1e2529;
+    --ink-soft: #5f6a70;
+    --accent: #a8552a;
+    --accent-soft: #f6ece5;
+    --line: #dcdfda;
+    --rule: #c8ccc5;
+    --code-bg: #eceee9;
+    --mark: #f7e2b0;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181a;
+      --surface: #1c2225;
+      --ink: #dfe4e2;
+      --ink-soft: #97a2a6;
+      --accent: #e08b57;
+      --accent-soft: #2b211b;
+      --line: #2a3134;
+      --rule: #3a4245;
+      --code-bg: #222a2d;
+      --mark: #6b5323;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Apple SD Gothic Neo", "Pretendard", "Noto Sans KR", "Malgun Gothic", sans-serif;
+    line-height: 1.78;
+    font-size: 16px;
+  }
+  header {
+    background: var(--surface);
+    border-bottom: 2px solid var(--rule);
+    position: sticky; top: 0; z-index: 20;
+  }
+  .head-inner {
+    max-width: 820px; margin: 0 auto; padding: 16px 20px;
+    display: flex; flex-wrap: wrap; gap: 12px;
+    align-items: baseline; justify-content: space-between;
+  }
+  .site-title {
+    font-size: 19px; font-weight: 700; letter-spacing: -0.01em;
+    display: flex; flex-direction: column; gap: 2px;
+  }
+  .site-title .kicker {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.16em;
+    color: var(--accent); text-transform: uppercase;
+  }
+  .site-title .sub {
+    font-size: 12.5px; font-weight: 400; color: var(--ink-soft); letter-spacing: 0;
+  }
+  label { font-size: 12.5px; color: var(--ink-soft); display: flex; gap: 7px; align-items: center; }
+  select {
+    font: inherit; font-size: 13.5px; padding: 5px 9px;
+    border: 1px solid var(--line); border-radius: 5px;
+    background: var(--bg); color: var(--ink);
+  }
+  main { max-width: 820px; margin: 0 auto; padding: 26px 20px 72px; }
+  .search-wrap { position: relative; margin-bottom: 22px; }
+  #searchBox {
+    width: 100%; font: inherit; font-size: 14.5px; padding: 10px 13px;
+    border: 1px solid var(--line); border-radius: 6px;
+    background: var(--surface); color: var(--ink);
+  }
+  #searchBox:focus { outline: 2px solid var(--accent); outline-offset: -1px; border-color: transparent; }
+  .search-results {
+    position: absolute; left: 0; right: 0; top: calc(100% + 6px);
+    background: var(--surface); border: 1px solid var(--line); border-radius: 6px;
+    max-height: 62vh; overflow-y: auto; z-index: 15;
+    box-shadow: 0 10px 28px rgba(0,0,0,.13);
+  }
+  .search-result-item { padding: 11px 14px; border-bottom: 1px solid var(--line); cursor: pointer; }
+  .search-result-item:last-child { border-bottom: 0; }
+  .search-result-item:hover { background: var(--accent-soft); }
+  .search-result-item .d { font-size: 11.5px; color: var(--accent); font-weight: 700; letter-spacing: .04em; }
+  .search-result-item .s { font-size: 13.5px; color: var(--ink-soft); }
+  .hint { padding: 11px 14px; font-size: 13px; color: var(--ink-soft); }
+  #status { color: var(--ink-soft); font-size: 14px; }
+  article { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 30px 30px 36px; }
+  article h1 {
+    font-size: 25px; line-height: 1.35; margin: 0 0 6px;
+    letter-spacing: -0.015em; padding-bottom: 14px; border-bottom: 2px solid var(--rule);
+  }
+  article h2 {
+    font-size: 15px; margin: 40px 0 16px; letter-spacing: .04em;
+    color: var(--accent); text-transform: none; font-weight: 700;
+    padding-left: 11px; border-left: 3px solid var(--accent);
+  }
+  article h3 { font-size: 18.5px; margin: 30px 0 10px; line-height: 1.45; letter-spacing: -0.01em; }
+  article p { margin: 0 0 14px; }
+  article ul { margin: 0 0 16px; padding-left: 20px; }
+  article li { margin-bottom: 5px; font-size: 14.5px; color: var(--ink-soft); }
+  article li strong { color: var(--ink); }
+  article a { color: var(--accent); text-underline-offset: 2px; }
+  article hr { border: 0; border-top: 1px solid var(--line); margin: 34px 0; }
+  article code { background: var(--code-bg); padding: 1px 5px; border-radius: 3px; font-size: .9em; }
+  article em { font-style: italic; color: var(--ink-soft); }
+  mark { background: var(--mark); color: inherit; padding: 0 2px; border-radius: 2px; }
+  footer {
+    max-width: 820px; margin: 0 auto; padding: 0 20px 52px;
+    font-size: 12.5px; color: var(--ink-soft); line-height: 1.7;
+  }
+  @media (max-width: 640px) {
+    article { padding: 22px 18px 28px; border-radius: 0; margin: 0 -20px; border-left: 0; border-right: 0; }
+    article h1 { font-size: 21px; }
+    article h3 { font-size: 17px; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="head-inner">
+    <div class="site-title">
+      <span class="kicker">Small Animal Surgery</span>
+      외과·정형외과 브리핑
+      <span class="sub">Veterinary Surgery · VCOT 중심 — AI 문헌 조사</span>
+    </div>
+    <label>지난 브리핑
+      <select id="datePicker" aria-label="브리핑 날짜 선택"></select>
+    </label>
+  </div>
+</header>
+<main>
+  <div class="search-wrap">
+    <input type="search" id="searchBox" placeholder="지난 브리핑 검색 (술기명, 임플란트, 저자, PMID 등)" aria-label="지난 브리핑 검색" autocomplete="off">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <p id="status">브리핑을 불러오는 중…</p>
+  <article id="content"></article>
+</main>
+<footer>
+  AI 비서가 PubMed 등재분을 조사해 자동 게시합니다. 요약은 <strong>공개 초록</strong>을 근거로 하며,
+  유료 저널 본문은 포함하지 않습니다. 각 항목의 DOI 링크로 원문을 직접 확인하세요.
+  요약·해석에 오류가 있을 수 있습니다. 진료 조언이 아닙니다.
+</footer>
+<script src="assets/marked.min.js"></script>
+<script>
+(function () {
+  var status = document.getElementById("status");
+  var content = document.getElementById("content");
+  var picker = document.getElementById("datePicker");
+  var searchBox = document.getElementById("searchBox");
+  var searchResults = document.getElementById("searchResults");
+
+  var reportCache = {};
+  var archiveDates = [];
+  var searchTimer = null;
+  var pendingHighlight = null;
+
+  marked.use({
+    renderer: {
+      link: function (href, title, text) {
+        var titleAttr = title ? ' title="' + title + '"' : "";
+        return '<a href="' + href + '" target="_blank" rel="noopener noreferrer"' + titleAttr + '>' + text + '</a>';
+      }
+    }
+  });
+
+  function show(md) {
+    content.innerHTML = marked.parse(md);
+    status.textContent = "";
+    if (pendingHighlight) { highlightTerm(pendingHighlight); pendingHighlight = null; }
+  }
+
+  function escapeRe(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); }
+
+  function highlightTerm(term) {
+    if (!term) return;
+    var re = new RegExp("(" + escapeRe(term) + ")", "i");
+    var walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+    var nodes = [], node;
+    while ((node = walker.nextNode())) nodes.push(node);
+    var first = null;
+    nodes.forEach(function (n) {
+      if (!re.test(n.nodeValue)) return;
+      var span = document.createElement("span");
+      span.innerHTML = n.nodeValue.replace(new RegExp(escapeRe(term), "gi"), "<mark>$&</mark>");
+      n.parentNode.replaceChild(span, n);
+      if (!first) first = span.querySelector("mark");
+    });
+    if (first) first.scrollIntoView({ behavior: "smooth", block: "center" });
+  }
+
+  function loadDate(d) {
+    status.textContent = "브리핑을 불러오는 중…";
+    fetchReport(d).then(function (md) {
+      if (md === null) { status.textContent = "이 날짜의 브리핑을 불러오지 못했습니다."; return; }
+      show(md);
+    });
+  }
+
+  function fetchReport(d) {
+    if (reportCache[d] !== undefined) return Promise.resolve(reportCache[d]);
+    return fetch("reports/" + d + ".md", { cache: "no-store" })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+      .then(function (md) { reportCache[d] = md; return md; })
+      .catch(function () { reportCache[d] = null; return null; });
+  }
+
+  function stripMd(md) {
+    return md
+      .replace(/```[\s\S]*?```/g, " ")
+      .replace(/`([^`]+)`/g, "$1")
+      .replace(/!\[[^\]]*\]\([^)]*\)/g, " ")
+      .replace(/\[([^\]]+)\]\([^)]*\)/g, "$1")
+      .replace(/[#>*_~]/g, " ")
+      .replace(/\s+/g, " ")
+      .trim();
+  }
+
+  function runSearch(query) {
+    var keywords = query.trim().split(/\s+/).filter(Boolean);
+    if (!keywords.length) { searchResults.hidden = true; searchResults.innerHTML = ""; return; }
+    searchResults.hidden = false;
+    searchResults.innerHTML = '<div class="hint">검색 중…</div>';
+    Promise.all(archiveDates.map(fetchReport)).then(function () {
+      var matches = [];
+      archiveDates.slice().sort().reverse().forEach(function (d) {
+        var raw = reportCache[d];
+        if (!raw) return;
+        var text = stripMd(raw);
+        var lower = text.toLowerCase();
+        var ok = keywords.every(function (k) { return lower.indexOf(k.toLowerCase()) !== -1; });
+        if (!ok) return;
+        var idx = lower.indexOf(keywords[0].toLowerCase());
+        var from = Math.max(0, idx - 60);
+        var snippet = (from > 0 ? "…" : "") + text.slice(from, idx + 140) + "…";
+        matches.push({ date: d, snippet: snippet, term: keywords[0] });
+      });
+      if (!matches.length) { searchResults.innerHTML = '<div class="hint">일치하는 브리핑이 없습니다.</div>'; return; }
+      searchResults.innerHTML = "";
+      matches.forEach(function (m) {
+        var div = document.createElement("div");
+        div.className = "search-result-item";
+        var d1 = document.createElement("div"); d1.className = "d"; d1.textContent = m.date;
+        var d2 = document.createElement("div"); d2.className = "s"; d2.textContent = m.snippet;
+        div.appendChild(d1); div.appendChild(d2);
+        div.addEventListener("click", function () {
+          pendingHighlight = m.term;
+          picker.value = m.date;
+          loadDate(m.date);
+          history.replaceState(null, "", "?d=" + m.date);
+          searchResults.hidden = true;
+          searchBox.value = "";
+        });
+        searchResults.appendChild(div);
+      });
+    });
+  }
+
+  searchBox.addEventListener("input", function () {
+    clearTimeout(searchTimer);
+    var v = searchBox.value;
+    searchTimer = setTimeout(function () { runSearch(v); }, 220);
+  });
+  searchBox.addEventListener("focus", function () {
+    if (searchBox.value.trim()) searchResults.hidden = false;
+  });
+  searchBox.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") { searchResults.hidden = true; searchBox.blur(); }
+    if (e.key === "Enter") {
+      var first = searchResults.querySelector(".search-result-item");
+      if (first) first.click();
+    }
+  });
+  document.addEventListener("click", function (e) {
+    if (e.target !== searchBox && !searchResults.contains(e.target)) searchResults.hidden = true;
+  });
+
+  fetch("archive.json", { cache: "no-store" })
+    .then(function (r) { return r.json(); })
+    .then(function (a) {
+      archiveDates = a.dates;
+      var params = new URLSearchParams(location.search);
+      var want = params.get("d");
+      var current = (want && a.dates.indexOf(want) !== -1) ? want : a.latest;
+      a.dates.slice().sort().reverse().forEach(function (d) {
+        var o = document.createElement("option");
+        o.value = d;
+        o.textContent = d + (d === a.latest ? " (최신)" : "");
+        picker.appendChild(o);
+      });
+      picker.value = current;
+      picker.addEventListener("change", function () {
+        loadDate(picker.value);
+        history.replaceState(null, "", "?d=" + picker.value);
+      });
+      loadDate(current);
+    })
+    .catch(function () { status.textContent = "목록을 불러오지 못했습니다."; });
+})();
+</script>
+</body>
+</html>
