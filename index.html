@@ -16,6 +16,12 @@
     --accent-soft: #e6f2f5;
     --line: #dde4e7;
     --code-bg: #f0f3f4;
+    /* 시그니처 브랜드 (로고 기준) — 카드뉴스·네이버 초안과 같은 색 체계 */
+    --brand: #212E51;
+    --gold: #AF9476;
+    --note-bg: #f6f4f0;
+    --cite-bg: #fafaf8;
+    --cite-bar: #dcd8d0;
   }
   @media (prefers-color-scheme: dark) {
     :root {
@@ -27,6 +33,12 @@
       --accent-soft: #16303a;
       --line: #26333d;
       --code-bg: #1d2933;
+      /* 어두운 배경에서는 네이비를 그대로 쓸 수 없어 밝은 쪽으로 뒤집는다 */
+      --brand: #cdd8ef;
+      --gold: #c9ae8b;
+      --note-bg: #1b2530;
+      --cite-bg: #141d25;
+      --cite-bar: #33414d;
     }
   }
   * { box-sizing: border-box; }
@@ -125,15 +137,60 @@
     border-radius: 3px;
   }
   #status { color: var(--ink-soft); font-size: 0.9rem; }
-  article h1 { font-size: 1.45rem; line-height: 1.35; letter-spacing: -0.02em; text-wrap: balance; }
+  article h1 {
+    font-size: 1.5rem; line-height: 1.35; letter-spacing: -0.02em;
+    text-wrap: balance; color: var(--brand); margin-bottom: 0.5em;
+  }
+  /* 보고서 본문에 이미 --- 구분선이 들어오므로 h2에 윗줄을 또 긋지 않는다.
+     대신 골드 세로바로 섹션 시작을 표시한다 (카드뉴스·네이버 초안과 동일). */
   article h2 {
-    font-size: 1.12rem;
-    margin-top: 2.2em;
-    padding-top: 1.1em;
-    border-top: 1px solid var(--line);
+    font-size: 1.24rem;
+    line-height: 1.45;
+    margin: 2.1em 0 0.9em;
+    padding-left: 0.62em;
+    border-left: 4px solid var(--gold);
+    color: var(--brand);
+    letter-spacing: -0.015em;
+  }
+  article h3 {
+    font-size: 1.08rem;
+    line-height: 1.55;
+    margin: 1.9em 0 0.6em;
+    color: var(--brand);
+    letter-spacing: -0.012em;
+  }
+  /* 제목 바로 아래 "오늘의 집중 과목" 한 줄 */
+  article p.subject {
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin: 0 0 1.6em;
     letter-spacing: -0.01em;
   }
-  article h3 { font-size: 1rem; margin-top: 1.6em; }
+  article p.subject strong { font-weight: 700; }
+  /* "임상적 의미" 문단 — 본문에서 한 단계 들어올린다 */
+  article p.note {
+    background: var(--note-bg);
+    border-left: 3px solid var(--gold);
+    border-radius: 0 8px 8px 0;
+    padding: 0.85em 1.1em;
+    margin: 0 0 1.35em;
+  }
+  /* 출처·원제·근거 수준·교신저자 4줄 — 작은 인용 카드로 묶는다 */
+  article ul.cite {
+    list-style: none;
+    padding: 0.85em 1.1em;
+    margin: 0 0 1.7em;
+    background: var(--cite-bg);
+    border-left: 3px solid var(--cite-bar);
+    border-radius: 0 8px 8px 0;
+    font-size: 0.86rem;
+    line-height: 1.75;
+    color: var(--ink-soft);
+  }
+  article ul.cite li { margin: 0.18em 0; }
+  article ul.cite strong { color: var(--ink); font-weight: 600; }
+  article ul.cite em { color: var(--ink); }
   article a { color: var(--accent); text-underline-offset: 3px; }
   article blockquote {
     margin: 1em 0;
@@ -214,8 +271,30 @@
     }
   });
 
+  // 한글 뒤에는 \b(단어 경계)가 걸리지 않으므로 라벨 뒤 구분자까지 함께 본다.
+  // 구분자는 em dash(현행)와 콜론(8/19 이전 아카이브)을 모두 받는다.
+  var META_LABEL = /^\s*(출처|원제|근거\s?수준|교신저자)\s*[—–\-:：]/;
+
+  // 마크다운만으로는 구분되지 않는 블록(집중 과목, 임상적 의미, 출처 묶음)에
+  // 클래스를 붙여 CSS가 잡아줄 수 있게 한다. 보고서 원문은 건드리지 않는다.
+  function decorate() {
+    Array.prototype.slice.call(content.children).forEach(function (el, i) {
+      if (el.tagName === "P") {
+        var t = el.textContent;
+        if (i < 3 && /오늘의 집중 과목/.test(t)) { el.className = "subject"; return; }
+        if (/^\s*임상적 의미/.test(t)) { el.className = "note"; }
+        return;
+      }
+      if (el.tagName === "UL") {
+        var first = el.querySelector("li");
+        if (first && META_LABEL.test(first.textContent)) el.className = "cite";
+      }
+    });
+  }
+
   function show(md) {
     content.innerHTML = marked.parse(md);
+    decorate();
     status.textContent = "";
     if (pendingHighlight) {
       highlightTerm(pendingHighlight);
