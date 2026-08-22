@@ -267,7 +267,11 @@
       link: function (href, title, text) {
         var titleAttr = title ? ' title="' + title + '"' : "";
         return '<a href="' + href + '" target="_blank" rel="noopener noreferrer"' + titleAttr + '>' + text + '</a>';
-      }
+      },
+      // marked는 물결표 하나(~)도 취소선으로 해석한다. 보고서에는 "1.58~2.83" 같은
+      // 수치 범위 표기가 흔해서, 한 문단에 ~가 두 번 나오면 그 사이가 통째로 취소선이
+      // 되어 버린다. 취소선은 쓸 일이 없으므로 물결표를 원문 그대로 되돌린다.
+      del: function (text) { return '~' + text + '~'; }
     }
   });
 
