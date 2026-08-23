@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>블로그 초안 2026-08-24</title>
+<style>
+  :root { --ink:#22303b; --soft:#5b6b76; --accent:#0e7490; --line:#dde4e7; --bg:#fafaf8; }
+  @media (prefers-color-scheme: dark) {
+    :root { --ink:#d9e2e8; --soft:#8fa1ac; --accent:#4cc4dd; --line:#26333d; --bg:#10171d; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); line-height:1.8;
+    font-family:"Apple SD Gothic Neo","Pretendard","Noto Sans KR",sans-serif; }
+  .wrap { max-width:42rem; margin:0 auto; padding:1.5rem 1.25rem 4rem; }
+  .meta { font-size:0.85rem; color:var(--soft); border:1px solid var(--line);
+    border-radius:10px; padding:0.8rem 1rem; margin-bottom:1.2rem; }
+  .btns { display:flex; gap:0.6rem; flex-wrap:wrap; margin-bottom:1.6rem; }
+  button { font:inherit; font-size:0.9rem; font-weight:600; color:#fff;
+    background:var(--accent); border:none; border-radius:8px;
+    padding:0.6rem 1.1rem; cursor:pointer; }
+  button.secondary { color:var(--accent); background:transparent;
+    border:1.5px solid var(--accent); }
+  h1 { font-size:1.5rem; line-height:1.4; }
+  article h3 { font-size:1.1rem; margin-top:2em; }
+  article p { margin:1em 0; }
+  article blockquote { margin:1.4em 0; padding:0.2em 1em; border-left:3px solid var(--accent); color:var(--soft); }
+  article img { max-width:100%; height:auto; border:1px solid var(--line); border-radius:8px; }
+  article table { border-collapse:collapse; width:100%; margin:1.2em 0; font-size:0.92em; }
+  article th, article td { border:1px solid var(--line); padding:0.5em 0.7em; text-align:left; }
+  article th { background:rgba(14,116,144,0.08); }
+  hr { border:none; border-top:1px solid var(--line); margin:2rem 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="meta">
+    블로그 글 초안 · 2026-08-24 · 카테고리 제안: 배움의 끈, 주간 저널클럽<br>
+    검토 후 수정할 부분이 있으면 편하게 고쳐서 올려주세요.<br>
+    그림이 붙여넣기에 포함되지 않으면, 그림을 길게 눌러(또는 우클릭) 저장한 뒤 에디터에서 삽입해 주세요.
+  </div>
+  <div class="btns">
+    <button id="copyTitle" type="button">제목 복사</button>
+    <button id="copyBody" class="secondary" type="button">본문 복사 (서식 유지)</button>
+  </div>
+  <h1 id="title">SDMA 다음을 묻는 연구가 나왔습니다 — 고양이 만성신장병, 소변 단백질 전체를 들여다보다</h1>
+  <hr>
+  <article id="body">
+<p>안녕하세요. 신장질환과 혈액투석, 응급중환자 진료를 하는 수의사 안운찬입니다.</p>
+
+<p>진료실에서 가장 자주 받는 질문 가운데 하나는 검사 수치에 관한 것입니다.</p>
+
+<blockquote>"SDMA가 조금 높다고 하는데, 신장이 나쁜 건가요?"</blockquote>
+
+<p>저는 이 질문에 늘 조금 긴 답을 하게 됩니다. 지금 우리가 쓰는 지표들이 저마다 다른 것을 보고 있고, 그중 어느 하나도 완전하지 않기 때문입니다.</p>
+
+<p>이번 주에 고양이 만성신장병(CKD)의 진단 지표를 다룬 연구를 하나 읽었습니다. 소변 속 단백질을 하나 고르는 대신 통째로 분석해 본 연구입니다.</p>
+
+<p>결과 자체보다 "무엇을 보려고 했는가"가 인상적이어서, 이번 주 저널클럽 글로 정리해 두려 합니다.</p>
+
+<h3>지금 쓰는 지표들이 답해주지 못하는 자리가 있습니다</h3>
+
+<p>고양이 만성신장병을 볼 때 우리가 쓰는 지표는 대체로 정해져 있습니다. 혈액에서는 크레아티닌과 대칭성 디메틸아르기닌(SDMA), 소변에서는 요비중과 요단백/크레아티닌 비(UPC)입니다.</p>
+
+<p>SDMA는 분명히 진단 시점을 앞당겼습니다. 크레아티닌보다 이른 시기에 올라가고, 근육량의 영향을 덜 받는다는 점이 특히 고양이에서 유용했습니다.</p>
+
+<p>다만 진료를 하다 보면 이런 자리를 반복해서 만나게 됩니다.</p>
+
+<ul>
+<li>SDMA만 경계선에 걸쳐 있고 나머지 소견은 모두 정상인 고양이</li>
+<li>탈수나 다른 전신질환 때문에 수치가 흔들린 것인지 구분이 어려운 경우</li>
+<li>UPC는 병기 구분과 예후 평가에는 쓰이지만, 아주 이른 시기를 잡아내는 데에는 상대적으로 약하다는 점</li>
+</ul>
+
+<p>그래서 "더 이른 시점에, 신장 자체의 상태를 더 직접 반영해 말해주는 지표는 없을까"라는 질문이 계속 남아 있었습니다.</p>
+
+<h3>소변 속 단백질을 통째로 들여다본 연구</h3>
+
+<p>미국 조지아대학교 연구진이 고양이 소변의 단백체(proteome)를 분석했습니다.</p>
+
+<p>단백체 분석은 특정 단백질 하나를 골라 측정하는 대신, 검출되는 단백질을 한꺼번에 정량하는 방식입니다. 소변에는 신장을 지나온 흔적이 단백질의 형태로 남기 때문에, 그 전체 구성을 보면 하나만 보아서는 알 수 없는 정보가 나올 수 있다는 발상입니다.</p>
+
+<p>연구진은 고성능 액체크로마토그래피-탠덤 질량분석(HPLC-MS/MS)으로 단백질을 측정하고, 미리 정해진 양을 섞어 넣은 내부표준으로 측정값을 보정했습니다. 그리고 그 결과를 랜덤 포레스트라는 기계학습 모델에 넣어 만성신장병 여부를 판별하게 했습니다.</p>
+
+<img src="https://vet-briefing.vercel.app/drafts/img/2026-08-24-urine-proteomics.png" alt="소변 단백질 정량에서 랜덤 포레스트 모델을 거쳐 만성신장병 여부를 판별하는 순서를 나타낸 모식도">
+
+<p>대상은 두 무리로 나뉘어 있었습니다.</p>
+
+<ul>
+<li>훈련군 고양이 37마리 — 수술로 만성신장병을 유발한 14마리와 건강한 대조군 23마리</li>
+<li>검증군 고양이 40마리 — 자연적으로 발생한 만성신장병 23마리와 건강한 고양이 17마리</li>
+</ul>
+
+<p>모델을 만든 집단과 성능을 확인한 집단을 분리했다는 점, 그리고 확인은 자연발생 환자로 했다는 점이 이 연구 설계의 미덕입니다.</p>
+
+<h3>결과 — 기존 지표들보다 나았습니다</h3>
+
+<p>판별 능력은 ROC 곡선하면적(AUC)으로 표시했습니다. 1.0에 가까울수록 두 집단을 잘 구분한다는 뜻이고, 0.5는 동전을 던지는 것과 다르지 않다는 뜻입니다.</p>
+
+<table>
+<tr><th>지표</th><th>곡선하면적(AUC)</th></tr>
+<tr><td>요 단백체 기반 랜덤 포레스트 모델</td><td>0.982 (95% 신뢰구간 0.952~1.000)</td></tr>
+<tr><td>요 레티놀결합단백 4(RBP4) 단독</td><td>0.957 (95% 신뢰구간 0.885~1.000)</td></tr>
+<tr><td>혈청 SDMA, UPC, 요 트랜스페린 · 알부민 · 시스타틴 C</td><td>위 두 지표보다 낮았음 (논문에 개별 수치는 제시되지 않음)</td></tr>
+</table>
+
+<p>여기서 제 눈이 오래 머문 것은 첫 줄이 아니라 두 번째 줄이었습니다.</p>
+
+<h3>단백질 하나가 거의 따라왔다는 것의 의미</h3>
+
+<p>레티놀결합단백 4는 비타민 A(레티놀)를 실어 나르는, 분자량이 작은 단백질입니다.</p>
+
+<p>작기 때문에 사구체를 비교적 자유롭게 통과하고, 신장이 정상이라면 근위세뇨관에서 대부분 다시 흡수됩니다. 소변에서 이 단백질이 늘어난다는 것은 세뇨관의 재흡수 기능이 예전 같지 않다는 신호로 읽을 수 있습니다.</p>
+
+<p>그런데 더 실용적인 이유가 있습니다.</p>
+
+<blockquote>질량분석 장비가 있어야 하는 단백체 분석과 달리, 단일 단백질은 일반적인 면역측정 방식의 검사로 옮기기가 훨씬 쉽습니다.</blockquote>
+
+<p>수백 종의 단백질을 한꺼번에 재야 하는 검사는 연구실 밖으로 나오기 어렵습니다. 반면 하나만 재면 되는 검사는 언젠가 동물병원 검사 항목이 될 여지가 있습니다.</p>
+
+<p>거의 비슷한 성능을 단일 단백질로 낼 수 있다면, 이 연구의 가치는 논문 안에서 끝나지 않습니다.</p>
+
+<h3>그러나 아직 조심해서 읽어야 합니다</h3>
+
+<p>저자들 스스로 이 연구를 개념증명(proof of concept)이라고 밝히고 있습니다. 저도 같은 선을 긋는 것이 맞다고 생각합니다.</p>
+
+<ul>
+<li>훈련군의 만성신장병은 수술로 유발한 모델입니다. 자연적으로 진행된 신장병과 완전히 같다고 보기는 어렵습니다.</li>
+<li>검증군을 합쳐도 전체 77마리 규모입니다.</li>
+<li>IRIS 병기별로 얼마나 잘 작동하는지는 확인되지 않았습니다.</li>
+<li>앞으로 나빠질 고양이를 미리 가려내는 능력, 즉 진행 예측력은 검증되지 않았습니다.</li>
+</ul>
+
+<p>제가 한 가지 더 덧붙이고 싶은 것은 이 연구가 푼 문제의 성격입니다.</p>
+
+<p>건강한 고양이와 만성신장병 고양이를 구분하는 일은, 사실 진료실에서 가장 어려운 과제가 아닙니다. 정말 어려운 것은 애매한 고양이입니다. 수치는 경계에 있고, 증상은 아직 없고, 보호자는 답을 원하는 상황 말입니다.</p>
+
+<p>이번 연구는 그 질문에 아직 답하지 않았습니다. 다음 연구가 답해야 할 자리입니다.</p>
+
+<h3>투석실에서 조기 진단 연구를 읽는 이유</h3>
+
+<p>투석과 조기 진단이 무슨 상관인가 싶으실 수 있습니다.</p>
+
+<p>저희가 투석실에서 만나는 환자 가운데 상당수는 만성신장병이 급성으로 악화된 상태로 옵니다. 이미 여러 해에 걸쳐 신장이 나빠져 온 아이가, 어느 날 급격히 무너져 내린 상태입니다.</p>
+
+<p>2017년부터 2024년까지 혈액투석을 받은 개와 고양이 136마리의 기록을 정리했을 때, 만성신장병 급성 악화 환자의 단기 생존율은 39.4%였습니다. 급성신손상 환자의 58.6%보다 뚜렷하게 낮은 숫자입니다.</p>
+
+<p>이 차이의 상당 부분은 치료 기술의 문제가 아니라, 남아 있는 신장이 얼마나 되느냐의 문제입니다.</p>
+
+<p>조기 진단 지표를 연구하는 일은, 결국 그 아이가 저희 투석실에 오기 훨씬 전 시점을 조금이라도 앞당기는 일입니다.</p>
+
+<p>그 시점이 앞당겨질수록 식이 관리, 혈압 조절, 탈수 예방처럼 이미 효과가 확인된 개입들이 작동할 시간이 늘어납니다.</p>
+
+<h3>정리하면</h3>
+
+<p>소변 단백체 분석이 고양이 만성신장병 진단에서 기존 지표들보다 나은 성능을 보였고, 그중 RBP4라는 단일 단백질이 거의 비슷한 성능을 냈습니다.</p>
+
+<p>아직 임상 검사로 쓸 수 있는 단계는 아닙니다. 오늘 병원에 가서 이 검사를 요청하실 수 있는 것도 아닙니다.</p>
+
+<p>다만 지금 우리가 쓰는 지표들이 마지막 답이 아니라는 것, 그리고 더 이른 시점을 보려는 노력이 계속되고 있다는 것은 기억해 두실 만합니다.</p>
+
+<p>저는 이런 연구를 읽을 때마다 같은 생각을 합니다. 제가 투석실에서 하는 일은 이미 늦은 시점의 환자를 붙드는 일이고, 그 시점 자체를 앞으로 당기는 일은 조금 더 앞단에서 이루어져야 한다는 것입니다.</p>
+
+<p>둘 다 필요한 일입니다.</p>
+
+<p><b>출처</b><br>Huang JHC, Lourenco BN, Schmiedt CW, Phillips DR. Mass spectrometry-based urinary proteomic analysis in feline chronic kidney disease. Physiological Reports. 2026;14(16):e71072.</p>
+
+<p>읽어주셔서 감사합니다.</p>
+
+<p>신장과 투석을 공부하는 수의사<br>안운찬 드림</p>
+
+<p><b>개인 홈페이지</b><br><a href="https://www.ahnwoonchan.com/">https://www.ahnwoonchan.com/</a></p>
+<p>※ 이 글은 동물의 신장질환과 혈액투석에 관한 일반적인 정보를 전달하기 위한 글입니다. 개별 환자의 치료 필요성과 예후는 검사 결과와 전신 상태를 종합하여 담당 수의사와 상담해 판단해야 합니다.</p>
+  </article>
+</div>
+<script>
+function flash(btn, label) {
+  var old = btn.textContent;
+  btn.textContent = label;
+  setTimeout(function () { btn.textContent = old; }, 1500);
+}
+document.getElementById("copyTitle").addEventListener("click", function () {
+  var t = document.getElementById("title").textContent;
+  navigator.clipboard.writeText(t).then(flash(this, "복사되었습니다"));
+});
+document.getElementById("copyBody").addEventListener("click", function () {
+  var el = document.getElementById("body");
+  var htmlBlob = new Blob([el.innerHTML], { type: "text/html" });
+  var textBlob = new Blob([el.innerText], { type: "text/plain" });
+  var btn = this;
+  if (window.ClipboardItem) {
+    navigator.clipboard.write([new ClipboardItem({ "text/html": htmlBlob, "text/plain": textBlob })])
+      .then(function () { flash(btn, "복사되었습니다"); },
+            function () { navigator.clipboard.writeText(el.innerText).then(function () { flash(btn, "텍스트로 복사됨"); }); });
+  } else {
+    navigator.clipboard.writeText(el.innerText).then(function () { flash(btn, "텍스트로 복사됨"); });
+  }
+});
+</script>
+</body>
+</html>
