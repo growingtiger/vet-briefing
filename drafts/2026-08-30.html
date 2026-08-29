@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>블로그 초안 2026-08-30</title>
+<style>
+  :root { --ink:#22303b; --soft:#5b6b76; --accent:#0e7490; --line:#dde4e7; --bg:#fafaf8; }
+  @media (prefers-color-scheme: dark) {
+    :root { --ink:#d9e2e8; --soft:#8fa1ac; --accent:#4cc4dd; --line:#26333d; --bg:#10171d; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); line-height:1.8;
+    font-family:"Apple SD Gothic Neo","Pretendard","Noto Sans KR",sans-serif; }
+  .wrap { max-width:42rem; margin:0 auto; padding:1.5rem 1.25rem 4rem; }
+  .meta { font-size:0.85rem; color:var(--soft); border:1px solid var(--line);
+    border-radius:10px; padding:0.8rem 1rem; margin-bottom:1.2rem; }
+  .btns { display:flex; gap:0.6rem; flex-wrap:wrap; margin-bottom:1.6rem; }
+  button { font:inherit; font-size:0.9rem; font-weight:600; color:#fff;
+    background:var(--accent); border:none; border-radius:8px;
+    padding:0.6rem 1.1rem; cursor:pointer; }
+  button.secondary { color:var(--accent); background:transparent;
+    border:1.5px solid var(--accent); }
+  h1 { font-size:1.5rem; line-height:1.4; }
+  article h3 { font-size:1.1rem; margin-top:2em; }
+  article p { margin:1em 0; }
+  article blockquote { margin:1.4em 0; padding:0.2em 1em; border-left:3px solid var(--accent); color:var(--soft); }
+  article img { max-width:100%; height:auto; border:1px solid var(--line); border-radius:8px; }
+  article table { border-collapse:collapse; width:100%; margin:1.2em 0; font-size:0.92em; }
+  article th, article td { border:1px solid var(--line); padding:0.5em 0.7em; text-align:left; }
+  article th { background:rgba(14,116,144,0.08); }
+  hr { border:none; border-top:1px solid var(--line); margin:2rem 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="meta">
+    블로그 글 초안 · 2026-08-30 · 카테고리 제안: 배움의 끈, 주간 저널클럽<br>
+    검토 후 수정할 부분이 있으면 편하게 고쳐서 올려주세요.<br>
+    그림이 붙여넣기에 포함되지 않으면, 그림을 길게 눌러(또는 우클릭) 저장한 뒤 에디터에서 삽입해 주세요.
+  </div>
+  <div class="btns">
+    <button id="copyTitle" type="button">제목 복사</button>
+    <button id="copyBody" class="secondary" type="button">본문 복사 (서식 유지)</button>
+  </div>
+  <h1 id="title">배양에서 균이 나왔는데 항생제를 쓰지 않습니다 — 노령 신장 환자의 무증상 세균뇨를 다시 읽다</h1>
+  <hr>
+  <article id="body">
+<p>안녕하세요. 신장질환과 혈액투석, 응급중환자 진료를 하는 수의사 안운찬입니다.</p>
+
+<p>노령 고양이의 요배양에서 균이 자랐다는 결과지를 받으면, 예전의 저는 감수성 표를 보고 바로 약을 골랐습니다. 지금은 그 앞에서 한 번 멈춥니다.</p>
+
+<p>이번 주에는 국제반려동물감염병학회(ISCAID)가 2019년에 개정한 개·고양이 세균성 요로감염 진단·관리 가이드라인과, 그 권고를 고양이 진료에 적용해 정리한 임상 리뷰를 함께 읽었습니다. 만성신장질환 고양이를 많이 보는 진료실에서는 이 두 문서가 생각보다 많은 것을 바꿉니다.</p>
+
+<h3>"균이 나왔는데 항생제를 안 쓴다고요?"</h3>
+
+<p>배양 결과지에 균 이름과 감수성 표가 찍혀 나오면, 그 종이는 치료하라는 지시처럼 보입니다. 보호자도 그렇게 받아들이고, 솔직히 저희도 오래 그렇게 배웠습니다.</p>
+
+<p>그런데 고양이에서는 그 등식이 잘 맞지 않습니다.</p>
+
+<p>고양이가 평생 세균성 요로감염을 겪을 확률은 1~2%입니다. 하부요로증상을 보이는 고양이 중 실제 요로감염인 비율도 연구에 따라 2~19%에 그칩니다. 젊은 고양이가 많은 미국 의뢰병원 자료에서는 3% 미만이었습니다. 나머지 대부분은 특발성 방광염입니다.</p>
+
+<p>다만 나이가 이 그림을 통째로 바꿉니다. 10세를 넘긴 고양이에서는 하부요로증상의 40~45%가 요로감염입니다. 하부요로증상을 보인 고양이 22,908마리를 분석한 사례대조 연구에서도 중성화한 암컷, 아비시니안, 10세 초과가 위험 인자로 확인됐습니다.</p>
+
+<p>"고양이 방광염은 대개 특발성"이라는 임상 감각은, 젊은 고양이에 대해서만 맞는 말이었습니다.</p>
+
+<h3>증상 없이 균만 자라는 상태, 그리고 그 상당수가 신장 환자입니다</h3>
+
+<p>증상은 없는데 요배양만 양성인 상태를 무증상 세균뇨라고 부릅니다. 유병률은 대상군에 따라 크게 흔들립니다. 평균 4세 건강묘 108마리에서는 0.9%였지만, 6.2%와 29%를 보고한 연구도 있습니다. 이 세 연구에서 배양 양성 고양이의 연령 중앙값은 14세였습니다.</p>
+
+<p>7세 이상 비질소혈증 고양이 67마리를 다섯 번 반복 검사한 전향 연구에서는 10~13%, 6세 초과 179마리를 대상으로 한 가장 최근 연구에서는 6.1%였습니다. 마지막 연구에서는 건강한 고양이와 질병이 있는 고양이 사이에 차이가 없었습니다. 모든 연구에서 암컷이 유의하게 많았다는 점만 일관됩니다.</p>
+
+<p>제 관심이 걸리는 지점은 그다음입니다. 배양이 양성인 고양이의 75~87%에서 소인이 되는 동반질환이 확인되는데, 그중 1위가 만성신장질환입니다. 두 연구에서 배양 양성 검체의 약 3분의 1이 만성신장질환 고양이에서 나왔습니다.</p>
+
+<img src="https://vet-briefing.vercel.app/drafts/img/2026-08-30-cat-bacteriuria.png" alt="고양이 동반질환별 요배양 양성률 막대 그래프. 만성신장질환 22~29%, 당뇨 12~13%, 갑상선기능항진증 12%, 6세 초과 고양이의 무증상 세균뇨 6.1%.">
+
+<p>그런데 이 아이들은 대체로 조용합니다. 배양이 양성인 만성신장질환 고양이 중 하부요로증상을 보인 것은 8~28%에 불과했습니다. 20%는 복부 통증, 발열, 신장 비대, 좌방 이동을 동반한 호중구증가처럼 신우신염에 부합하는 소견을 보였습니다. 당뇨에서는 14~44%, 갑상선기능항진증에서는 33%가 증상을 보였습니다.</p>
+
+<p>뒤집어 말하면, 제가 진료실에서 보는 신장 환자의 상당수는 증상 없이 균만 자랍니다.</p>
+
+<h3>침사로는 구분되지 않습니다</h3>
+
+<p>그렇다면 침사를 보면 되지 않느냐고 물으실 수 있습니다. 저도 오래 그렇게 했습니다.</p>
+
+<p>무증상 세균뇨나 요로감염이 있는 고양이의 침사에서 혈뇨는 28~77%, 농뇨는 35~100%에서 관찰됩니다. 문제는 같은 소견이 특발성 방광염에서도 그대로 나온다는 점입니다. 특발성 방광염 고양이의 70% 이상에서 혈뇨가 보이고, 농뇨는 특발성 방광염의 최대 77%, 방광결석의 50% 이상에서 보고됐습니다. 겹치는 정도가 이 수준이면 침사는 감별 도구가 되지 못합니다.</p>
+
+<p>대신 침사에서 세균 자체를 찾아내는 일은 판독법에 따라 성적이 크게 갈립니다. 요검체 472건을 배양 결과와 대조한 연구의 숫자를 옮겨 둡니다.</p>
+
+<table>
+<tr><th>침사 판독 방법</th><th>민감도</th><th>특이도</th></tr>
+<tr><td>무염색 습식 침사</td><td>75.9%</td><td>56.7%</td></tr>
+<tr><td>건조 후 라이트 염색</td><td>82.8%</td><td>98.7%</td></tr>
+</table>
+
+<p>특이도 56.7%는 임상 판단의 근거로 삼기에 너무 낮습니다. "침사에서 세균이 보였다"는 말의 무게가 염색 한 단계로 이만큼 달라진다면, 바꿔야 할 것은 판단이 아니라 검사실의 습관입니다.</p>
+
+<h3>그럼 언제 치료합니까</h3>
+
+<p>ISCAID는 무증상 세균뇨에서 치료를 고려할 상황을 좁게 열거합니다.</p>
+
+<ul>
+<li>신우신염이 의심될 때</li>
+<li>요로계 수술을 앞두고 있을 때</li>
+<li>출혈을 동반하는 요로 내시경 시술을 할 때</li>
+<li>방광이 요로 밖 감염의 진원지로 판단될 때</li>
+<li>당뇨 환자에서 세균뇨가 인슐린 길항이나 케톤증의 원인으로 의심될 때</li>
+</ul>
+
+<p>여기에 <b>Corynebacterium urealyticum</b>이 검출된 경우도 더합니다. 이 균은 고양이에서 가피성 방광염(encrusting cystitis)과 연관되기 때문입니다.</p>
+
+<p>목록에 <b>없는</b> 것도 중요합니다. 다제내성균이 나왔다는 사실은 치료 여부를 결정하는 근거가 되지 않습니다. 내성균이니 지금 잡아 두어야 한다는 논리를 가이드라인은 명시적으로 배제합니다.</p>
+
+<p>참고할 자료도 한 편 있습니다. 노령묘를 대상으로 한 연구에서, 항생제를 쓰지 않고 지켜본 무증상 세균뇨는 생존에 불리하게 작용하지 않았습니다. 고양이 자료로는 이 정도가 전부라 근거가 두텁다고 말하기는 어렵습니다. 다만 지켜보는 것이 곧 손해라는 가정도 뒷받침되지 않습니다.</p>
+
+<h3>기간은 짧아지고, 실패했을 때의 순서는 바뀌었습니다</h3>
+
+<p>2019년 개정판이 바꾼 또 하나는 투여 기간입니다.</p>
+
+<ul>
+<li>산발성 방광염 — 3~5일</li>
+<li>재감염으로 판단되는 재발성 방광염 — 3~5일</li>
+<li>지속 감염이나 재발이 의심되는 경우 — 7~14일</li>
+<li>신우신염 — 10~14일</li>
+</ul>
+
+<p>신우신염의 4~6주는 오래 통용되던 숫자였습니다. 사람에서 더 짧은 기간으로도 효과가 보고되면서 10~14일로 정리됐습니다.</p>
+
+<p>2011년판은 재발성 방광염에 일률적으로 장기 투여를 권했습니다. 2019년판은 이 범주에 워낙 다양한 상황이 섞여 있다는 점을 인정하고, 장기 요법을 자동으로 적용하지 않습니다.</p>
+
+<p>제가 가장 새겨야 한다고 생각한 대목은 이렇게 정리됩니다.</p>
+
+<blockquote>치료가 실패했을 때 항생제만 경험적으로 바꾸지 말고, 세균이 자리 잡게 만든 원인을 찾아라.</blockquote>
+
+<p>약을 한 단계 올리는 일은 오늘 안에 끝납니다. 왜 이 아이의 요로가 균에게 열려 있는지를 찾는 일은 몇 주가 걸립니다. 오래 걸리는 쪽이 맞는 순서입니다.</p>
+
+<h3>장구균 결과지는 한 번 더 봅니다</h3>
+
+<p>고양이 요배양에서 가장 흔한 균은 대장균으로 양성 배양의 39~59%를 차지합니다. 그다음이 <b>Enterococcus faecalis</b>(5~27%), <b>Staphylococcus felis</b>(17~20%), <b>Streptococcus</b> 속(2~19%) 순입니다.</p>
+
+<p>이 가운데 <b>E. faecalis</b>는 증상이 있는 요로감염(11%)보다 무증상 세균뇨(23%)에서 더 자주 나옵니다. 그런데 이 균은 세팔로스포린과 플루오로퀴놀론에 내재 내성을 가집니다. 요중 트리메토프림/설폰아마이드의 효과도 논란이 있어 피하도록 권고됩니다.</p>
+
+<p>여기서 오해 하나를 짚고 갑니다. <b>E. faecalis</b>가 나왔다고 해서 아목시실린까지 함께 배제할 이유는 없습니다. ISCAID는 아목시실린을 산발성 방광염의 좋은 1차 선택 약제로 두고 있습니다.</p>
+
+<p>문제는 시험관 감수성 검사에서 세팔로스포린, 클린다마이신, 트리메토프림/설폰아마이드가 감수성으로 찍혀 나올 수 있다는 점입니다. 세팔로스포린과 클린다마이신은 생체 내에서 듣지 않고, 트리메토프림/설폰아마이드도 요중 효과를 신뢰하기 어렵습니다. 리뷰는 검사실이 내재 내성 약제의 감수성 결과를 아예 보고하지 말아야 한다고 지적합니다. 장구균은 생물막까지 형성해 항생제를 피합니다.</p>
+
+<p>결과지에 장구균에 대한 세팔로스포린 감수성이 찍혀 있다면, 그 줄은 읽지 않는 것이 맞습니다.</p>
+
+<h3>카테터와 요관 우회술 환자는 따로 봅니다</h3>
+
+<p>무균 조작과 폐쇄식 채뇨 시스템을 표준대로 지킨 폐색성 하부요로질환 고양이 18마리에서도, 24시간 뒤 3마리(17%), 48시간 뒤 6마리(33%)에서 요배양이 양성이 됐습니다. 다른 연구에서도 48시간 유치 후 37마리 중 8마리(22%)가 양성이었습니다.</p>
+
+<p>그럼에도 가이드라인의 표현은 단정적입니다. 유치 카테터에 대한 예방적 항생제 투여는 어떤 경우에도 정당화되지 않고, 카테터 제거 후 일상적으로 요배양을 하는 것도 근거가 없습니다.</p>
+
+<p>피하 요관 우회술(SUB)이나 요관 스텐트를 유치한 고양이는 사정이 다릅니다. 감염률이 31%에 이르고, 이 환자들에서 배양이 양성이면 대개 하부요로증상이나 신우신염 증상을 동반합니다. 무증상 세균뇨와 같은 잣대로 놓고 볼 환자가 아닙니다.</p>
+
+<h3>이 문서를 읽을 때의 한계</h3>
+
+<p>솔직하게 적어야 할 부분이 있습니다. 리뷰가 인용한 고양이 연구들은 대부분 소규모 관찰 연구입니다. 저자들도 근거가 없는 영역에서는 자신들의 접근법을 기술했다고 밝히고 있고, 특히 만성신장질환이 있는 세균뇨 고양이의 관리가 그렇습니다.</p>
+
+<p>무증상 세균뇨를 치료하지 않는다는 원칙의 근거 상당 부분은 사람 의학의 무작위 임상시험에서 왔습니다. 치료 기간 단축 권고 역시 고양이를 대상으로 한 대규모 비교 시험보다는, 짧은 기간으로도 충분했다는 관찰의 축적에 기대고 있습니다.</p>
+
+<p>사람의 자료를 고양이로 옮길 때 이 간격을 감안하지 않으면, 근거를 따랐다는 말이 사실은 근거를 건너뛴 말이 됩니다.</p>
+
+<h3>진료실에서 제가 바꾼 것</h3>
+
+<p>노령 신장 환자에서 요배양 양성은 흔한 소견이고, 그 자체는 항생제 적응증이 아닙니다. 증상과 동반질환, 신우신염 가능성을 함께 놓고 판단합니다.</p>
+
+<p>검체와 판독을 손봅니다. 방광천자로 받고, 즉시 냉장해 24시간 안에 처리하고, 침사는 건조 라이트 염색으로 봅니다. 침사에 세균이 보이는데 배양이 자라지 않으면 배양 기간을 최소 5일까지 늘려 봅니다. 느리게 자라는 균종이 있기 때문입니다.</p>
+
+<p>기간은 줄입니다. 그리고 실패했을 때는 약을 바꾸기 전에 원인을 찾습니다.</p>
+
+<p>남은 어려움은 신우신염 진단입니다. 조직학적으로 확진된 고양이 신우신염 17례에서 신장 통증은 3마리, 발열은 2마리에서만 관찰됐습니다. 나머지는 식욕부진, 무기력, 구토 같은 비특이 증상이었습니다. 대신 임상병리 소견은 비교적 일관됐습니다. 혈청화학이 가능했던 11마리 전원에서 질소혈증, 8마리에서 고인산혈증, 혈구검사가 가능했던 10마리 중 7마리에서 비재생성 빈혈이 있었습니다.</p>
+
+<p>발열과 신장 통증을 기다리다가는 놓친다는 뜻입니다. 질소혈증이 갑자기 나빠진 노령묘 앞에서 신우신염을 떠올릴 수 있느냐가, 이 글을 읽으며 제가 가장 오래 붙잡고 있던 대목이었습니다.</p>
+
+<h3>맺으며</h3>
+
+<p>항생제를 쓰지 않는 결정은 겉보기에 아무것도 하지 않는 결정처럼 보입니다. 실제로는 더 많은 판단이 들어갑니다. 증상이 정말 없는지, 이 아이의 신장 안쪽에서 다른 일이 벌어지고 있지는 않은지, 검체는 제대로 받았는지를 하나씩 확인해야 하기 때문입니다.</p>
+
+<p>배양 결과지 한 장으로 답이 나오지 않는다는 사실이 저에게는 오히려 다행스럽습니다. 그 종이 뒤에 아직 볼 것이 남아 있다는 뜻이니까요.</p>
+
+<p>읽어주셔서 감사합니다.</p>
+
+<p>신장과 투석을 공부하는 수의사<br>안운찬 드림</p>
+
+<h3>참고 문헌</h3>
+
+<ul>
+<li>Weese JS, Blondeau J, Boothe D, Guardabassi LG, Gumley N, Papich M, Jessen LR, Lappin M, Rankin S, Westropp JL, Sykes J. <b>International Society for Companion Animal Infectious Diseases (ISCAID) guidelines for the diagnosis and management of bacterial urinary tract infections in dogs and cats.</b> The Veterinary Journal. 2019;247:8-25.</li>
+<li>Dorsch R, Teichmann-Knorrn S, Sjetne Lund H. <b>Urinary tract infection and subclinical bacteriuria in cats: A clinical update.</b> Journal of Feline Medicine and Surgery. 2019;21(11):1023-1038.</li>
+</ul>
+<p><b>개인 홈페이지</b><br><a href="https://www.ahnwoonchan.com/">https://www.ahnwoonchan.com/</a></p>
+<p>※ 이 글은 동물의 신장질환과 혈액투석에 관한 일반적인 정보를 전달하기 위한 글입니다. 개별 환자의 치료 필요성과 예후는 검사 결과와 전신 상태를 종합하여 담당 수의사와 상담해 판단해야 합니다.</p>
+  </article>
+</div>
+<script>
+function flash(btn, label) {
+  var old = btn.textContent;
+  btn.textContent = label;
+  setTimeout(function () { btn.textContent = old; }, 1500);
+}
+document.getElementById("copyTitle").addEventListener("click", function () {
+  var t = document.getElementById("title").textContent;
+  navigator.clipboard.writeText(t).then(flash(this, "복사되었습니다"));
+});
+document.getElementById("copyBody").addEventListener("click", function () {
+  var el = document.getElementById("body");
+  var htmlBlob = new Blob([el.innerHTML], { type: "text/html" });
+  var textBlob = new Blob([el.innerText], { type: "text/plain" });
+  var btn = this;
+  if (window.ClipboardItem) {
+    navigator.clipboard.write([new ClipboardItem({ "text/html": htmlBlob, "text/plain": textBlob })])
+      .then(function () { flash(btn, "복사되었습니다"); },
+            function () { navigator.clipboard.writeText(el.innerText).then(function () { flash(btn, "텍스트로 복사됨"); }); });
+  } else {
+    navigator.clipboard.writeText(el.innerText).then(function () { flash(btn, "텍스트로 복사됨"); });
+  }
+});
+</script>
+</body>
+</html>
