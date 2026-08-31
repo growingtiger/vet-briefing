@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>블로그 초안 2026-09-01</title>
+<style>
+  :root { --ink:#22303b; --soft:#5b6b76; --accent:#0e7490; --line:#dde4e7; --bg:#fafaf8; }
+  @media (prefers-color-scheme: dark) {
+    :root { --ink:#d9e2e8; --soft:#8fa1ac; --accent:#4cc4dd; --line:#26333d; --bg:#10171d; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); line-height:1.8;
+    font-family:"Apple SD Gothic Neo","Pretendard","Noto Sans KR",sans-serif; }
+  .wrap { max-width:42rem; margin:0 auto; padding:1.5rem 1.25rem 4rem; }
+  .meta { font-size:0.85rem; color:var(--soft); border:1px solid var(--line);
+    border-radius:10px; padding:0.8rem 1rem; margin-bottom:1.2rem; }
+  .btns { display:flex; gap:0.6rem; flex-wrap:wrap; margin-bottom:1.6rem; }
+  button { font:inherit; font-size:0.9rem; font-weight:600; color:#fff;
+    background:var(--accent); border:none; border-radius:8px;
+    padding:0.6rem 1.1rem; cursor:pointer; }
+  button.secondary { color:var(--accent); background:transparent;
+    border:1.5px solid var(--accent); }
+  h1 { font-size:1.5rem; line-height:1.4; }
+  article h3 { font-size:1.1rem; margin-top:2em; }
+  article p { margin:1em 0; }
+  article blockquote { margin:1.4em 0; padding:0.2em 1em; border-left:3px solid var(--accent); color:var(--soft); }
+  article img { max-width:100%; height:auto; border:1px solid var(--line); border-radius:8px; }
+  article table { border-collapse:collapse; width:100%; margin:1.2em 0; font-size:0.92em; }
+  article th, article td { border:1px solid var(--line); padding:0.5em 0.7em; text-align:left; }
+  article th { background:rgba(14,116,144,0.08); }
+  hr { border:none; border-top:1px solid var(--line); margin:2rem 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="meta">
+    블로그 글 초안 · 2026-09-01 · 카테고리 제안: 배움의 끈, 주간 저널클럽<br>
+    검토 후 수정할 부분이 있으면 편하게 고쳐서 올려주세요.<br>
+    그림이 붙여넣기에 포함되지 않으면, 그림을 길게 눌러(또는 우클릭) 저장한 뒤 에디터에서 삽입해 주세요.
+  </div>
+  <div class="btns">
+    <button id="copyTitle" type="button">제목 복사</button>
+    <button id="copyBody" class="secondary" type="button">본문 복사 (서식 유지)</button>
+  </div>
+  <h1 id="title">소변이 묽다는 것만으로 신장을 의심해야 할까요 — 겉으로 건강한 고양이를 2년 따라간 연구를 읽다</h1>
+  <hr>
+  <article id="body">
+<p>안녕하세요. 신장질환과 혈액투석, 응급중환자 진료를 하는 수의사 안운찬입니다.</p>
+
+<p>얼마 전 소변의 농도가 신장에 대해 무엇을 말해주는지 글로 정리한 적이 있습니다. 그때는 개념을 설명하는 데 그쳤는데, 마침 그 이야기를 숫자로 검증한 연구가 나왔습니다.</p>
+
+<p>「미국수의사회지(JAVMA)」 2026년에 실린 논문입니다. 오하이오주립대 수의내과 연구진과 미국의 대형 1차 병원 네트워크가 함께, 겉으로 건강해 보이는 고양이의 요비중 하나만 보고 2년 뒤를 예측할 수 있는지 물었습니다.</p>
+
+<h3>"소변이 묽다"는 말은 검사지에서 어떻게 나타납니까</h3>
+
+<p>신장이 하는 일 중 가장 먼저 무너지는 것이 소변을 농축하는 기능입니다.</p>
+
+<p>몸에서 수분이 필요할 때 신장은 소변을 진하게 만들어 물을 아낍니다. 이 능력이 떨어지면 몸이 탈수되어 가는데도 묽은 소변이 계속 나옵니다. 그 농도를 간단히 재는 값이 요비중(urine specific gravity, USG)입니다.</p>
+
+<p>고양이에서는 흔히 1.035를 기준선으로 삼습니다. 1.035 이상이면 신장이 소변을 충분히 농축하고 있다고 보고, 그 아래로 내려가면 농축 능력에 의문을 갖습니다.</p>
+
+<p>문제는 이 값이 애매한 순간에 있습니다. 혈액검사의 크레아티닌은 아직 정상이고, 아이도 잘 먹고 잘 지냅니다. 그런데 요비중만 1.03 언저리입니다. 이럴 때 어디까지 파고들어야 하는지가 실제로 어려운 대목입니다.</p>
+
+<h3>겉으로 건강한 고양이 2,614마리를 2년간 따라갔습니다</h3>
+
+<p>연구진은 1차 병원 의무기록에서 겉으로 건강한 고양이 15,027마리를 검토한 뒤, 조건을 만족하는 개체를 나이와 요비중으로 나누어 2년간의 경과를 추적했습니다. 후향 종단 설계입니다.</p>
+
+<p>나이는 11~15세를 성묘(mature), 15세 초과를 노령묘(senior)로 나눴습니다. 최종 분석에 들어간 것은 네 군입니다.</p>
+
+<table>
+<tr><th>군</th><th>요비중</th><th>마릿수</th></tr>
+<tr><td>성묘 (11~15세)</td><td>1.035 미만</td><td>504마리</td></tr>
+<tr><td>성묘 (11~15세)</td><td>1.035 이상</td><td>1,872마리</td></tr>
+<tr><td>노령묘 (15세 초과)</td><td>1.035 미만</td><td>89마리</td></tr>
+<tr><td>노령묘 (15세 초과)</td><td>1.035 이상</td><td>149마리</td></tr>
+</table>
+
+<p>결과 판정은 추적 기간 중 만성신장병(CKD)으로 진단되었거나, 크레아티닌이 1.6 mg/dL을 넘으면서 요비중 1.035 미만과 그에 맞는 임상증상이 함께 확인된 경우로 정했습니다. 기록을 다시 읽었을 때 만성신장병으로 보기 어려운 경우에는 만성신장병으로 집계하지 않았습니다.</p>
+
+<h3>성묘에서 오즈가 3.19배였습니다</h3>
+
+<p>성묘 군에서 요비중 1.035 미만인 고양이는 그렇지 않은 고양이보다 추적 기간 중 만성신장병으로 진단될 오즈가 3.191배 높았습니다(신뢰구간 1.611~6.231). 진단까지 걸린 시간도 더 짧았습니다.</p>
+
+<img src="https://vet-briefing.vercel.app/drafts/img/2026-09-01-usg-ckd.png" alt="겉으로 건강한 고양이를 요비중으로 나눠 2년간 추적한 연구 설계 모식도">
+
+<p>저자들의 결론은 담백합니다. 성묘에서 요비중이 낮게 확인되면 그것만으로도 이후의 검사 계획을 개별화할 근거가 된다는 것입니다.</p>
+
+<h3>이 숫자를 그대로 옮기기 전에 짚어둘 것</h3>
+
+<p>저는 이 논문을 읽으면서 세 군데에서 멈췄습니다.</p>
+
+<p>첫째, 결과 판정 기준 안에 요비중 1.035 미만이 들어가 있습니다. 두 갈래 판정 기준 중 하나가 그렇습니다. 요비중이 낮은 군은 애초에 결과 조건을 만족하기가 조금 더 쉬운 구조입니다. 이 부분을 감안하지 않고 3.19라는 숫자만 떼어 읽으면 효과를 과대평가하게 됩니다.</p>
+
+<p>둘째, 진단명이 "추정(presumptive)" 만성신장병입니다. 1차 병원의 대규모 의무기록을 쓴 연구의 숙명이기도 합니다. 영상이나 조직 소견으로 확정한 것이 아니라 기록에 남은 판단을 모은 것입니다.</p>
+
+<p>셋째, 15세를 넘긴 군은 89마리와 149마리입니다. 두 배 이상 차이 나는 오즈비를 안정적으로 잡아내기에는 부족한 규모입니다. 실제로 통계적으로 유의한 차이가 보고된 것은 성묘 군입니다. 15세가 넘은 고양이에게 이 결과를 그대로 적용할 근거는 이 논문 안에 없습니다.</p>
+
+<h3>그런데 요비중 하나만 보면 안 되는 이유</h3>
+
+<p>이 지점에서 오래된 연구 하나를 같이 놓고 싶습니다.</p>
+
+<p>영국 왕립수의과대학 연구진이 2009년 「Journal of Veterinary Internal Medicine」에 보고한 전향 코호트입니다. 9세 이상, 아직 질소혈증이 없는 고양이 118마리를 6개월마다 추적했습니다. 12개월 시점까지 도달한 95마리 중 30.5%인 29마리가 질소혈증에 들어섰습니다.</p>
+
+<p>단변량 분석에서는 나이, 수축기 혈압, 혈장 크레아티닌, 요비중, 요단백/크레아티닌비(UP/C), 요알부민/크레아티닌비 모두 질소혈증 발생과 유의하게 연관됐습니다. 요비중도 여기 들어 있습니다.</p>
+
+<p>그런데 여러 변수를 함께 넣은 다변량 분석에서 끝까지 남은 것은 혈장 크레아티닌과 단백뇨 지표뿐이었습니다.</p>
+
+<blockquote>요비중은 혼자 있을 때는 신호를 주지만, 크레아티닌과 단백뇨를 옆에 세우면 자기 몫을 대부분 넘겨줍니다.</blockquote>
+
+<p>두 연구가 충돌한다고 읽지는 않습니다. 2026년 연구는 요비중 한 가지만 손에 쥔 상황, 그러니까 정기검진 현장에서 그 값이 얼마나 쓸모 있는지를 물었고, 2009년 연구는 여러 지표를 동시에 볼 수 있을 때 요비중의 몫이 얼마나 남는지를 물었습니다. 질문이 다릅니다.</p>
+
+<p>같은 맥락에서, 겐트대 연구진이 2015년 「Journal of Feline Medicine and Surgery」에 보고한 자료도 참고할 만합니다. 크레아티닌·요소·요비중·UP/C 같은 일상적인 검사값을 조합해도 사구체여과율(GFR) 자체를 정확히 맞히지는 못했습니다. 다만 여과율이 낮은 고양이를 걸러내는 데는 민감도 96.5~98.2%로 잘 작동했고, 특이도는 60~91.3%로 폭이 넓었습니다.</p>
+
+<p>일상 검사값의 성격이 여기 그대로 드러납니다. 놓치지 않는 데는 강하고, 확정하는 데는 약합니다.</p>
+
+<h3>그래서 진료실에서 무엇이 달라집니까</h3>
+
+<p>저는 신장 기능이 이미 상당히 무너진 뒤에 오는 환자를 주로 봅니다. 투석실에서 만나는 고양이의 보호자에게 언제부터 이상이 있었느냐고 물으면, 돌아오는 답이 비슷할 때가 많습니다. 검진에서 뭔가 조금 이상하다는 말을 들은 적은 있는데 그때는 아이가 멀쩡했다는 것입니다.</p>
+
+<p>이번 연구가 새로 알려준 사실은 사실 많지 않습니다. 요비중이 낮으면 신장이 나빠질 수 있다는 말은 교과서에 이미 있습니다.</p>
+
+<p>다만 그 말에 숫자가 붙었습니다. 11세에서 15세 사이, 겉으로 아무 문제 없어 보이는 고양이에서 요비중 1.035 미만은 2년 안에 만성신장병 진단으로 이어질 오즈를 세 배 가까이 올린다는 숫자입니다.</p>
+
+<p>이 숫자가 진료실에서 바꾸는 것은 진단이 아니라 다음 약속입니다. 지금 당장 무엇을 치료해야 한다는 뜻이 아니라, 1년 뒤가 아니라 몇 달 뒤에 한 번 더 보자고 말할 근거가 생겼다는 뜻입니다.</p>
+
+<p>그리고 그 다음 약속에서는 요비중만 다시 보지 말아야 합니다. 크레아티닌과 요단백/크레아티닌비를 함께 놓고 봐야 한다는 것이 2009년 연구가 남긴 교훈입니다. 지금이라면 여기에 SDMA를 하나 더 얹겠습니다.</p>
+
+<p>덧붙여, 요비중은 소변을 언제 어떻게 받았는지에 따라 흔들리는 값입니다. 한 번의 낮은 수치로 결론을 내리기보다 다시 한 번 확인하는 편이 낫다고 생각합니다.</p>
+
+<h3>맺으며</h3>
+
+<p>신장은 나빠지는 동안 거의 말을 하지 않습니다. 그래서 신장을 오래 보는 사람일수록 검사지의 작은 신호에 예민해집니다.</p>
+
+<p>요비중은 특별한 장비 없이, 추가 비용도 거의 없이 얻을 수 있는 값입니다. 그 흔한 숫자 하나가 2년 뒤를 조금 더 알려준다면, 정기검진에서 그 값을 그냥 지나치지 않을 이유는 충분하다고 생각합니다.</p>
+
+<p>읽어주셔서 감사합니다.</p>
+
+<p><b>출처</b></p>
+
+<ul>
+<li>Rudinsky AJ, Morrison JA, Parker VJ, Spofford N, Topdjian K, Byron JM, Winston JA, Bechtold MA, Langston C, Quimby JM. Poorly concentrated urine is associated with an increased risk of developing chronic kidney disease in apparently healthy cats. Journal of the American Veterinary Medical Association, 2026.</li>
+<li>Jepson RE, Brodbelt D, Vallance C, Syme HM, Elliott J. Evaluation of predictors of the development of azotemia in cats. Journal of Veterinary Internal Medicine, 2009;23(4):806-813.</li>
+<li>Paepe D, Lefebvre HP, Concordet D, van Hoek I, Croubels S, Daminet S. Simplified methods for estimating glomerular filtration rate in cats and for detection of cats with low or borderline glomerular filtration rate. Journal of Feline Medicine and Surgery, 2015;17(10):889-900.</li>
+</ul>
+
+<p>신장과 투석을 공부하는 수의사<br>안운찬 드림</p>
+<p><b>개인 홈페이지</b><br><a href="https://www.ahnwoonchan.com/">https://www.ahnwoonchan.com/</a></p>
+<p>※ 이 글은 동물의 신장질환과 혈액투석에 관한 일반적인 정보를 전달하기 위한 글입니다. 개별 환자의 치료 필요성과 예후는 검사 결과와 전신 상태를 종합하여 담당 수의사와 상담해 판단해야 합니다.</p>
+  </article>
+</div>
+<script>
+function flash(btn, label) {
+  var old = btn.textContent;
+  btn.textContent = label;
+  setTimeout(function () { btn.textContent = old; }, 1500);
+}
+document.getElementById("copyTitle").addEventListener("click", function () {
+  var t = document.getElementById("title").textContent;
+  navigator.clipboard.writeText(t).then(flash(this, "복사되었습니다"));
+});
+document.getElementById("copyBody").addEventListener("click", function () {
+  var el = document.getElementById("body");
+  var htmlBlob = new Blob([el.innerHTML], { type: "text/html" });
+  var textBlob = new Blob([el.innerText], { type: "text/plain" });
+  var btn = this;
+  if (window.ClipboardItem) {
+    navigator.clipboard.write([new ClipboardItem({ "text/html": htmlBlob, "text/plain": textBlob })])
+      .then(function () { flash(btn, "복사되었습니다"); },
+            function () { navigator.clipboard.writeText(el.innerText).then(function () { flash(btn, "텍스트로 복사됨"); }); });
+  } else {
+    navigator.clipboard.writeText(el.innerText).then(function () { flash(btn, "텍스트로 복사됨"); });
+  }
+});
+</script>
+</body>
+</html>
