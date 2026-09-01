@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>블로그 초안 2026-09-02</title>
+<style>
+  :root { --ink:#22303b; --soft:#5b6b76; --accent:#0e7490; --line:#dde4e7; --bg:#fafaf8; }
+  @media (prefers-color-scheme: dark) {
+    :root { --ink:#d9e2e8; --soft:#8fa1ac; --accent:#4cc4dd; --line:#26333d; --bg:#10171d; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); line-height:1.8;
+    font-family:"Apple SD Gothic Neo","Pretendard","Noto Sans KR",sans-serif; }
+  .wrap { max-width:42rem; margin:0 auto; padding:1.5rem 1.25rem 4rem; }
+  .meta { font-size:0.85rem; color:var(--soft); border:1px solid var(--line);
+    border-radius:10px; padding:0.8rem 1rem; margin-bottom:1.2rem; }
+  .btns { display:flex; gap:0.6rem; flex-wrap:wrap; margin-bottom:1.6rem; }
+  button { font:inherit; font-size:0.9rem; font-weight:600; color:#fff;
+    background:var(--accent); border:none; border-radius:8px;
+    padding:0.6rem 1.1rem; cursor:pointer; }
+  button.secondary { color:var(--accent); background:transparent;
+    border:1.5px solid var(--accent); }
+  h1 { font-size:1.5rem; line-height:1.4; }
+  article h3 { font-size:1.1rem; margin-top:2em; }
+  article p { margin:1em 0; }
+  article blockquote { margin:1.4em 0; padding:0.2em 1em; border-left:3px solid var(--accent); color:var(--soft); }
+  article img { max-width:100%; height:auto; border:1px solid var(--line); border-radius:8px; }
+  article table { border-collapse:collapse; width:100%; margin:1.2em 0; font-size:0.92em; }
+  article th, article td { border:1px solid var(--line); padding:0.5em 0.7em; text-align:left; }
+  article th { background:rgba(14,116,144,0.08); }
+  hr { border:none; border-top:1px solid var(--line); margin:2rem 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="meta">
+    블로그 글 초안 · 2026-09-02 · 카테고리 제안: 가슴 뛰는 신장·중환자·투석<br>
+    검토 후 수정할 부분이 있으면 편하게 고쳐서 올려주세요.<br>
+    그림이 붙여넣기에 포함되지 않으면, 그림을 길게 눌러(또는 우클릭) 저장한 뒤 에디터에서 삽입해 주세요.
+  </div>
+  <div class="btns">
+    <button id="copyTitle" type="button">제목 복사</button>
+    <button id="copyBody" class="secondary" type="button">본문 복사 (서식 유지)</button>
+  </div>
+  <h1 id="title">투석하다가 잘못되는 경우도 있나요 — 저희가 합병증 목록을 먼저 꺼내는 이유</h1>
+  <hr>
+  <article id="body">
+<p>안녕하세요. 신장질환과 혈액투석, 응급중환자 진료를 하는 수의사 안운찬입니다.</p><p>투석을 시작할지 상의하는 자리에서, 보호자분들이 마지막에 꺼내시는 질문은 대체로 비슷합니다.</p><blockquote>"그러다 치료 중에 잘못되면 어떡하나요?"</blockquote><p>이 질문에 "괜찮습니다"라고만 답하고 싶지 않았습니다. 체외로 혈액을 빼내 기계를 통과시키고 다시 몸으로 돌려보내는 치료입니다. 아무 일도 안 생기는 치료라고 말한다면 그건 거짓말입니다.</p><p>그래서 오늘은 투석실에서 실제로 어떤 문제가, 얼마나 자주 생기는지를 숫자로 적어보려 합니다. 며칠 전 벨기에 리에주대학교 수의과대학병원이 자기 병원의 체외순환치료 기록을 통째로 공개한 논문이 나왔는데, 이런 이야기를 하기에 좋은 자료였습니다.</p><h3>합병증 27%라는 말은 무슨 뜻일까요</h3><p>먼저 오해 하나를 짚고 가야 합니다.</p><p>"합병증 발생률 27%"라는 문장을 보면 대개 "환자의 27%가 잘못된다"로 읽힙니다. 그렇지 않습니다.</p><p>여기서 27%는 <b>세션당</b> 비율입니다. 한 번의 투석 치료를 100번 돌렸을 때 그 중 27번에서 무언가 조정이 필요한 일이 있었다는 뜻이고, 그 대부분은 치료 중에 발견해서 그 자리에서 처리하는 종류의 일입니다. 사망이나 후유증과는 다른 층위의 이야기입니다.</p><p>이 구분이 왜 중요한가 하면, 리에주 자료에서 <b>치명적인 합병증은 한 건도 없었기</b> 때문입니다.</p><h3>103번의 치료에서 무슨 일이 있었는가</h3><p>리에주대 수의과대학병원은 2023년 11월부터 2024년 12월까지 체외순환치료를 받은 개 37마리와 고양이 4마리, 모두 41마리의 기록을 정리했습니다. 치료 세션은 총 103회입니다. 퇴원 후 1개월까지 추적했습니다.</p><p>치료를 받은 이유는 급성신손상이 27마리로 가장 많았고, 중독이 10마리, 면역매개질환이 3마리였습니다. 나머지 한 마리는 문맥전신단락 교정 수술 뒤 신경증상이 온 경우였습니다.</p><p>가장 흔했던 문제 네 가지는 이렇습니다.</p><img src="https://vet-briefing.vercel.app/drafts/img/2026-09-02-ect-complications.png" alt="체외순환치료 103세션에서 가장 흔했던 합병증 네 가지의 발생 건수를 나타낸 가로 막대 모식도"><p>하나씩 풀어보겠습니다.</p><p><b>회로 응고</b>는 혈액이 지나는 관과 필터 안에서 피가 굳는 것입니다. 몸 밖으로 나온 혈액은 이물질과 닿는 순간부터 굳으려 합니다. 그래서 항응고제를 씁니다. 그런데 항응고를 세게 걸면 출혈이 늘고, 약하게 걸면 회로가 굳습니다. 투석 중에 저희가 계속 저울질하는 것이 이 두 가지입니다.</p><p>회로가 굳으면 그 회로에 남아 있던 혈액을 환자에게 돌려주지 못하고 버려야 하는 경우가 생깁니다. 이미 빈혈이 있는 환자에게는 그것 자체가 부담입니다.</p><p><b>저칼슘혈증</b>은 혈중 칼슘이 떨어지는 것입니다. 항응고 방식에 따라 칼슘을 붙잡는 약제를 쓰기 때문에 예상 가능한 일이고, 세션 중에 칼슘을 재면서 보충합니다.</p><p><b>출혈</b>은 카테터를 넣은 목 부위에서 가장 눈에 잘 띕니다. 하지만 눈에 보이는 곳만 보아서는 안 됩니다. 치료 중이나 직후에 혈압이 떨어지면 체강이나 위장관 안쪽에서 피가 나고 있지 않은지 함께 확인합니다. 신부전 환자는 요독 자체가 혈소판 기능을 떨어뜨리기 때문에, 원래도 잘 멎지 않는 몸 상태에 항응고제가 더해진다는 점을 감안해야 합니다.</p><p><b>혈역학적 불안정</b>은 치료 중 혈압이 흔들리는 것입니다. 체구가 작은 환자일수록 회로에 담기는 혈액량의 비중이 커지기 때문에 더 예민합니다. 고양이와 소형견에서 신경 써야 할 부분입니다.</p><h3>방식에 따라 위험의 크기가 다릅니다</h3><p>이 논문에서 저에게 가장 실무적으로 다가온 대목은 여기입니다.</p><table><tr><th>방식</th><th>세션당 합병증</th><th>주로 쓰는 상황</th></tr><tr><td>혈액투석(HD)</td><td>27%</td><td>요독증, 고칼륨혈증 등 노폐물·전해질 문제</td></tr><tr><td>혈액관류(HP)</td><td>71%</td><td>약물·독성물질 제거</td></tr><tr><td>혈장교환(TPE)</td><td>64%</td><td>면역매개질환, 단백질에 붙는 독성물질</td></tr></table><p>혈액투석이 다른 두 방식보다 뚜렷하게 낮았습니다(p=0.012).</p><p>저는 그동안 이 세 가지를 "체외순환치료"라는 한 단어로 묶어 설명해 왔습니다. 이 자료를 보고 나서는 그러면 안 되겠다고 생각했습니다. 혈액관류를 받는 환자의 보호자와 혈액투석을 받는 환자의 보호자에게 같은 설명을 드리는 것은 정확하지 않습니다.</p><p>다만 숫자를 뒤집어 읽는 일도 없어야 합니다. 혈액관류의 합병증이 두 배 넘게 잦다는 것이 혈액관류를 피하라는 뜻은 아닙니다. 이 병원 자료에서 <b>중독으로 치료받은 개 10마리는 10마리 모두 퇴원했습니다</b>. 급성신손상 개는 23마리 중 13마리(57%), 면역매개질환은 3마리 중 1마리가 퇴원했습니다.</p><p>합병증이 잦은 치료를 받은 쪽의 결과가 가장 좋았습니다. 위험이 높은 치료가 나쁜 치료라는 뜻이 아니라, 그만큼 급한 환자에게 쓰는 치료라는 뜻입니다.</p><p>여기서 제가 건너뛰고 싶지 않은 숫자가 하나 더 있습니다. <b>41마리 중 퇴원한 것은 25마리였고, 퇴원한 25마리 중 20마리가 한 달을 넘겼습니다.</b> 열여섯 마리는 집으로 돌아가지 못했습니다.</p><p>합병증 이야기를 하면서 이 숫자를 빼면 앞뒤가 맞지 않습니다. 체외순환치료를 받는 환자들은 애초에 그 치료 말고는 방법이 없어서 온 환자들입니다. 치료 중에 생기는 문제가 대개 가볍다는 것과, 환자의 예후가 무겁다는 것은 서로 다른 이야기이고 둘 다 사실입니다.</p><h3>다른 연구들이 보태주는 것</h3><p>중독 환자 쪽 숫자는 앞선 연구와도 방향이 같습니다. 미국의 두 병원이 2011년부터 2018년까지 급성 중독으로 체외혈액정화를 받은 개 51마리·고양이 3마리를 모은 연구에서, 전체 생존율은 83.3%(45/54)였습니다. 이 연구에서도 합병증은 44.4%에서 있었지만, 치료 자체에 돌릴 수 있는 것은 18.5%였고 사망한 환자 중 합병증 때문에 죽은 경우는 없었습니다.</p><p>혈액이 받는 영향을 직접 잰 연구도 있습니다. 프랑스 리옹의 연구진이 렙토스피라증으로 급성신손상이 온 개 10마리에서 첫 투석 전후를 비교했더니, 혈소판 수가 25% 줄고(p=0.012) aPTT라는 응고 검사 시간이 24% 늘었습니다(p=0.006). 한 번의 치료로도 혈소판은 눈에 띄게 떨어집니다. 투석 환자에게 혈액검사를 자주 하는 이유가 여기 있습니다.</p><p>장기간 투석을 받는 환자에게는 또 다른 종류의 문제가 있습니다. 미국 UC 데이비스에서 두 마리의 개가 심낭에 유미액이 고이는 드문 합병증을 겪었는데, 저자들은 원인을 목의 투석 카테터와 연관된 정맥 혈전이나 협착 때문으로 추정했습니다. 두 마리 모두 리바록사반과 클로피도그렐을 함께 쓰고 있었지만 유미 삼출은 멎지 않았습니다. 카테터를 오래 유지하는 일 자체가 별도의 위험을 만든다는 이야기입니다.</p><p>반대로, 운용 방식으로 줄일 수 있는 위험도 있습니다. 브라질 연구진은 요독증 위기에 빠진 만성신장병 개 14마리를 두 군으로 나눠, 투석 회로에 바이패스를 거는 방식과 걸지 않는 방식을 비교했습니다. 노폐물을 한 번에 너무 빨리 빼면 생기는 불균형증후군을 피하려는 목적이었고, 혈역학이나 검사 수치를 나쁘게 하지 않으면서 안전하게 진행되었다고 보고했습니다. 저희가 첫 세션에서 시간당 제거량을 일부러 낮게 잡는 이유도 같은 자리에 있습니다. 강도를 낮추는 대신 치료 시간은 충분히 확보하는 쪽이 원칙입니다.</p><h3>그래서 저는 이렇게 말씀드립니다</h3><p>저는 2016년 무렵부터 신장질환과 신대체요법에 집중해 왔고, 지금까지 개와 고양이 200마리 이상을 혈액투석으로 치료했습니다. 누적 세션은 800회를 넘겼습니다.</p><p>2017년부터 2024년까지 저희 병원에서 혈액투석을 받은 136마리를 정리해 봤을 때, 급성신손상 환자의 단기 생존율은 58.6%, 만성신장병이 급격히 나빠진 환자는 39.4%였습니다.</p><p>이 숫자를 보호자분들께 먼저 말씀드립니다. 좋아 보이지 않는 숫자라는 것을 압니다. 그래도 이 숫자를 감춘 채 시작한 치료는, 중간에 무슨 일이 생겼을 때 보호자와 저 사이에 남는 것이 없습니다.</p><p>합병증 목록도 마찬가지입니다. 회로가 굳을 수 있고, 칼슘이 떨어질 수 있고, 카테터 자리에서 피가 배어날 수 있고, 혈압이 흔들릴 수 있습니다. 저희는 그 각각을 예상하고 감시하고 있으며, 대부분은 그 자리에서 조정됩니다.</p><p>제가 정직하게 말씀드릴 수 없는 것은 하나입니다. 이 환자에게 아무 일도 생기지 않을 거라는 약속입니다.</p><p>대신 이렇게는 말씀드릴 수 있습니다. 어떤 일이 생길 수 있는지 저희가 이미 알고 있고, 그것을 보려고 옆에 붙어 있겠다고요.</p><h3>보호자분께 드리고 싶은 말</h3><p>동의서에 적힌 합병증 목록이 길다는 것은 그 치료가 위험하다는 뜻만은 아닙니다. 그 치료를 오래 해 온 사람들이 무엇이 생기는지 세어 왔다는 뜻이기도 합니다.</p><p>목록이 짧은 쪽을 더 경계하셔도 됩니다.</p><p>궁금한 것이 있으시면 담당 수의사에게 "어떤 방식으로 하시나요", "그 방식에서는 주로 뭐가 생기나요"라고 물어보십시오. 앞의 표에서 보셨듯이 방식마다 답이 다릅니다. 그 질문에 구체적으로 답하는 병원이라면, 그만큼 세어 온 병원입니다.</p><p>읽어주셔서 감사합니다.</p><h3>참고 문헌</h3><ul><li>Escande E, Graziano N, Gommeren K. Retrospective Evaluation of the Indications, Complications, and Outcomes of Extracorporeal Therapies in Companion Animals in a Veterinary Teaching Hospital. Journal of Veterinary Emergency and Critical Care, 2026.</li><li>Groover J, Londoño LA, Tapia-Ruano K, Iacovetta C. Extracorporeal blood purification in acutely intoxicated veterinary patients: A multicenter retrospective study (2011-2018): 54 cases. Journal of Veterinary Emergency and Critical Care, 2022;32(1):34-41.</li><li>Barthélemy A, Violé A, Cambournac M, et al. Hematological and Hemostatic Alterations Associated With a Single Extracorporeal Renal Replacement Therapy in Dogs With Acute Kidney Injury Associated Leptospirosis: A Pilot Study. Topics in Companion Animal Medicine, 2020;38:100406.</li><li>Woerde DJ, Palm CA, Duler LM, et al. Case report: Chylopericardium secondary to dialysis catheter related jugular venous thrombosis in two dogs receiving long-term hemodialysis. Frontiers in Veterinary Science, 2024;11:1386710.</li><li>de Azevedo MGP, Maia SR, de Moraes RS, et al. Evaluation of intermittent hemodialysis therapy in the bypass mode in dogs with chronic kidney disease in uremic crisis. BMC Veterinary Research, 2025;21(1):286.</li></ul><p>신장과 투석을 공부하는 수의사<br>안운찬 드림</p>
+<p><b>개인 홈페이지</b><br><a href="https://www.ahnwoonchan.com/">https://www.ahnwoonchan.com/</a></p>
+<p>※ 이 글은 동물의 신장질환과 혈액투석에 관한 일반적인 정보를 전달하기 위한 글입니다. 개별 환자의 치료 필요성과 예후는 검사 결과와 전신 상태를 종합하여 담당 수의사와 상담해 판단해야 합니다.</p>
+  </article>
+</div>
+<script>
+function flash(btn, label) {
+  var old = btn.textContent;
+  btn.textContent = label;
+  setTimeout(function () { btn.textContent = old; }, 1500);
+}
+document.getElementById("copyTitle").addEventListener("click", function () {
+  var t = document.getElementById("title").textContent;
+  navigator.clipboard.writeText(t).then(flash(this, "복사되었습니다"));
+});
+document.getElementById("copyBody").addEventListener("click", function () {
+  var el = document.getElementById("body");
+  var htmlBlob = new Blob([el.innerHTML], { type: "text/html" });
+  var textBlob = new Blob([el.innerText], { type: "text/plain" });
+  var btn = this;
+  if (window.ClipboardItem) {
+    navigator.clipboard.write([new ClipboardItem({ "text/html": htmlBlob, "text/plain": textBlob })])
+      .then(function () { flash(btn, "복사되었습니다"); },
+            function () { navigator.clipboard.writeText(el.innerText).then(function () { flash(btn, "텍스트로 복사됨"); }); });
+  } else {
+    navigator.clipboard.writeText(el.innerText).then(function () { flash(btn, "텍스트로 복사됨"); });
+  }
+});
+</script>
+</body>
+</html>
