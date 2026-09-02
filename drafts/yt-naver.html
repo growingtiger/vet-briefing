@@ -21,18 +21,33 @@
     background:var(--accent); border:none; border-radius:8px; padding:0.6rem 1.1rem; cursor:pointer; }
   button.secondary { color:var(--accent); background:transparent; border:1.5px solid var(--accent); }
   h1 { font-size:1.4rem; line-height:1.4; }
-  article h3 { font-size:1.05rem; margin-top:1.8em; }
-  article a { color:var(--accent); }
-  article img { max-width:100%; height:auto; border-radius:8px; border:1px solid var(--line); }
+  /* 미리보기는 네이버에 붙여넣은 뒤의 모습 그대로 보여준다 (흰 종이 + 인라인 서식). */
+  article#body { background:#ffffff; color:#333; border:1px solid var(--line);
+    border-radius:12px; padding:1.6rem 1.4rem 0.6rem; }
+  article#body :where(p,li) { color:inherit; }
+  article#body img { max-width:100%; height:auto; }
+  .sheetnote { font-size:0.8rem; color:var(--soft); margin:0.6rem 0 0; text-align:right; }
   #status { color:var(--soft); font-size:0.9rem; }
+  #tagsec { margin-top:2.5rem; border-top:1px solid var(--line); padding-top:1.5rem; }
+  #tagsec h2 { font-size:1.05rem; margin:0 0 0.4rem; }
+  #tagsec .hint { font-size:0.85rem; color:var(--soft); margin:0 0 0.9rem; }
+  #tagList { display:flex; flex-wrap:wrap; gap:0.4rem; margin-bottom:1rem; }
+  #tagList span { font-size:0.85rem; color:var(--accent); border:1px solid var(--line);
+    border-radius:999px; padding:0.25rem 0.7rem; background:transparent; }
+  #tagRaw { width:100%; font:inherit; font-size:0.85rem; line-height:1.7; color:var(--ink);
+    background:transparent; border:1px solid var(--line); border-radius:8px;
+    padding:0.7rem 0.8rem; margin-bottom:0.9rem; resize:vertical; }
 </style>
 </head>
 <body>
 <div class="wrap">
   <div class="meta">
     유튜브 영상 요약 — 네이버 블로그용 초안<br>
-    [본문 복사] 후 네이버 에디터에 붙여넣으면 소제목·이미지·링크가 함께 들어갑니다.
-    이미지가 안 들어가면 이미지를 길게 눌러 저장한 뒤 에디터에서 삽입해 주세요.
+    [본문 복사] 후 네이버 에디터에 붙여넣으면 아래 미리보기와 <b>같은 모습으로 들어갑니다</b>
+    (소제목 크기, 이미지, 링크 박스까지 인라인 서식으로 고정해 두었습니다).
+    제목은 따로 복사해 제목란에 넣어주세요.
+    이미지가 함께 안 들어오면 이미지를 저장한 뒤 에디터에서 직접 삽입해 주세요.
+    태그는 맨 아래에서 [태그 복사]로 가져가 네이버 [태그 편집]란에 붙여넣으면 됩니다.
   </div>
   <div class="btns">
     <button id="copyTitle" type="button">제목 복사</button>
@@ -42,6 +57,18 @@
   <hr>
   <p id="status">불러오는 중…</p>
   <article id="body"></article>
+  <p class="sheetnote">↑ 네이버에 붙여넣었을 때의 실제 모습입니다</p>
+
+  <section id="tagsec" hidden>
+    <h2>태그</h2>
+    <p class="hint">네이버 [태그 편집]란에 붙여넣으면 쉼표 기준으로 자동 분리됩니다. 필요 없는 태그는 아래 칸에서 직접 지우고 복사하세요.</p>
+    <div id="tagList"></div>
+    <textarea id="tagRaw" rows="3" spellcheck="false"></textarea>
+    <div class="btns">
+      <button id="copyTags" type="button">태그 복사</button>
+      <button id="copyTagsHash" class="secondary" type="button"># 붙여서 복사</button>
+    </div>
+  </section>
 </div>
 <script>
 (function () {
@@ -50,9 +77,166 @@
   var titleEl = document.getElementById("title");
   var ORIGIN = "https://vet-briefing.vercel.app";
 
+  // ── 네이버 에디터 대응 ────────────────────────────────────────────────
+  // 네이버 SmartEditor는 붙여넣기 때 h2/h3 같은 시맨틱 태그의 크기를 버린다.
+  // (굵게만 남고 크기는 본문과 같아져서 매번 손으로 키워야 했다.)
+  // 그래서 모든 블록을 p로 낮추고 서식을 인라인 style로 박아 넣는다.
+  // 인라인 style은 글자 크기·색·굵기·여백·테두리까지 그대로 살아남는다.
+  var NAVY = "#212E51", GOLD = "#AF9476";   // 시그니처 브랜드 컬러 (로고 기준)
+  var S = {
+    lead: "font-size:16px;line-height:1.9;font-weight:700;color:" + NAVY + ";margin:0 0 20px;letter-spacing:-0.3px;",
+    h2:   "font-size:20px;line-height:1.5;font-weight:700;color:" + NAVY + ";border-left:4px solid " + GOLD +
+          ";padding-left:13px;margin:48px 0 20px;letter-spacing:-0.3px;",
+    p:    "font-size:15px;line-height:1.9;color:#333333;margin:0 0 18px;letter-spacing:-0.2px;",
+    fig:  "margin:0 0 20px;text-align:center;",
+    img:  "max-width:100%;height:auto;border-radius:6px;",
+    cta:  "font-size:15px;line-height:1.9;color:#2f3b4a;background:#F6F4F0;border-left:3px solid " + GOLD +
+          ";padding:15px 17px;margin:0 0 18px;letter-spacing:-0.2px;",
+    hr:   "border:none;border-top:1px solid #E5E2DC;margin:42px 0;",
+    tail: "font-size:13px;line-height:1.8;color:#8a8a8a;margin:0 0 12px;letter-spacing:-0.2px;",
+    link: "color:#1B5E8C;"
+  };
+
   function esc(s) {
     return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
   }
+  function p(style, inner) { return '<p style="' + style + '">' + inner + "</p>"; }
+
+  // post.json의 body는 빈 줄로 문단을 나눈다. 네이버에서 문단이 살아 있어야
+  // 읽히므로 줄바꿈마다 별도의 p로 쪼갠다 (한 p 안의 \n은 붙여넣으면 사라진다).
+  function paragraphs(text, style) {
+    return String(text).split(/\n+/)
+      .map(function (t) { return t.trim(); })
+      .filter(Boolean)
+      .map(function (t) { return p(style, esc(t)); })
+      .join("");
+  }
+
+  function link(url) {
+    return '<a href="' + esc(url) + '" target="_blank" rel="noopener noreferrer" style="' + S.link + '">' +
+           esc(url) + "</a>";
+  }
+
+  function buildNaverHtml(d, post) {
+    var base = ORIGIN + "/insta-yt/" + d + "/";
+    var html = "";
+
+    (post.intro || []).forEach(function (t, i) {
+      html += paragraphs(t, i === 0 ? S.lead : S.p);
+    });
+
+    (post.items || []).forEach(function (it) {
+      html += p(S.h2, esc(it.title));
+      if (it.image) {
+        html += p(S.fig, '<img src="' + base + it.image + '" alt="' + esc(it.title) +
+                         '" style="' + S.img + '">');
+      }
+      html += paragraphs(it.body, S.p);
+    });
+
+    html += '<hr style="' + S.hr + '">';
+    if (post.video_url) {
+      html += p(S.cta, "<b>전체 영상 보러가기</b><br>" + link(post.video_url));
+    }
+    html += p(S.p, "유튜브에서 '수의사 이태호'를 검색하시면 더 많은 영상을 보실 수 있습니다.");
+    html += p(S.tail, "※ 영상에서 다룬 내용을 정리한 글이며, 요약 과정에서 오류가 있을 수 있습니다.");
+    return html;
+  }
+  // ─────────────────────────────────────────────────────────────────────
+
+  // 어느 영상에나 붙는 고정 태그 + 글에 실제로 등장한 주제만 골라 붙인다.
+  // 세 번째 값은 최소 언급 횟수(기본 1). 감별진단 목록에 한 번 스쳐 지나간 병명이
+  // 그 영상의 태그로 올라가면 검색 유입이 엉뚱해지므로, 폭넓은 질환 태그는 2회 이상
+  // 언급된 경우에만 붙인다.
+  var BASE_TAGS = ["수의사이태호", "시그니처동물의료센터", "강아지", "반려견", "강아지건강", "반려동물건강", "동물병원"];
+  var TAG_RULES = [
+    [/비만|다이어트|체중\s?감량|과체중|\bBCS\b/i, ["강아지비만", "강아지다이어트", "반려견체중관리"]],
+    [/사료|처방식|급여|간식|영양/, ["강아지사료", "반려동물영양"], 2],
+    [/갑상선/, ["반려동물갑상선질환"]],
+    [/쿠싱|부신피질기능항진/, ["쿠싱증후군"]],
+    [/애디슨|부신피질기능저하/, ["애디슨병"]],
+    [/당뇨/, ["반려동물당뇨"]],
+    [/신장병|신부전|\bCKD\b|신장\s?질환/i, ["강아지신장병"], 2],
+    [/혈액투석|복막투석|\bCRRT\b|혈액관류/i, ["반려동물혈액투석"]],
+    [/심장병|심부전|판막|승모판|\bMMVD\b/i, ["강아지심장병"], 2],
+    [/심장사상충|하트웜/, ["심장사상충"]],
+    [/마취/, ["반려동물마취"]],
+    [/종양|항암|암세포|암\s?치료|육종|림프종|방사선\s?치료/, ["반려동물종양", "강아지암"], 2],
+    [/췌장염/, ["반려동물췌장염"]],
+    [/구토|설사|위장관|소화기|식도\s?이물|이물/, ["강아지소화기질환"], 2],
+    [/담낭|담즙|슬러지|점액\s?종/, ["강아지담낭질환"]],
+    [/간\s?수치|간질환|간담도/, ["반려동물간질환"]],
+    [/스케일링|치주|발치|치과|구강/, ["강아지스케일링", "반려동물치과"]],
+    [/피부|아토피|가려움|소양|농피증|외이염/, ["강아지피부병"], 2],
+    [/백내장|녹내장|각막|망막|안과/, ["반려동물안과"], 2],
+    [/기관\s?허탈|기관지\s?허탈|기관지\s?협착/, ["기관허탈"]],
+    [/기침|호흡\s?곤란|호흡기|헥헥/, ["강아지호흡기질환"], 2],
+    [/폐렴/, ["강아지폐렴"]],
+    [/슬개골/, ["슬개골탈구"]],
+    [/추간판|디스크|\bIVDD\b/i, ["반려동물디스크"]],
+    [/십자인대/, ["십자인대파열"]],
+    [/관절/, ["강아지관절염"], 2],
+    [/방광염|요로|요석|결석/, ["강아지방광염"], 2],
+    [/예방접종|백신/, ["강아지예방접종"]],
+    [/중성화/, ["강아지중성화"]],
+    [/노령견|노화|시니어/, ["노령견관리"]],
+    [/치매|인지\s?기능|인지장애/, ["강아지치매"]],
+    [/안락사|무지개다리|임종|이별/, ["반려동물안락사"]],
+    [/산책/, ["강아지산책"]],
+    [/입양|분양|첫날/, ["강아지입양"]],
+    [/배변\s?훈련/, ["강아지배변훈련"]],
+    [/분리불안/, ["강아지분리불안"]],
+    [/수명|장수|오래\s?살/, ["반려견수명"], 2],
+    [/응급|중환자/, ["동물응급의학"], 2],
+    [/병원비|진료비|펫보험|보험/, ["동물병원비"], 2],
+    [/말티즈|말티스/, ["말티즈"]],
+    [/포메라니안/, ["포메라니안"]],
+    [/비숑/, ["비숑프리제"]],
+    [/시츄/, ["시츄"]],
+    [/닥스훈트/, ["닥스훈트"]],
+    [/프렌치\s?불독|퍼그|단두종/, ["단두종증후군"]],
+    [/시바견/, ["시바견"]],
+    [/푸들/, ["푸들"]],
+    [/요크셔테리어/, ["요크셔테리어"]],
+    [/골든\s?리트리버|리트리버/, ["골든리트리버"]]
+  ];
+  var MAX_TAGS = 30;
+
+  function postText(post) {
+    var parts = [post.naver_title || "", post.title || ""];
+    (post.intro || []).forEach(function (t) { parts.push(t); });
+    (post.items || []).forEach(function (it) { parts.push(it.title, it.body); });
+    return parts.join("\n");
+  }
+
+  function renderTags(post) {
+    var text = postText(post);
+    var tags = BASE_TAGS.slice();
+    TAG_RULES.forEach(function (rule) {
+      var g = new RegExp(rule[0].source, rule[0].flags.indexOf("g") === -1 ? rule[0].flags + "g" : rule[0].flags);
+      var hits = (text.match(g) || []).length;
+      if (hits < (rule[2] || 1)) return;
+      rule[1].forEach(function (t) { if (tags.indexOf(t) === -1) tags.push(t); });
+    });
+    tags = tags.slice(0, MAX_TAGS);
+
+    var list = document.getElementById("tagList");
+    list.innerHTML = "";
+    tags.forEach(function (t) {
+      var el = document.createElement("span");
+      el.textContent = "#" + t;
+      list.appendChild(el);
+    });
+    document.getElementById("tagRaw").value = tags.join(", ");
+    document.getElementById("tagsec").hidden = false;
+  }
+
+  function currentTags() {
+    return document.getElementById("tagRaw").value
+      .split(",").map(function (t) { return t.trim().replace(/^#/, ""); })
+      .filter(Boolean);
+  }
+
   function flash(btn, label) {
     var old = btn.textContent;
     btn.textContent = label;
@@ -75,22 +259,20 @@
       navigator.clipboard.writeText(bodyEl.innerText).then(function () { flash(btn, "텍스트로 복사됨"); });
     }
   });
+  document.getElementById("copyTags").addEventListener("click", function () {
+    var btn = this;
+    navigator.clipboard.writeText(currentTags().join(", ")).then(function () { flash(btn, "복사되었습니다"); });
+  });
+  document.getElementById("copyTagsHash").addEventListener("click", function () {
+    var btn = this;
+    var text = currentTags().map(function (t) { return "#" + t; }).join(" ");
+    navigator.clipboard.writeText(text).then(function () { flash(btn, "복사되었습니다"); });
+  });
 
-  function render(d, p) {
-    titleEl.textContent = p.naver_title || p.title;
-    var base = ORIGIN + "/insta-yt/" + d + "/";
-    var html = "";
-    (p.intro || []).forEach(function (t) { html += "<p>" + esc(t) + "</p>"; });
-    (p.items || []).forEach(function (it) {
-      html += "<h3>" + esc(it.title) + "</h3>";
-      if (it.image) html += '<p><img src="' + base + it.image + '" alt="' + esc(it.title) + '"></p>';
-      html += "<p>" + esc(it.body) + "</p>";
-    });
-    if (p.video_url) {
-      html += "<p><b>전체 영상 보러가기</b><br><a href=\"" + p.video_url + "\" target=\"_blank\" rel=\"noopener noreferrer\">" + p.video_url + "</a></p>";
-    }
-    html += "<p>유튜브에서 '수의사 이태호'를 검색하시면 더 많은 영상을 보실 수 있습니다.</p>";
-    bodyEl.innerHTML = html;
+  function render(d, post) {
+    titleEl.textContent = post.naver_title || post.title;
+    bodyEl.innerHTML = buildNaverHtml(d, post);
+    renderTags(post);
     status.textContent = "";
   }
 
@@ -98,7 +280,7 @@
   function tryLoad(date) {
     return fetch("../insta-yt/" + date + "/post.json", { cache: "no-store" })
       .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
-      .then(function (p) { render(date, p); });
+      .then(function (post) { render(date, post); });
   }
   if (d) {
     tryLoad(d).catch(function () { status.textContent = "이 날짜의 요약을 불러오지 못했습니다."; });
