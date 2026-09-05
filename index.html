@@ -53,9 +53,6 @@
       --cite-bg: #141d25;
       --cite-bar: #33414d;
     }
-    /* 네이비 로고는 어두운 배경에서 묻힌다 — 밝은 반전본으로 바꿔 끼운다. */
-    .hospital-mark img.on-light { display: none; }
-    .hospital-mark img.on-dark { display: block; }
   }
   * { box-sizing: border-box; }
   html { -webkit-text-size-adjust: 100%; }
@@ -98,6 +95,13 @@
   .hospital-mark { display: inline-flex; align-items: center; flex: none; }
   .hospital-mark img { height: 28px; width: auto; display: block; }
   .hospital-mark img.on-dark { display: none; }
+  /* 네이비 로고는 어두운 배경에서 묻힌다 — 밝은 반전본으로 바꿔 끼운다.
+     이 블록은 반드시 위 기본 규칙 뒤에 와야 한다. 같은 특이도라
+     앞에 두면 순서에서 밀려 두 이미지가 모두 숨는다. */
+  @media (prefers-color-scheme: dark) {
+    .hospital-mark img.on-light { display: none; }
+    .hospital-mark img.on-dark { display: block; }
+  }
   .brandbar-links {
     display: flex;
     gap: 0.85rem;
