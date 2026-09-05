@@ -381,6 +381,13 @@
     color: var(--ink-soft);
   }
   .hospital-meta .em { color: var(--ink); }
+  /* 모바일에서 눌러 바로 걸 수 있게 — 병원 정보 블록에서 실제로 쓰이는 동작이다 */
+  .hospital-meta .tel {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--line);
+  }
+  .hospital-meta .tel:hover, .hospital-meta .tel:focus-visible { border-bottom-color: var(--gold); }
   .colophon-note {
     margin-top: 2rem;
     padding-top: 1.15rem;
@@ -449,7 +456,7 @@
     </a>
     <div class="hospital-meta">
       서울특별시 강남구 도산대로 213<br>
-      대표전화 <span class="em">02-549-0275</span> · 365일 24시간 응급진료
+      대표전화 <a class="tel" href="tel:0225490275">02-549-0275</a> · 365일 24시간 응급진료
     </div>
     <div class="colophon-links">
       <a href="https://signatureamc.co.kr" target="_blank" rel="noopener noreferrer">병원 홈페이지 &#8599;</a>
