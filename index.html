@@ -5,7 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>수의사 이태호의 수의학 데일리 브리핑</title>
 <meta name="description" content="수의사 이태호의 수의학 데일리 브리핑 — 신장·투석·응급중환자 중심 최신 문헌 조사">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🩺</text></svg>">
+<link rel="icon" href="assets/logo-mark.png">
+<link rel="apple-touch-icon" href="assets/logo-mark.png">
+<meta property="og:title" content="수의사 이태호의 수의학 데일리 브리핑">
+<meta property="og:description" content="시그니처 동물의료센터 대표원장 이태호 — 신장·투석 매일, 요일별 임상 과목 문헌 리뷰">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #fafaf8;
@@ -19,9 +26,14 @@
     /* 시그니처 브랜드 (로고 기준) — 카드뉴스·네이버 초안과 같은 색 체계 */
     --brand: #212E51;
     --gold: #AF9476;
+    /* 골드 원색(#AF9476)은 아이보리 위에서 명암비 2.75:1로 본문 글자에 못 쓴다.
+       괘선·세로바에는 원색을 그대로 두고, 글자에는 어둡게 조인 값을 쓴다(4.9:1). */
+    --gold-ink: #87683F;
     --note-bg: #f6f4f0;
     --cite-bg: #fafaf8;
     --cite-bar: #dcd8d0;
+    /* 제호·필자명에만 쓰는 명조 — 개인 홈페이지(leetaeho.vercel.app)와 같은 서체다. */
+    --serif: "Noto Serif KR", "Nanum Myeongjo", "AppleMyungjo", "Batang", serif;
   }
   @media (prefers-color-scheme: dark) {
     :root {
@@ -36,10 +48,14 @@
       /* 어두운 배경에서는 네이비를 그대로 쓸 수 없어 밝은 쪽으로 뒤집는다 */
       --brand: #cdd8ef;
       --gold: #c9ae8b;
+      --gold-ink: #c9ae8b;
       --note-bg: #1b2530;
       --cite-bg: #141d25;
       --cite-bar: #33414d;
     }
+    /* 네이비 로고는 어두운 배경에서 묻힌다 — 밝은 반전본으로 바꿔 끼운다. */
+    .hospital-mark img.on-light { display: none; }
+    .hospital-mark img.on-dark { display: block; }
   }
   * { box-sizing: border-box; }
   html { -webkit-text-size-adjust: 100%; }
@@ -65,13 +81,67 @@
     gap: 1rem;
     flex-wrap: wrap;
   }
-  .site-title { font-size: 1.05rem; font-weight: 700; letter-spacing: -0.01em; }
+  /* ── 마스트헤드 ────────────────────────────────────────────
+     신문 제호 구조를 그대로 쓴다. 맨 위 얇은 바가 발행 주체(병원),
+     그 아래가 제호와 필자다. 두 브랜드를 한 덩어리로 뭉개지 않고
+     위계로 나눠 놓아야 어느 쪽도 장식처럼 보이지 않는다. */
+  .brandbar { border-bottom: 1px solid var(--line); }
+  .brandbar-inner {
+    max-width: 44rem;
+    margin: 0 auto;
+    padding: 0.5rem 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.8rem;
+  }
+  .hospital-mark { display: inline-flex; align-items: center; flex: none; }
+  .hospital-mark img { height: 21px; width: auto; display: block; }
+  .hospital-mark img.on-dark { display: none; }
+  .brandbar-links {
+    display: flex;
+    gap: 0.85rem;
+    font-size: 0.74rem;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+  }
+  .brandbar-links a { color: var(--ink-soft); text-decoration: none; }
+  .brandbar-links a:hover,
+  .brandbar-links a:focus-visible {
+    color: var(--gold-ink);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .site-title {
+    font-family: var(--serif);
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+    color: var(--brand);
+  }
+  /* 필자 한 줄 — 골드는 여기 한 군데만 쓴다. 여러 곳에 뿌리면 색이 의미를 잃는다. */
+  .site-title .byline {
+    display: block;
+    font-family: inherit;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--gold-ink);
+    letter-spacing: -0.01em;
+    margin-top: 0.34rem;
+  }
   .site-title .sub {
     display: block;
-    font-size: 0.78rem;
+    font-family: "Apple SD Gothic Neo", "Pretendard", "Noto Sans KR", "Malgun Gothic", sans-serif;
+    font-size: 0.76rem;
     font-weight: 500;
     color: var(--ink-soft);
-    letter-spacing: 0.02em;
+    letter-spacing: 0.01em;
+    margin-top: 0.16rem;
+  }
+  @media (max-width: 34rem) {
+    .brandbar-links { display: none; }   /* 좁은 화면에서는 푸터 콜로폰이 같은 링크를 담당한다 */
+    .site-title { font-size: 1.16rem; }
   }
   select {
     font: inherit;
@@ -161,7 +231,7 @@
   }
   /* 제목 바로 아래 "오늘의 집중 과목" 한 줄 */
   article p.subject {
-    color: var(--gold);
+    color: var(--gold-ink);
     font-weight: 700;
     font-size: 0.95rem;
     margin: 0 0 1.6em;
@@ -215,20 +285,123 @@
   article li { margin: 0.35em 0; }
   article table { border-collapse: collapse; width: 100%; display: block; overflow-x: auto; }
   article th, article td { border: 1px solid var(--line); padding: 0.45em 0.7em; font-size: 0.92rem; }
+  /* ── 콜로폰: 필자와 병원 ───────────────────────────────────
+     본문이 끝난 자리에 누가 썼고 어디서 나왔는지를 둔다. 위쪽 마스트헤드가
+     이름만 걸어두는 자리라면 여기는 실체를 적는 자리다. 두 블록의 리듬을
+     일부러 다르게 뒀다 — 필자는 사진을 낀 가로 배치, 병원은 로고를 세운
+     세로 배치. 같은 모양을 두 번 반복하면 그때부터 템플릿으로 보인다. */
   footer {
     max-width: 44rem;
     margin: 0 auto;
-    padding: 0 1.25rem 2.5rem;
+    padding: 0 1.25rem 3rem;
     color: var(--ink-soft);
     font-size: 0.8rem;
     border-top: none;
+  }
+  .colophon-author {
+    display: flex;
+    gap: 1.05rem;
+    align-items: flex-start;
+    padding-top: 1.7rem;
+    border-top: 1px solid var(--line);
+  }
+  .colophon-author img {
+    width: 74px;
+    height: 74px;
+    flex: none;
+    object-fit: cover;
+    border-radius: 2px;
+    box-shadow: 0 0 0 1px var(--line);
+  }
+  .author-name {
+    font-family: var(--serif);
+    font-size: 1.06rem;
+    font-weight: 600;
+    color: var(--brand);
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+  }
+  .author-role {
+    margin-top: 0.3rem;
+    font-size: 0.79rem;
+    line-height: 1.65;
+    color: var(--ink-soft);
+  }
+  .author-note {
+    margin-top: 0.42rem;
+    font-size: 0.81rem;
+    line-height: 1.7;
+    color: var(--ink);
+  }
+  .colophon-links {
+    margin-top: 0.6rem;
+    display: flex;
+    gap: 0.9rem;
+    flex-wrap: wrap;
+    font-size: 0.78rem;
+  }
+  .colophon-links a {
+    color: var(--accent);
+    text-decoration: none;
+    text-underline-offset: 3px;
+  }
+  .colophon-links a:hover, .colophon-links a:focus-visible { text-decoration: underline; }
+
+  .colophon-hospital {
+    margin-top: 2.1rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--line);
+  }
+  /* 병원 블록만 골드 짧은 괘선으로 열어 준다. 면을 칠하는 대신 선 하나로
+     구분하면 카드가 겹겹이 쌓이는 인상을 피할 수 있다. */
+  .colophon-hospital::before {
+    content: "";
+    display: block;
+    width: 34px;
+    height: 2px;
+    background: var(--gold);
+    margin-bottom: 1.15rem;
+  }
+  .colophon-hospital .hospital-mark img { height: 27px; }
+  .hospital-meta {
+    margin-top: 0.85rem;
+    font-size: 0.79rem;
+    line-height: 1.85;
+    color: var(--ink-soft);
+  }
+  .hospital-meta .em { color: var(--ink); }
+  .colophon-note {
+    margin-top: 2rem;
+    padding-top: 1.15rem;
+    border-top: 1px solid var(--line);
+    font-size: 0.76rem;
+    line-height: 1.75;
+    color: var(--ink-soft);
+  }
+  @media (max-width: 34rem) {
+    .colophon-author { gap: 0.85rem; }
+    .colophon-author img { width: 60px; height: 60px; }
   }
 </style>
 </head>
 <body>
 <header>
+  <div class="brandbar">
+    <div class="brandbar-inner">
+      <a class="hospital-mark" href="https://signatureamc.co.kr" target="_blank" rel="noopener noreferrer" aria-label="시그니처 동물의료센터">
+        <img class="on-light" src="assets/logo-signature.png" alt="시그니처 동물의료센터">
+        <img class="on-dark" src="assets/logo-signature-dark.png" alt="" aria-hidden="true">
+      </a>
+      <nav class="brandbar-links" aria-label="관련 채널">
+        <a href="https://leetaeho.vercel.app/" target="_blank" rel="noopener noreferrer">이태호 수의사</a>
+        <a href="https://signatureamc.co.kr" target="_blank" rel="noopener noreferrer">병원 홈페이지</a>
+        <a href="https://blog.naver.com/signatureamc" target="_blank" rel="noopener noreferrer">병원 블로그</a>
+      </nav>
+    </div>
+  </div>
   <div class="head-inner">
-    <div class="site-title">수의사 이태호의 수의학 데일리 브리핑
+    <div class="site-title">수의학 데일리 브리핑
+      <span class="byline">수의사 이태호 · 시그니처 동물의료센터 대표원장</span>
       <span class="sub">신장·투석 매일 · 요일별 임상 과목 문헌 리뷰</span>
     </div>
     <label>지난 브리핑
@@ -245,8 +418,39 @@
   <article id="content"></article>
 </main>
 <footer>
-  매일 아침 PubMed 등재 문헌을 조사해 정리합니다.
-  요약·해석에 오류가 있을 수 있으니 원문(출처 링크)을 확인하세요.
+  <div class="colophon-author">
+    <img src="assets/portrait.jpg" alt="이태호 수의사" width="74" height="74" loading="lazy">
+    <div>
+      <div class="author-name">이태호</div>
+      <div class="author-role">시그니처 동물의료센터 대표원장<br>건국대학교 수의과대학 임상내과학 겸임교수</div>
+      <p class="author-note">개와 고양이의 내과를 봅니다. 심장과 종양, 신장, 그리고 나이가 들며 여러 질환이 한꺼번에 겹치는 환자를 주로 봅니다.</p>
+      <div class="colophon-links">
+        <a href="https://leetaeho.vercel.app/" target="_blank" rel="noopener noreferrer">프로필 &#8599;</a>
+        <a href="https://www.youtube.com/@%EC%9D%B4%ED%83%9C%ED%98%B8%EC%88%98%EC%9D%98%EC%82%AC" target="_blank" rel="noopener noreferrer">유튜브 &#8599;</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="colophon-hospital">
+    <a class="hospital-mark" href="https://signatureamc.co.kr" target="_blank" rel="noopener noreferrer" aria-label="시그니처 동물의료센터">
+      <img class="on-light" src="assets/logo-signature.png" alt="시그니처 동물의료센터" loading="lazy">
+      <img class="on-dark" src="assets/logo-signature-dark.png" alt="" aria-hidden="true" loading="lazy">
+    </a>
+    <div class="hospital-meta">
+      서울특별시 강남구 도산대로 213<br>
+      대표전화 <span class="em">02-549-0275</span> · 365일 24시간 응급진료
+    </div>
+    <div class="colophon-links">
+      <a href="https://signatureamc.co.kr" target="_blank" rel="noopener noreferrer">병원 홈페이지 &#8599;</a>
+      <a href="https://blog.naver.com/signatureamc" target="_blank" rel="noopener noreferrer">병원 블로그 &#8599;</a>
+      <a href="https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%20%EA%B0%95%EB%82%A8%EA%B5%AC%20%EB%8F%84%EC%82%B0%EB%8C%80%EB%A1%9C%20213" target="_blank" rel="noopener noreferrer">오시는 길 &#8599;</a>
+    </div>
+  </div>
+
+  <p class="colophon-note">
+    매일 아침 PubMed 등재 문헌을 조사해 정리합니다.
+    요약·해석에 오류가 있을 수 있으니 원문(출처 링크)을 확인하세요.
+  </p>
 </footer>
 <script src="assets/marked.min.js"></script>
 <script>
