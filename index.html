@@ -89,14 +89,14 @@
   .brandbar-inner {
     max-width: 44rem;
     margin: 0 auto;
-    padding: 0.5rem 1.25rem;
+    padding: 0.62rem 1.25rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 0.8rem;
   }
   .hospital-mark { display: inline-flex; align-items: center; flex: none; }
-  .hospital-mark img { height: 21px; width: auto; display: block; }
+  .hospital-mark img { height: 28px; width: auto; display: block; }
   .hospital-mark img.on-dark { display: none; }
   .brandbar-links {
     display: flex;
@@ -210,6 +210,13 @@
   article h1 {
     font-size: 1.5rem; line-height: 1.35; letter-spacing: -0.02em;
     text-wrap: balance; color: var(--brand); margin-bottom: 0.5em;
+  }
+  /* 날짜만 남은 제목 — 호수(號數)처럼 읽히도록 명조로 세운다 */
+  article h1.dateline {
+    font-family: var(--serif);
+    font-size: 1.62rem;
+    font-weight: 600;
+    margin-bottom: 0.34em;
   }
   /* 보고서 본문에 이미 --- 구분선이 들어오므로 h2에 윗줄을 또 긋지 않는다.
      대신 골드 세로바로 섹션 시작을 표시한다 (카드뉴스·네이버 초안과 동일). */
@@ -362,7 +369,7 @@
     background: var(--gold);
     margin-bottom: 1.15rem;
   }
-  .colophon-hospital .hospital-mark img { height: 27px; }
+  .colophon-hospital .hospital-mark img { height: 34px; }
   .hospital-meta {
     margin-top: 0.85rem;
     font-size: 0.79rem;
@@ -487,6 +494,14 @@
   // 클래스를 붙여 CSS가 잡아줄 수 있게 한다. 보고서 원문은 건드리지 않는다.
   function decorate() {
     Array.prototype.slice.call(content.children).forEach(function (el, i) {
+      if (el.tagName === "H1") {
+        // 제호(마스트헤드)가 이미 "수의학 데일리 브리핑 / 수의사 이태호"를 달고 있다.
+        // 보고서 h1이 같은 이름을 다시 적으면 한 화면에 매체명이 세 번 나온다.
+        // 표기가 예상 형태일 때만 날짜 쪽으로 줄인다 — 아니면 원문 그대로 둔다.
+        var m = el.textContent.match(/^\s*수의사 이태호의 수의학 데일리 브리핑\s*[—–-]\s*(.+?)\s*$/);
+        if (m) { el.textContent = m[1]; el.classList.add("dateline"); }
+        return;
+      }
       if (el.tagName === "P") {
         var t = el.textContent;
         if (i < 3 && /오늘의 집중 과목/.test(t)) { el.className = "subject"; return; }
