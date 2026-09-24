@@ -293,6 +293,11 @@
     navigator.clipboard.writeText(text).then(function () { flash(btn, "복사되었습니다"); });
   });
 
+  // 네이버 제목은 요일을 한 글자로 줄인다 (목요일 -> 목). 2026-09-24 원장 지시.
+  function shortWeekday(s) {
+    return s.replace(/([월화수목금토일])요일/g, "$1");
+  }
+
   function load(d) {
     fetch("../reports/" + d + ".md", { cache: "no-store" })
       .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
@@ -301,7 +306,7 @@
         var tmp = document.createElement("div");
         tmp.innerHTML = marked.parse(md);
         var h1 = tmp.querySelector("h1");
-        if (h1) { titleEl.textContent = h1.textContent; h1.remove(); }
+        if (h1) { titleEl.textContent = shortWeekday(h1.textContent); h1.remove(); }
         else { titleEl.textContent = "수의학 데일리 브리핑 " + d; }
 
         // 미리보기와 복사 결과를 같은 HTML로 맞춘다.
