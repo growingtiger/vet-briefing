@@ -510,7 +510,8 @@
         // 보고서 h1이 같은 이름을 다시 적으면 한 화면에 매체명이 세 번 나온다.
         // 표기가 예상 형태일 때만 날짜 쪽으로 줄인다 — 아니면 원문 그대로 둔다.
         var m = el.textContent.match(/^\s*수의사 이태호의 수의학 데일리 브리핑\s*[—–-]\s*(.+?)\s*$/);
-        if (m) { el.textContent = m[1]; el.classList.add("dateline"); }
+        // 요일은 한 글자로 적는다 (목요일 -> 목). 2026-09-24 원장 지시.
+        if (m) { el.textContent = m[1].replace(/([월화수목금토일])요일/g, "$1"); el.classList.add("dateline"); }
         return;
       }
       if (el.tagName === "P") {
