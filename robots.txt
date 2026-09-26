@@ -1,0 +1,11 @@
+# 수의사 이태호의 수의학 데일리 브리핑
+
+User-agent: *
+Allow: /
+
+# 내부 작업물 — 색인 대상 아님
+Disallow: /marketing/
+Disallow: /vendors/
+Disallow: /drafts/
+
+Sitemap: https://vet-briefing.vercel.app/sitemap.xml
