@@ -1,0 +1,43 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>뒤로가기로 앱이 닫히지 않게 — 20개 앱 적용 결과</title><style>:root{--paper:#fdfaf3;--ink:#2a251f;--ink2:#5b5245;--ink3:#8b8070;--line:#e6dcc8;--gold:#a8802f}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:-apple-system,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;word-break:keep-all}
+main{max-width:760px;margin:0 auto;padding:26px 16px 70px}
+.lab{font-size:12px;letter-spacing:.12em;color:var(--gold);font-weight:700}h1{font-size:21px;margin:6px 0 4px}
+h2{font-size:17px;margin:30px 0 8px;padding-top:16px;border-top:1px solid var(--line)}
+.hd{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:10px}
+button,.btn{font:inherit;font-weight:600;font-size:14px;background:var(--ink);color:#fff;border:0;padding:9px 16px;cursor:pointer;white-space:nowrap;text-decoration:none;display:inline-block}
+button.ok{background:var(--gold)}.links{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.box{border:1px solid var(--line);background:#fff;padding:14px;white-space:pre-wrap;line-height:1.75;font-size:15px;margin-top:8px}
+.note{font-size:14px;color:var(--ink2);line-height:1.6;margin:6px 0 0}
+.imgs{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-top:10px}
+.imgs figure{margin:0;display:grid;gap:6px}.imgs img{width:100%;height:auto;border:1px solid var(--line);display:block}</style></head><body><main><p class="lab">원내 앱 점검</p><h1>뒤로가기로 앱이 닫히지 않게 — 20개 앱 적용 결과</h1><h2>요약</h2><div class="hd"><b></b></div><div class="box" id="x1">20개 앱 모두 코드에 적용했고 19개는 배포까지 마쳤습니다.
+
+안드로이드 뒤로 버튼이나 아이폰 가장자리 밀기를 누르면 이렇게 움직입니다. 열린 창이 있으면 그 창이 먼저 닫히고, 그다음 앞에 보던 탭이나 화면으로 돌아갑니다. 첫 화면에서는 앱이 닫히지 않고 &quot;앱을 닫으려면 홈 화면으로 나가 주십시오&quot; 안내만 뜹니다.
+
+데이터 저장·동기화 코드는 손대지 않았습니다. 마취·혈액투석 기록 앱도 마찬가지입니다.
+
+확인하다가 버그 하나를 잡았습니다. 마취·혈액투석 앱에서 아래 탭을 누르면 오늘 화면으로 튕겼는데, 고쳐서 다시 배포했습니다.
+
+새 화면은 서비스워커 캐시 버전을 올려 두어 휴대폰에서 앱을 한두 번 다시 열면 반영됩니다.</div><h2>앱별 결과</h2><div class="hd"><b></b><button data-t="x2">복사</button></div><div class="box" id="x2">마취 기록 — 적용·배포. 탭, 기록지·환자 창. 로컬에서 확인
+혈액투석 기록 — 적용·배포. 탭, 세션·환자 창. 로컬에서 확인
+수혈 혈액 재고 — 적용·배포. 탭 4개, 팩 등록 창. 로컬에서 확인
+마약류 관리 — 적용·배포. 탭 6개, 관리자 창. 로컬에서 확인
+의뢰환자 관리 — 적용·배포. 대시보드·리셉 보드·통합 포털 3화면. 로컬에서 확인
+스튜디오 예약 — 적용·배포. 탭, 예약 창. 로컬에서 확인
+인재관리 — 적용, 배포 보류. GitHub 저장소가 없어 push 실패. 로컬에서 확인
+진료차트 — 적용·배포. 검색 결과, 고치기 칸. 잠금 화면까지 확인
+건강검진 결과서 — 적용·배포. 새 결과서·편집·참고범위표. 실서버에서 확인
+미용실 예약 — 적용·배포. 하루/1주일 보기, 검색·예약 창. 실서버에서 확인
+논문 번역기·그래픽 초록 — 적용·배포. 번역 화면, 히스토리 창, 편집 탭. 실서버에서 확인
+케이스 카드 — 적용·배포. 1·2·3단계, 설정·보관함 창. 실서버에서 확인
+테크니션 시간표 — 적용·배포. 탭 6개, 칸 수정 창. 실서버에서 확인
+원장실 경영대장 — 적용·배포. 메뉴 10개. 로컬에서 확인
+KAHA 회원 앱 — 적용·배포. 홈·소식·교육·도구, 계산기 → 도구 탭 복귀. 실서버에서 확인
+AAHA CON 수첩 — 적용·배포. 탭 5개, 강의 창. 실서버에서 확인
+미국·캐나다 여행 — 적용·배포. 일정·지도·지출·준비물, 지도·사진 창. 실서버에서 확인
+수의 임상 계산기 — 적용·배포. 분류 바로가기 유지, 처방 점검 2쪽 포함. 실서버에서 확인
+채널 기획실 — 적용·배포. 탭 4개, 기획·이름 창. 실서버에서 확인
+댓글 답글 — 적용·배포. 목록, 답글 화면, 직접 질문. 로컬에서 확인</div><h2>원장님 확인이 필요한 것</h2><div class="hd"><b></b></div><div class="box" id="x3">1. 인재관리 앱(signature-amc-people)은 GitHub에 저장소가 없어 올리지 못했습니다. 저장소를 새로 만들지, 다른 곳에서 배포하고 계신지 알려 주시면 맞춰서 올리겠습니다.
+2. 비밀번호가 걸린 7개 앱(마취·혈액투석·수혈·마약류·의뢰·스튜디오·댓글)은 실서버 로그인 없이 같은 코드를 로컬에서 띄워 확인했습니다. 원장님 휴대폰에서 탭을 몇 번 옮긴 뒤 뒤로가기를 여러 번 눌러 보시면 됩니다.</div></main><script>document.querySelectorAll("button[data-t]").forEach(function(b){b.onclick=function(){var el=document.getElementById(b.dataset.t),t=el.innerText,lab=b.textContent;
+function ok(){b.textContent="복사했습니다";b.classList.add("ok");setTimeout(function(){b.textContent=lab;b.classList.remove("ok")},1500)}
+function sel(){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);try{document.execCommand("copy");ok()}catch(e){}}
+if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(ok,sel)}else sel();}});</script></body></html>

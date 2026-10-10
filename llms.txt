@@ -1,0 +1,10 @@
+# 수의사 이태호의 수의학 데일리 브리핑
+> 시그니처 동물의료센터 대표원장 이태호 수의사가 매일 PubMed 등재 문헌을 조사해 정리하는 공개 브리핑. 신장·투석(매일)과 요일별 임상 과목.
+
+## 페이지
+- [브리핑 홈](https://vet-briefing.vercel.app/)
+- [인스타그램 카드](https://vet-briefing.vercel.app/insta/)
+- [외과·정형외과 브리핑](https://vet-briefing.vercel.app/ortho/)
+
+## 관련
+- [이태호 수의사](https://leetaeho.vercel.app/) · [안운찬 수의사](https://www.ahnwoonchan.com/) · [송우진 수의사](https://songwoojin.vercel.app/) · [시그니처 동물의료센터](https://signatureamc.co.kr/)

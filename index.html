@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>수의사 이태호의 수의학 데일리 브리핑</title>
+<meta name="description" content="수의사 이태호의 수의학 데일리 브리핑 — 신장·투석·응급중환자 중심 최신 문헌 조사">
+<link rel="canonical" href="https://vet-briefing.vercel.app/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:url" content="https://vet-briefing.vercel.app/">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebSite",
+   "@id": "https://vet-briefing.vercel.app/#website",
+   "url": "https://vet-briefing.vercel.app/",
+   "name": "수의사 이태호의 수의학 데일리 브리핑",
+   "inLanguage": "ko",
+   "description": "신장·투석과 응급중환자를 중심으로 매일 최신 수의학 문헌을 정리하는 브리핑",
+   "publisher": {
+    "@id": "https://vet-briefing.vercel.app/#person"
+   }
+  },
+  {
+   "@type": "Person",
+   "@id": "https://vet-briefing.vercel.app/#person",
+   "name": "이태호",
+   "alternateName": "Tae-Ho Lee",
+   "jobTitle": "대표원장",
+   "url": "https://leetaeho.vercel.app/",
+   "worksFor": {
+    "@type": "VeterinaryCare",
+    "name": "시그니처동물의료센터",
+    "telephone": "+82-2-549-0275",
+    "url": "https://signatureamc.co.kr",
+    "address": {
+     "@type": "PostalAddress",
+     "streetAddress": "도산대로 213",
+     "addressLocality": "강남구",
+     "addressRegion": "서울특별시",
+     "addressCountry": "KR"
+    }
+   },
+   "knowsAbout": [
+    "수의내과",
+    "반려동물 신장질환",
+    "혈액투석",
+    "지속적 신대체요법",
+    "응급중환자의학"
+   ],
+   "sameAs": [
+    "https://www.youtube.com/channel/UCwDwL7htetGbWwypB1sYK5A",
+    "https://leetaeho.vercel.app/",
+    "https://blog.naver.com/jwbb"
+   ]
+  }
+ ]
+}
+</script>
+<link rel="icon" href="assets/logo-mark.png">
+<link rel="apple-touch-icon" href="assets/logo-mark.png">
+<meta property="og:title" content="수의사 이태호의 수의학 데일리 브리핑">
+<meta property="og:description" content="시그니처 동물의료센터 대표원장 이태호 — 신장·투석 매일, 요일별 임상 과목 문헌 리뷰">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fafaf8;
+    --surface: #ffffff;
+    --ink: #22303b;
+    --ink-soft: #5b6b76;
+    --accent: #0e7490;
+    --accent-soft: #e6f2f5;
+    --line: #dde4e7;
+    --code-bg: #f0f3f4;
+    /* 시그니처 브랜드 (로고 기준) — 카드뉴스·네이버 초안과 같은 색 체계 */
+    --brand: #212E51;
+    --gold: #AF9476;
+    /* 골드 원색(#AF9476)은 아이보리 위에서 명암비 2.75:1로 본문 글자에 못 쓴다.
+       괘선·세로바에는 원색을 그대로 두고, 글자에는 어둡게 조인 값을 쓴다(4.9:1). */
+    --gold-ink: #87683F;
+    --note-bg: #f6f4f0;
+    --cite-bg: #fafaf8;
+    --cite-bar: #dcd8d0;
+    /* 제호·필자명에만 쓰는 명조 — 개인 홈페이지(leetaeho.vercel.app)와 같은 서체다. */
+    --serif: "Noto Serif KR", "Nanum Myeongjo", "AppleMyungjo", "Batang", serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #10171d;
+      --surface: #17212a;
+      --ink: #d9e2e8;
+      --ink-soft: #8fa1ac;
+      --accent: #4cc4dd;
+      --accent-soft: #16303a;
+      --line: #26333d;
+      --code-bg: #1d2933;
+      /* 어두운 배경에서는 네이비를 그대로 쓸 수 없어 밝은 쪽으로 뒤집는다 */
+      --brand: #cdd8ef;
+      --gold: #c9ae8b;
+      --gold-ink: #c9ae8b;
+      --note-bg: #1b2530;
+      --cite-bg: #141d25;
+      --cite-bar: #33414d;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Apple SD Gothic Neo", "Pretendard", "Noto Sans KR", "Malgun Gothic", sans-serif;
+    line-height: 1.75;
+    font-size: 16px;
+  }
+  header {
+    border-bottom: 1px solid var(--line);
+    background: var(--surface);
+  }
+  .head-inner {
+    max-width: 44rem;
+    margin: 0 auto;
+    padding: 1.1rem 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  /* ── 마스트헤드 ────────────────────────────────────────────
+     신문 제호 구조를 그대로 쓴다. 맨 위 얇은 바가 발행 주체(병원),
+     그 아래가 제호와 필자다. 두 브랜드를 한 덩어리로 뭉개지 않고
+     위계로 나눠 놓아야 어느 쪽도 장식처럼 보이지 않는다. */
+  .brandbar { border-bottom: 1px solid var(--line); }
+  .brandbar-inner {
+    max-width: 44rem;
+    margin: 0 auto;
+    padding: 0.62rem 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.8rem;
+  }
+  .hospital-mark { display: inline-flex; align-items: center; flex: none; }
+  .hospital-mark img { height: 28px; width: auto; display: block; }
+  .hospital-mark img.on-dark { display: none; }
+  /* 네이비 로고는 어두운 배경에서 묻힌다 — 밝은 반전본으로 바꿔 끼운다.
+     이 블록은 반드시 위 기본 규칙 뒤에 와야 한다. 같은 특이도라
+     앞에 두면 순서에서 밀려 두 이미지가 모두 숨는다. */
+  @media (prefers-color-scheme: dark) {
+    .hospital-mark img.on-light { display: none; }
+    .hospital-mark img.on-dark { display: block; }
+  }
+  .brandbar-links {
+    display: flex;
+    gap: 0.85rem;
+    font-size: 0.74rem;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+  }
+  .brandbar-links a { color: var(--ink-soft); text-decoration: none; }
+  .brandbar-links a:hover,
+  .brandbar-links a:focus-visible {
+    color: var(--gold-ink);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .site-title {
+    font-family: var(--serif);
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+    color: var(--brand);
+  }
+  /* 필자 한 줄 — 골드는 여기 한 군데만 쓴다. 여러 곳에 뿌리면 색이 의미를 잃는다. */
+  .site-title .byline {
+    display: block;
+    font-family: inherit;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--gold-ink);
+    letter-spacing: -0.01em;
+    margin-top: 0.34rem;
+  }
+  .site-title .sub {
+    display: block;
+    font-family: "Apple SD Gothic Neo", "Pretendard", "Noto Sans KR", "Malgun Gothic", sans-serif;
+    font-size: 0.76rem;
+    font-weight: 500;
+    color: var(--ink-soft);
+    letter-spacing: 0.01em;
+    margin-top: 0.16rem;
+  }
+  @media (max-width: 34rem) {
+    .brandbar-links { display: none; }   /* 좁은 화면에서는 푸터 콜로폰이 같은 링크를 담당한다 */
+    .site-title { font-size: 1.16rem; }
+  }
+  select {
+    font: inherit;
+    font-size: 0.85rem;
+    color: var(--ink);
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 0.35rem 0.6rem;
+  }
+  select:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+  main {
+    max-width: 44rem;
+    margin: 0 auto;
+    padding: 1.5rem 1.25rem 4rem;
+  }
+  .search-wrap { position: relative; margin-bottom: 1.4rem; }
+  #searchBox {
+    width: 100%;
+    font: inherit;
+    font-size: 0.95rem;
+    color: var(--ink);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 0.65rem 0.9rem;
+  }
+  #searchBox:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+  .search-results {
+    position: absolute;
+    top: calc(100% + 0.4rem);
+    left: 0;
+    right: 0;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    max-height: 60vh;
+    overflow-y: auto;
+    z-index: 10;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
+  }
+  .search-results .hint { padding: 0.75rem 0.9rem; color: var(--ink-soft); font-size: 0.85rem; }
+  .search-result-item {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    border-top: 1px solid var(--line);
+    padding: 0.7rem 0.9rem;
+    cursor: pointer;
+    color: var(--ink);
+    font: inherit;
+  }
+  .search-result-item:first-child { border-top: none; }
+  .search-result-item:hover, .search-result-item:focus { background: var(--accent-soft); }
+  .search-result-date { font-size: 0.78rem; color: var(--accent); font-weight: 700; margin-bottom: 0.2rem; }
+  .search-result-snippet { font-size: 0.86rem; color: var(--ink-soft); line-height: 1.5; }
+  .search-result-snippet mark, article mark {
+    background: var(--accent-soft);
+    color: var(--accent);
+    padding: 0 0.15em;
+    border-radius: 3px;
+  }
+  #status { color: var(--ink-soft); font-size: 0.9rem; }
+  article h1 {
+    font-size: 1.5rem; line-height: 1.35; letter-spacing: -0.02em;
+    text-wrap: balance; color: var(--brand); margin-bottom: 0.5em;
+  }
+  /* 날짜만 남은 제목 — 호수(號數)처럼 읽히도록 명조로 세운다 */
+  article h1.dateline {
+    font-family: var(--serif);
+    font-size: 1.62rem;
+    font-weight: 600;
+    margin-bottom: 0.34em;
+  }
+  /* 보고서 본문에 이미 --- 구분선이 들어오므로 h2에 윗줄을 또 긋지 않는다.
+     대신 골드 세로바로 섹션 시작을 표시한다 (카드뉴스·네이버 초안과 동일). */
+  article h2 {
+    font-size: 1.24rem;
+    line-height: 1.45;
+    margin: 2.1em 0 0.9em;
+    padding-left: 0.62em;
+    border-left: 4px solid var(--gold);
+    color: var(--brand);
+    letter-spacing: -0.015em;
+  }
+  article h3 {
+    font-size: 1.08rem;
+    line-height: 1.55;
+    margin: 1.9em 0 0.6em;
+    color: var(--brand);
+    letter-spacing: -0.012em;
+  }
+  /* 제목 바로 아래 "오늘의 집중 과목" 한 줄 */
+  article p.subject {
+    color: var(--gold-ink);
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin: 0 0 1.6em;
+    letter-spacing: -0.01em;
+  }
+  article p.subject strong { font-weight: 700; }
+  /* "임상적 의미" 문단 — 본문에서 한 단계 들어올린다 */
+  article p.note {
+    background: var(--note-bg);
+    border-left: 3px solid var(--gold);
+    border-radius: 0 8px 8px 0;
+    padding: 0.85em 1.1em;
+    margin: 0 0 1.35em;
+  }
+  /* 출처·원제·근거 수준·교신저자 4줄 — 작은 인용 카드로 묶는다 */
+  article ul.cite {
+    list-style: none;
+    padding: 0.85em 1.1em;
+    margin: 0 0 1.7em;
+    background: var(--cite-bg);
+    border-left: 3px solid var(--cite-bar);
+    border-radius: 0 8px 8px 0;
+    font-size: 0.86rem;
+    line-height: 1.75;
+    color: var(--ink-soft);
+  }
+  article ul.cite li { margin: 0.18em 0; }
+  article ul.cite strong { color: var(--ink); font-weight: 600; }
+  article ul.cite em { color: var(--ink); }
+  article a { color: var(--accent); text-underline-offset: 3px; }
+  article blockquote {
+    margin: 1em 0;
+    padding: 0.6em 1em;
+    border-left: 3px solid var(--accent);
+    background: var(--accent-soft);
+    border-radius: 0 8px 8px 0;
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+  }
+  article blockquote p { margin: 0.3em 0; }
+  article code {
+    background: var(--code-bg);
+    border-radius: 4px;
+    padding: 0.1em 0.4em;
+    font-size: 0.88em;
+  }
+  article pre { background: var(--code-bg); border-radius: 8px; padding: 1em; overflow-x: auto; }
+  article pre code { background: none; padding: 0; }
+  article hr { border: none; border-top: 1px solid var(--line); margin: 2.2em 0; }
+  article ul, article ol { padding-left: 1.4em; }
+  article li { margin: 0.35em 0; }
+  article table { border-collapse: collapse; width: 100%; display: block; overflow-x: auto; }
+  article th, article td { border: 1px solid var(--line); padding: 0.45em 0.7em; font-size: 0.92rem; }
+  /* ── 콜로폰: 필자와 병원 ───────────────────────────────────
+     본문이 끝난 자리에 누가 썼고 어디서 나왔는지를 둔다. 위쪽 마스트헤드가
+     이름만 걸어두는 자리라면 여기는 실체를 적는 자리다. 두 블록의 리듬을
+     일부러 다르게 뒀다 — 필자는 사진을 낀 가로 배치, 병원은 로고를 세운
+     세로 배치. 같은 모양을 두 번 반복하면 그때부터 템플릿으로 보인다. */
+  footer {
+    max-width: 44rem;
+    margin: 0 auto;
+    padding: 0 1.25rem 3rem;
+    color: var(--ink-soft);
+    font-size: 0.8rem;
+    border-top: none;
+  }
+  .colophon-author {
+    display: flex;
+    gap: 1.05rem;
+    align-items: flex-start;
+    padding-top: 1.7rem;
+    border-top: 1px solid var(--line);
+  }
+  .colophon-author img {
+    width: 74px;
+    height: 74px;
+    flex: none;
+    object-fit: cover;
+    border-radius: 2px;
+    box-shadow: 0 0 0 1px var(--line);
+  }
+  .author-name {
+    font-family: var(--serif);
+    font-size: 1.06rem;
+    font-weight: 600;
+    color: var(--brand);
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+  }
+  .author-role {
+    margin-top: 0.3rem;
+    font-size: 0.79rem;
+    line-height: 1.65;
+    color: var(--ink-soft);
+  }
+  .author-note {
+    margin-top: 0.42rem;
+    font-size: 0.81rem;
+    line-height: 1.7;
+    color: var(--ink);
+  }
+  .colophon-links {
+    margin-top: 0.6rem;
+    display: flex;
+    gap: 0.9rem;
+    flex-wrap: wrap;
+    font-size: 0.78rem;
+  }
+  .colophon-links a {
+    color: var(--accent);
+    text-decoration: none;
+    text-underline-offset: 3px;
+  }
+  .colophon-links a:hover, .colophon-links a:focus-visible { text-decoration: underline; }
+
+  .colophon-hospital {
+    margin-top: 2.1rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--line);
+  }
+  /* 병원 블록만 골드 짧은 괘선으로 열어 준다. 면을 칠하는 대신 선 하나로
+     구분하면 카드가 겹겹이 쌓이는 인상을 피할 수 있다. */
+  .colophon-hospital::before {
+    content: "";
+    display: block;
+    width: 34px;
+    height: 2px;
+    background: var(--gold);
+    margin-bottom: 1.15rem;
+  }
+  .colophon-hospital .hospital-mark img { height: 34px; }
+  .hospital-meta {
+    margin-top: 0.85rem;
+    font-size: 0.79rem;
+    line-height: 1.85;
+    color: var(--ink-soft);
+  }
+  .hospital-meta .em { color: var(--ink); }
+  /* 모바일에서 눌러 바로 걸 수 있게 — 병원 정보 블록에서 실제로 쓰이는 동작이다 */
+  .hospital-meta .tel {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--line);
+  }
+  .hospital-meta .tel:hover, .hospital-meta .tel:focus-visible { border-bottom-color: var(--gold); }
+  .colophon-note {
+    margin-top: 2rem;
+    padding-top: 1.15rem;
+    border-top: 1px solid var(--line);
+    font-size: 0.76rem;
+    line-height: 1.75;
+    color: var(--ink-soft);
+  }
+  @media (max-width: 34rem) {
+    .colophon-author { gap: 0.85rem; }
+    .colophon-author img { width: 60px; height: 60px; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="brandbar">
+    <div class="brandbar-inner">
+      <a class="hospital-mark" href="https://signatureamc.co.kr" target="_blank" rel="noopener noreferrer" aria-label="시그니처 동물의료센터">
+        <img class="on-light" src="assets/logo-signature.png" alt="시그니처 동물의료센터">
+        <img class="on-dark" src="assets/logo-signature-dark.png" alt="" aria-hidden="true">
+      </a>
+      <nav class="brandbar-links" aria-label="관련 채널">
+        <a href="https://leetaeho.vercel.app/" target="_blank" rel="noopener noreferrer">이태호 수의사</a>
+        <a href="https://signatureamc.co.kr" target="_blank" rel="noopener noreferrer">병원 홈페이지</a>
+        <a href="https://blog.naver.com/signatureamc" target="_blank" rel="noopener noreferrer">병원 블로그</a>
+      </nav>
+    </div>
+  </div>
+  <div class="head-inner">
+    <div class="site-title">수의학 데일리 브리핑
+      <span class="byline">수의사 이태호 · 시그니처 동물의료센터 대표원장</span>
+      <span class="sub">신장·투석 매일 · 요일별 임상 과목 문헌 리뷰</span>
+    </div>
+    <label>지난 브리핑
+      <select id="datePicker" aria-label="브리핑 날짜 선택"></select>
+    </label>
+  </div>
+</header>
+<main>
+  <div class="search-wrap">
+    <input type="search" id="searchBox" placeholder="지난 브리핑 검색 (질환명, 약물명, 저자, PMID 등)" aria-label="지난 브리핑 검색" autocomplete="off">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <p id="status">브리핑을 불러오는 중…</p>
+  <article id="content"></article>
+</main>
+<footer>
+  <div class="colophon-author">
+    <img src="assets/portrait.jpg" alt="이태호 수의사" width="74" height="74" loading="lazy">
+    <div>
+      <div class="author-name">이태호</div>
+      <div class="author-role">시그니처 동물의료센터 대표원장<br>건국대학교 수의과대학 임상내과학 겸임교수</div>
+      <p class="author-note">개와 고양이의 내과를 봅니다. 심장과 종양, 신장, 그리고 나이가 들며 여러 질환이 한꺼번에 겹치는 환자를 주로 봅니다.</p>
+      <div class="colophon-links">
+        <a href="https://leetaeho.vercel.app/" target="_blank" rel="noopener noreferrer">프로필 &#8599;</a>
+        <a href="https://www.youtube.com/@%EC%9D%B4%ED%83%9C%ED%98%B8%EC%88%98%EC%9D%98%EC%82%AC" target="_blank" rel="noopener noreferrer">유튜브 &#8599;</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="colophon-hospital">
+    <a class="hospital-mark" href="https://signatureamc.co.kr" target="_blank" rel="noopener noreferrer" aria-label="시그니처 동물의료센터">
+      <img class="on-light" src="assets/logo-signature.png" alt="시그니처 동물의료센터" loading="lazy">
+      <img class="on-dark" src="assets/logo-signature-dark.png" alt="" aria-hidden="true" loading="lazy">
+    </a>
+    <div class="hospital-meta">
+      서울특별시 강남구 도산대로 213<br>
+      대표전화 <a class="tel" href="tel:0225490275">02-549-0275</a> · 365일 24시간 응급진료
+    </div>
+    <div class="colophon-links">
+      <a href="https://signatureamc.co.kr" target="_blank" rel="noopener noreferrer">병원 홈페이지 &#8599;</a>
+      <a href="https://blog.naver.com/signatureamc" target="_blank" rel="noopener noreferrer">병원 블로그 &#8599;</a>
+      <a href="https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%20%EA%B0%95%EB%82%A8%EA%B5%AC%20%EB%8F%84%EC%82%B0%EB%8C%80%EB%A1%9C%20213" target="_blank" rel="noopener noreferrer">오시는 길 &#8599;</a>
+    </div>
+  </div>
+
+  <p class="colophon-note">
+    매일 아침 PubMed 등재 문헌을 조사해 정리합니다.
+    요약·해석에 오류가 있을 수 있으니 원문(출처 링크)을 확인하세요.
+  </p>
+</footer>
+<script src="assets/marked.min.js"></script>
+<script>
+(function () {
+  var status = document.getElementById("status");
+  var content = document.getElementById("content");
+  var picker = document.getElementById("datePicker");
+  var searchBox = document.getElementById("searchBox");
+  var searchResults = document.getElementById("searchResults");
+
+  var reportCache = {};   // date -> raw markdown text
+  var archiveDates = [];
+  var searchTimer = null;
+  var pendingHighlight = null;
+
+  marked.use({
+    renderer: {
+      link: function (href, title, text) {
+        var titleAttr = title ? ' title="' + title + '"' : "";
+        return '<a href="' + href + '" target="_blank" rel="noopener noreferrer"' + titleAttr + '>' + text + '</a>';
+      },
+      // marked는 물결표 하나(~)도 취소선으로 해석한다. 보고서에는 "1.58~2.83" 같은
+      // 수치 범위 표기가 흔해서, 한 문단에 ~가 두 번 나오면 그 사이가 통째로 취소선이
+      // 되어 버린다. 취소선은 쓸 일이 없으므로 물결표를 원문 그대로 되돌린다.
+      del: function (text) { return '~' + text + '~'; }
+    }
+  });
+
+  // 한글 뒤에는 \b(단어 경계)가 걸리지 않으므로 라벨 뒤 구분자까지 함께 본다.
+  // 구분자는 em dash(현행)와 콜론(8/19 이전 아카이브)을 모두 받는다.
+  var META_LABEL = /^\s*(출처|원제|근거\s?수준|교신저자)\s*[—–\-:：]/;
+
+  // 마크다운만으로는 구분되지 않는 블록(집중 과목, 임상적 의미, 출처 묶음)에
+  // 클래스를 붙여 CSS가 잡아줄 수 있게 한다. 보고서 원문은 건드리지 않는다.
+  function decorate() {
+    Array.prototype.slice.call(content.children).forEach(function (el, i) {
+      if (el.tagName === "H1") {
+        // 제호(마스트헤드)가 이미 "수의학 데일리 브리핑 / 수의사 이태호"를 달고 있다.
+        // 보고서 h1이 같은 이름을 다시 적으면 한 화면에 매체명이 세 번 나온다.
+        // 표기가 예상 형태일 때만 날짜 쪽으로 줄인다 — 아니면 원문 그대로 둔다.
+        var m = el.textContent.match(/^\s*수의사 이태호의 수의학 데일리 브리핑\s*[—–-]\s*(.+?)\s*$/);
+        // 요일은 한 글자로 적는다 (목요일 -> 목). 2026-09-24 원장 지시.
+        if (m) { el.textContent = m[1].replace(/([월화수목금토일])요일/g, "$1"); el.classList.add("dateline"); }
+        return;
+      }
+      if (el.tagName === "P") {
+        var t = el.textContent;
+        if (i < 3 && /오늘의 집중 과목/.test(t)) { el.className = "subject"; return; }
+        if (/^\s*임상적 의미/.test(t)) { el.className = "note"; }
+        return;
+      }
+      if (el.tagName === "UL") {
+        var first = el.querySelector("li");
+        if (first && META_LABEL.test(first.textContent)) el.className = "cite";
+      }
+    });
+  }
+
+  function show(md) {
+    content.innerHTML = marked.parse(md);
+    decorate();
+    status.textContent = "";
+    if (pendingHighlight) {
+      highlightTerm(pendingHighlight);
+      pendingHighlight = null;
+    }
+  }
+
+  function escapeRe(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); }
+
+  function highlightTerm(term) {
+    if (!term) return;
+    var re = new RegExp("(" + escapeRe(term) + ")", "i");
+    var walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+    var nodes = [];
+    var node;
+    while ((node = walker.nextNode())) nodes.push(node);
+    var first = null;
+    nodes.forEach(function (n) {
+      if (!re.test(n.nodeValue)) return;
+      var span = document.createElement("span");
+      span.innerHTML = n.nodeValue.replace(new RegExp(escapeRe(term), "gi"), "<mark>$&</mark>");
+      n.parentNode.replaceChild(span, n);
+      if (!first) first = span.querySelector("mark");
+    });
+    if (first) first.scrollIntoView({ behavior: "smooth", block: "center" });
+  }
+
+  function loadDate(d) {
+    status.textContent = "브리핑을 불러오는 중…";
+    fetchReport(d).then(function (md) {
+      if (md === null) { status.textContent = "이 날짜의 브리핑을 불러오지 못했습니다."; return; }
+      show(md);
+    });
+  }
+
+  function fetchReport(d) {
+    if (reportCache[d] !== undefined) return Promise.resolve(reportCache[d]);
+    return fetch("reports/" + d + ".md", { cache: "no-store" })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+      .then(function (md) { reportCache[d] = md; return md; })
+      .catch(function () { reportCache[d] = null; return null; });
+  }
+
+  function stripMd(md) {
+    return md
+      .replace(/```[\s\S]*?```/g, " ")
+      .replace(/`([^`]+)`/g, "$1")
+      .replace(/!\[[^\]]*\]\([^)]*\)/g, " ")
+      .replace(/\[([^\]]+)\]\([^)]*\)/g, "$1")
+      .replace(/[#>*_~]/g, " ")
+      .replace(/\s+/g, " ")
+      .trim();
+  }
+
+  function runSearch(query) {
+    var keywords = query.trim().split(/\s+/).filter(Boolean);
+    if (!keywords.length) {
+      searchResults.hidden = true;
+      searchResults.innerHTML = "";
+      return;
+    }
+    searchResults.hidden = false;
+    searchResults.innerHTML = '<div class="hint">검색 중…</div>';
+    Promise.all(archiveDates.map(fetchReport)).then(function () {
+      var re = new RegExp("(" + keywords.map(escapeRe).join("|") + ")", "gi");
+      var matches = [];
+      archiveDates.slice().sort().reverse().forEach(function (d) {
+        var raw = reportCache[d];
+        if (!raw) return;
+        var text = stripMd(raw);
+        var lower = text.toLowerCase();
+        var ok = keywords.every(function (k) { return lower.indexOf(k.toLowerCase()) !== -1; });
+        if (!ok) return;
+        var idx = lower.indexOf(keywords[0].toLowerCase());
+        var start = Math.max(0, idx - 40);
+        var snippet = (start > 0 ? "…" : "") + text.slice(start, start + 140) + "…";
+        matches.push({ date: d, snippet: snippet.replace(re, "<mark>$1</mark>") });
+      });
+      if (!matches.length) {
+        searchResults.innerHTML = '<div class="hint">일치하는 브리핑이 없습니다.</div>';
+        return;
+      }
+      searchResults.innerHTML = "";
+      matches.forEach(function (m) {
+        var item = document.createElement("button");
+        item.type = "button";
+        item.className = "search-result-item";
+        item.innerHTML = '<div class="search-result-date">' + m.date + '</div><div class="search-result-snippet">' + m.snippet + "</div>";
+        item.addEventListener("click", function () {
+          pendingHighlight = keywords[0];
+          picker.value = m.date;
+          loadDate(m.date);
+          history.replaceState(null, "", "?d=" + m.date);
+          searchResults.hidden = true;
+        });
+        searchResults.appendChild(item);
+      });
+    });
+  }
+
+  searchBox.addEventListener("input", function () {
+    clearTimeout(searchTimer);
+    var q = searchBox.value;
+    searchTimer = setTimeout(function () { runSearch(q); }, 200);
+  });
+  searchBox.addEventListener("focus", function () {
+    if (searchBox.value.trim()) searchResults.hidden = false;
+  });
+  searchBox.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") { searchResults.hidden = true; searchBox.blur(); }
+    if (e.key === "Enter") {
+      var first = searchResults.querySelector(".search-result-item");
+      if (first) first.click();
+    }
+  });
+  document.addEventListener("click", function (e) {
+    if (e.target !== searchBox && !searchResults.contains(e.target)) searchResults.hidden = true;
+  });
+
+  fetch("archive.json", { cache: "no-store" })
+    .then(function (r) { return r.json(); })
+    .then(function (a) {
+      archiveDates = a.dates;
+      var params = new URLSearchParams(location.search);
+      var want = params.get("d");
+      var current = (want && a.dates.indexOf(want) !== -1) ? want : a.latest;
+      a.dates.slice().sort().reverse().forEach(function (d) {
+        var o = document.createElement("option");
+        o.value = d;
+        o.textContent = d + (d === a.latest ? " (최신)" : "");
+        picker.appendChild(o);
+      });
+      picker.value = current;
+      picker.addEventListener("change", function () {
+        loadDate(picker.value);
+        history.replaceState(null, "", "?d=" + picker.value);
+      });
+      loadDate(current);
+    })
+    .catch(function () { status.textContent = "목록을 불러오지 못했습니다."; });
+})();
+</script>
+</body>
+</html>

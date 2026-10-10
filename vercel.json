@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/drafts/hub/:path*", "destination": "https://signature-hub-eta.vercel.app/:path*" }
+  ]
+}

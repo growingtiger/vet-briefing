@@ -1,0 +1,27 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>강의 준비실 앱</title><style>:root{--paper:#fdfaf3;--ink:#2a251f;--ink2:#5b5245;--ink3:#8b8070;--line:#e6dcc8;--gold:#a8802f}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:-apple-system,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;word-break:keep-all}
+main{max-width:760px;margin:0 auto;padding:26px 16px 70px}
+.lab{font-size:12px;letter-spacing:.12em;color:var(--gold);font-weight:700}h1{font-size:21px;margin:6px 0 4px}
+h2{font-size:17px;margin:30px 0 8px;padding-top:16px;border-top:1px solid var(--line)}
+.hd{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:10px}
+button,.btn{font:inherit;font-weight:600;font-size:14px;background:var(--ink);color:#fff;border:0;padding:9px 16px;cursor:pointer;white-space:nowrap;text-decoration:none;display:inline-block}
+button.ok{background:var(--gold)}.links{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.box{border:1px solid var(--line);background:#fff;padding:14px;white-space:pre-wrap;line-height:1.75;font-size:15px;margin-top:8px}
+.note{font-size:14px;color:var(--ink2);line-height:1.6;margin:6px 0 0}
+.imgs{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-top:10px}
+.imgs figure{margin:0;display:grid;gap:6px}.imgs img{width:100%;height:auto;border:1px solid var(--line);display:block}</style></head><body><main><p class="lab">AI 교육</p><h1>강의 준비실 앱</h1><h2>강의 준비실에서 하는 일</h2><p class="note">기수 탭: 기수별 교육일·D-day·상태, 수강생별 입금·노트북 준비 체크와 메모, 기수 할 일 목록(단톡방부터 교육 진행까지 9단계). 수강생은 신청 명단에서 자동으로 들어오고, 대기자와 과정 2 방문 세팅(김수정 원장님)도 따로 보입니다. 강의 자료 탭: 슬라이드·대본·실습 과제·안내 문안을 쓰고 보관합니다. PPTX·PDF 파일은 3MB까지 붙일 수 있습니다. 그동안 만든 안내 문안 9개와 교육 당일 준비물 체크리스트 초안을 미리 넣어 두었습니다. 결과물 탭: 모집 페이지, 홍보물, 언론 자료, 문서, 운영 카톡 모음 20개 링크를 분류해 두었고, 새 링크도 더할 수 있습니다. 여러 기기에서 같이 보며, 고친 내용은 바로 서버에 저장됩니다.</p><div class="links"><a class="btn" href="https://leetaeho.co.kr/ai-class/studio" target="_blank" rel="noopener">강의 준비실 열기</a></div><h2>설치 방법 (한 번만)</h2><div class="hd"><b></b><button data-t="x1">복사</button></div><div class="box" id="x1">아이폰
+1. 사파리(Safari)에서 https://leetaeho.co.kr/ai-class/studio 를 엽니다.
+2. 화면 아래 공유 버튼(네모에 위쪽 화살표) → &#x27;홈 화면에 추가&#x27;를 누릅니다.
+3. 이름이 &#x27;강의 준비실&#x27;로 나오면 오른쪽 위 &#x27;추가&#x27;를 누릅니다.
+4. 홈 화면의 남색 &#x27;AI 강의 준비실&#x27; 아이콘을 눌러 엽니다.
+5. 신청 명단과 같은 관리 비밀번호를 넣고 &#x27;이 기기에서 로그인 유지&#x27;가 체크된 상태로 &#x27;열기&#x27;를 누릅니다.
+
+안드로이드
+1. 크롬(Chrome)에서 https://leetaeho.co.kr/ai-class/studio 를 엽니다.
+2. 오른쪽 위 점 세 개 메뉴 → &#x27;앱 설치&#x27; 또는 &#x27;홈 화면에 추가&#x27; → &#x27;설치&#x27;를 누릅니다.
+3. 아이콘으로 열어 비밀번호를 넣고 &#x27;열기&#x27;를 누릅니다.
+
+확인: 위쪽에 &#x27;기수 · 강의 자료 · 결과물&#x27; 탭이 보이고, 기수 탭에 1기 11월 26일(목)과 수강생 다섯 분이 나오면 됩니다. 홈 화면 앱은 앱마다 로그인을 따로 기억하므로, 수강생 관리 앱과 별개로 한 번 로그인해 주셔야 합니다.</div></main><script>document.querySelectorAll("button[data-t]").forEach(function(b){b.onclick=function(){var el=document.getElementById(b.dataset.t),t=el.innerText,lab=b.textContent;
+function ok(){b.textContent="복사했습니다";b.classList.add("ok");setTimeout(function(){b.textContent=lab;b.classList.remove("ok")},1500)}
+function sel(){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);try{document.execCommand("copy");ok()}catch(e){}}
+if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(ok,sel)}else sel();}});</script></body></html>

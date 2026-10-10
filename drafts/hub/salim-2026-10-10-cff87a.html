@@ -1,0 +1,45 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>10월 10일 병원 프로그램 운영비</title><style>:root{--paper:#fdfaf3;--ink:#2a251f;--ink2:#5b5245;--ink3:#8b8070;--line:#e6dcc8;--gold:#a8802f}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:-apple-system,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;word-break:keep-all}
+main{max-width:760px;margin:0 auto;padding:26px 16px 70px}
+.lab{font-size:12px;letter-spacing:.12em;color:var(--gold);font-weight:700}h1{font-size:21px;margin:6px 0 4px}
+h2{font-size:17px;margin:30px 0 8px;padding-top:16px;border-top:1px solid var(--line)}
+.hd{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:10px}
+button,.btn{font:inherit;font-weight:600;font-size:14px;background:var(--ink);color:#fff;border:0;padding:9px 16px;cursor:pointer;white-space:nowrap;text-decoration:none;display:inline-block}
+button.ok{background:var(--gold)}.links{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.box{border:1px solid var(--line);background:#fff;padding:14px;white-space:pre-wrap;line-height:1.75;font-size:15px;margin-top:8px}
+.note{font-size:14px;color:var(--ink2);line-height:1.6;margin:6px 0 0}
+.imgs{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-top:10px}
+.imgs figure{margin:0;display:grid;gap:6px}.imgs img{width:100%;height:auto;border:1px solid var(--line);display:block}</style></head><body><main><p class="lab">살림 · 운영비</p><h1>10월 10일 병원 프로그램 운영비</h1><h2>서비스별</h2><div class="hd"><b></b></div><div class="box" id="x1">Claude Max 5x  어제 ₩6,048 / 이번 달 예상 ₩187,500
+Supabase Pro  어제 ₩2,138 / 이번 달 예상 ₩66,288
+Vercel Pro  어제 ₩894 / 이번 달 예상 ₩50,372
+Claude API (앱이 쓰는 종량제)  어제 ₩1,181 / 이번 달 예상 ₩42,723
+Plaud Unlimited  어제 ₩956 / 이번 달 예상 ₩29,083
+GitHub Free  어제 ₩0 / 이번 달 예상 ₩0
+
+합계  어제 ₩11,218 / 이번 달 예상 ₩375,966
+환율 1달러 = 1,341.6원</div><h2>Claude 구독 활용</h2><div class="hd"><b></b></div><div class="box" id="x2">Claude Code API 환산 어제 ₩148,407, 이번 달 ₩1,136,156어치 사용. 구독료 월 ₩187,500. 주간 한도 10% 사용(초기화 2026-10-15).</div><h2>바꿀 것</h2><p class="note">&quot;살림아 N번 적용해&quot;라고 말씀하시면 그 항목만 적용합니다.</p><div class="hd"><b></b><button data-t="x3">복사</button></div><div class="box" id="x3">2. Vercel 사용료가 포함 크레딧 $20을 곧 넘습니다
+근거: 이번 주기(2026-09-20~2026-10-19) 사용료 $19.55, 최근 7일 평균 하루 $1.64. 이대로면 주기 말 $37.55로 $17.55(약 ₩23,540)가 추가 청구됩니다.
+제안: 아래 빌드·호출 제안을 적용하면 대부분 줄어듭니다.
+
+3. Vercel 빌드 비용의 44%가 vet-briefing 배포입니다  [승인 후 적용]
+근거: 빌드는 Vercel 사용료 중 가장 큰 항목입니다(이번 주기 $11.91, 3404분). 그중 vet-briefing이 1484분입니다. 배포 파일이 약 1,200MB라 한 번 배포가 오래 걸리고, 어제 커밋 34건 중 21건이 카톡 모음 페이지(kakao_hub.py)였습니다.
+제안: 카톡 모음 페이지(drafts/hub)만 작은 별도 Vercel 프로젝트로 옮기고 vet-briefing.vercel.app/drafts/hub/* 는 그쪽으로 넘겨줍니다(rewrites). 카카오 등록 도메인은 그대로라 버튼은 똑같이 열립니다. 빌드 시간이 크게 줄 것으로 예상합니다.
+
+5. 리셉 알림 보드가 기기마다 3초에 한 번 서버를 부릅니다  [승인 후 적용]
+근거: 10월 1일 밤 리셉 알림 보드를 도입한 뒤(10월 2일부터 상시 3초) 의뢰 앱 서버 호출이 하루 16,443~22,276건에서 108,238~178,139건으로 늘었습니다. 이번 주기 이 앱 Vercel 비용 $6.71로 프로젝트 중 가장 큽니다.
+제안: 화면이 켜져 있고 진료 시간(08~21시)일 때만 3초, 화면이 꺼졌거나 다른 탭이면 30초, 진료 시간 밖이면 60초로 바꿉니다. 진료 중 알림 속도는 그대로입니다.
+
+1. Claude API 비용의 44%가 어느 앱이 쓴 건지 모릅니다  [승인 후 적용]
+근거: 최근 30일 $38.16 중 여러 앱이 같이 쓰는 공용 키(growingtiger-api-key 2개)가 $16.98입니다. 앱마다 키를 따로 쓰면 앱별 비용이 보입니다.
+제안: 공용 키를 쓰는 앱(혈액투석·증례·의뢰·유튜브 앱 등)에 앱 이름을 붙인 새 키를 하나씩 발급해 Vercel 환경변수만 바꿉니다. 비용 변화 없음, 추적만 좋아집니다.
+
+4. Observability Plus 이벤트 요금이 $3.36 나왔습니다  [승인 후 적용]
+근거: 이번 주기 이벤트 2,796,111건(100만 건당 $1.20).
+제안: 로그 상세 분석을 따로 보지 않으신다면 Observability Plus를 끕니다. 끈 뒤로는 이 요금이 생기지 않습니다(이미 쌓인 이번 주기 분은 청구). 기본 로그는 남지만 보관 기간이 30일에서 1일로 줄어듭니다. 프로젝트별로만 빼는 방법도 있습니다.
+
+6. 앱 9개가 이전 세대 Claude 모델을 씁니다  [승인 후 적용]
+근거: signature-amc-anes(claude-opus-5), signature-amc-cases(claude-opus-5/claude-sonnet-5/claude-haiku-4-5), signature-amc-hd(claude-opus-5), signature-amc-papers(claude-sonnet-5/claude-opus-5/claude-haiku-4-5), signature-amc-referral(claude-sonnet-5/claude-opus-5/claude-haiku-4-5), vet-calculator(claude-opus-5/claude-sonnet-5/claude-haiku-4-5), taeho-yt-growth(claude-opus-5), taeho-yt-replies(claude-opus-5), aaha-con-2026(claude-opus-5). claude-haiku-4-5 → claude-haiku-5-5: Haiku 5.5가 단가 1/10($1/$5 → $0.10/$0.50, 10만 토큰 이하 요청 기준); claude-opus-5 → claude-opus-5-5: Opus 5.5가 단가 20% 낮다($5/$25 → $4/$20, 백만 토큰당 입력/출력); claude-sonnet-5 → claude-sonnet-5-5: 같은 단가의 다음 세대. 앱 전체 Claude API 비용이 월 ₩42,723 안팎이라 절감액 자체는 크지 않습니다.
+제안: 모델 이름만 바꾸는 작업이지만 결과 문체·형식이 달라질 수 있어, 앱별로 실제 사례 3~5건을 비교한 뒤 배포합니다. 진료 기록 앱(마취·투석)은 맨 마지막에 합니다.</div><h2>원본 화면</h2><div class="links"><a class="btn" href="https://platform.claude.com/cost?group_by=key_id" target="_blank" rel="noopener">Claude API 비용</a><a class="btn" href="https://vercel.com/growingtigers-projects/~/usage" target="_blank" rel="noopener">Vercel 사용량</a><a class="btn" href="https://supabase.com/dashboard/org/xsbppvavhczpccncsffv/billing" target="_blank" rel="noopener">Supabase 청구</a><a class="btn" href="https://claude.ai/settings/usage" target="_blank" rel="noopener">Claude 사용량</a></div></main><script>document.querySelectorAll("button[data-t]").forEach(function(b){b.onclick=function(){var el=document.getElementById(b.dataset.t),t=el.innerText,lab=b.textContent;
+function ok(){b.textContent="복사했습니다";b.classList.add("ok");setTimeout(function(){b.textContent=lab;b.classList.remove("ok")},1500)}
+function sel(){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);try{document.execCommand("copy");ok()}catch(e){}}
+if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(ok,sel)}else sel();}});</script></body></html>

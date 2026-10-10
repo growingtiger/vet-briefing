@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>블로그 초안 2026-09-12</title>
+<style>
+  :root { --ink:#22303b; --soft:#5b6b76; --accent:#0e7490; --line:#dde4e7; --bg:#fafaf8; }
+  @media (prefers-color-scheme: dark) {
+    :root { --ink:#d9e2e8; --soft:#8fa1ac; --accent:#4cc4dd; --line:#26333d; --bg:#10171d; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); line-height:1.8;
+    font-family:"Apple SD Gothic Neo","Pretendard","Noto Sans KR",sans-serif; }
+  .wrap { max-width:42rem; margin:0 auto; padding:1.5rem 1.25rem 4rem; }
+  .meta { font-size:0.85rem; color:var(--soft); border:1px solid var(--line);
+    border-radius:10px; padding:0.8rem 1rem; margin-bottom:1.2rem; }
+  .btns { display:flex; gap:0.6rem; flex-wrap:wrap; margin-bottom:1.6rem; }
+  button { font:inherit; font-size:0.9rem; font-weight:600; color:#fff;
+    background:var(--accent); border:none; border-radius:8px;
+    padding:0.6rem 1.1rem; cursor:pointer; }
+  button.secondary { color:var(--accent); background:transparent;
+    border:1.5px solid var(--accent); }
+  h1 { font-size:1.5rem; line-height:1.4; }
+  article h3 { font-size:1.1rem; margin-top:2em; }
+  article p { margin:1em 0; }
+  article blockquote { margin:1.4em 0; padding:0.2em 1em; border-left:3px solid var(--accent); color:var(--soft); }
+  article img { max-width:100%; height:auto; border:1px solid var(--line); border-radius:8px; }
+  article table { border-collapse:collapse; width:100%; margin:1.2em 0; font-size:0.92em; }
+  article th, article td { border:1px solid var(--line); padding:0.5em 0.7em; text-align:left; }
+  article th { background:rgba(14,116,144,0.08); }
+  hr { border:none; border-top:1px solid var(--line); margin:2rem 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="meta">
+    블로그 글 초안 · 2026-09-12 · 카테고리 제안: 배움의 끈, 주간 저널클럽<br>
+    검토 후 수정할 부분이 있으면 편하게 고쳐서 올려주세요.<br>
+    그림이 붙여넣기에 포함되지 않으면, 그림을 길게 눌러(또는 우클릭) 저장한 뒤 에디터에서 삽입해 주세요.
+  </div>
+  <div class="btns">
+    <button id="copyTitle" type="button">제목 복사</button>
+    <button id="copyBody" class="secondary" type="button">본문 복사 (서식 유지)</button>
+  </div>
+  <h1 id="title">자궁축농증은 수술로 끝나는 병일까요 — 625마리의 예후를 가른 것은 크레아티닌이었습니다</h1>
+  <hr>
+  <article id="body">
+<p>안녕하세요. 신장질환과 혈액투석, 응급중환자 진료를 하는 수의사 안운찬입니다.</p><p>자궁축농증은 제 진료 목록에 없는 병입니다. 진단이 붙으면 수술방으로 갑니다. 자궁을 들어내면 원인이 사라지니까요.</p><p>그런데 이 병을 중환자실에서 다시 만나는 경우가 있습니다. 수술은 깔끔하게 끝났는데 소변이 줄고 크레아티닌이 오르는 환자들입니다. 이번 주에 나온 논문 한 편이 그 환자들 이야기를 하고 있어서, 관련 연구 몇 편을 함께 꺼내 읽었습니다.</p><h3>수술 결과를 가른 것은 수술 바깥에 있었습니다</h3><p>코넬대학교를 포함한 8개 3차 진료기관이 2008년 12월부터 2023년 12월까지 자궁축농증으로 난소자궁적출술을 받은 개 625마리를 후향적으로 모았습니다.</p><p>먼저 반가운 숫자부터 말씀드리겠습니다. 604마리(96.6%)가 퇴원까지 살아남았고, 단기 주요 합병증은 40마리(6.4%)였습니다. 수술 자체의 성적은 좋습니다.</p><p>문제는 살아 나가지 못한 쪽입니다. 비생존 위험을 높인 변수로 확인된 것은 두 가지였습니다. <b>수술 전 크레아티닌 상승</b>, 그리고 <b>패혈증</b>입니다. 입원 기간을 늘린 것도 같은 두 가지였고, 여기에 크레아티닌 상승과 의식 변화가 겹칠 때의 상호작용이 더해졌습니다.</p><blockquote>수술로 해결되는 병에서, 예후를 가른 변수는 수술이 아니었습니다.</blockquote><p>다만 이 숫자를 그대로 일반 진료에 옮기기 전에 짚어야 할 것이 있습니다. 3차 진료기관에 의뢰된 환자들의 후향 자료라 처음부터 상태가 무거운 쪽으로 쏠렸을 수 있고, 반대로 그만큼 수술 전 관리가 충분했을 수도 있습니다. 크레아티닌이 얼마나 올라야 위험이 얼마나 커지는지도 이 초록만으로는 알 수 없습니다.</p><h3>"그럼 신장 수치가 정상이면 괜찮은 것 아닌가요"</h3><p>진료실에서 나오는 당연한 질문입니다. 저도 오랫동안 그렇게 답해 왔습니다.</p><p>브라질의 한 연구팀이 이 질문을 조직 수준에서 확인해 두 편으로 나누어 보고했습니다. 자궁축농증으로 내원한 개 27마리를 모으되, <b>크레아티닌 1.6 mg/dL 이하의 비질소혈증 환자만</b> 넣었습니다. 전신염증반응증후군(SIRS) 기준은 모두 충족한 상태였습니다. 그리고 난소자궁적출술을 하는 김에 우측 신피질을 생검했습니다.</p><p>27마리 전부에서 신장 병변이 나왔습니다.</p><p><img src="https://vet-briefing.vercel.app/drafts/img/2026-09-12-pyometra-kidney.png" alt="크레아티닌이 정상이던 자궁축농증 개 27마리의 신장 조직 병변 빈도"></p><p>가장 흔한 것은 세뇨관 손상으로 23마리(85%)에서 확인됐고, 그중 4마리는 피질 세뇨관 대부분이 괴사에 이른 중증이었습니다. 막증식성 사구체신염이 17마리, 간질 염증 침윤이 18마리에서 나왔습니다.</p><p>같은 연구에서 혈청 크레아티닌과 SDMA, 요 단백/크레아티닌 비(UPC)는 병변의 경중을 전혀 구분하지 못했습니다. 구분해 낸 것은 세뇨관 세포의 스트레스를 반영하는 요 TIMP-2와 IGFBP7이었습니다. 같은 코호트를 다룬 다른 보고에서는 요 SDMA가 중증군 0.43 µg/mL, 중등도군 0.31, 경도군 0.26으로 갈렸습니다.</p><p>여기서 제 손이 멈췄습니다. TIMP-2와 IGFBP7은 사람 중환자실에서 쓰는 검사이고, 국내 동물병원에서 오늘 당장 돌릴 수 있는 항목이 아닙니다. 이 연구도 컷오프 값을 제시하지 못했습니다. 게다가 27마리짜리 두 편은 같은 연구진이 같은 환자들을 나누어 보고한 것으로 보이므로, 서로 독립적인 재현으로 읽으면 안 됩니다.</p><p>그런데 조직 소견만큼은 앞선 연구와 겹칩니다. 2020년 상파울루주립대학교 연구팀이 자궁축농증 암컷 20마리를 건강한 개 12마리와 비교했을 때도, 20마리 모두에서 어느 정도의 신장 손상이 조직학적으로 확인됐습니다. 같은 환자들을 SOFA 점수로 분류했을 때 패혈증으로 잡힌 것은 40%뿐이었습니다.</p><p>그러니까 지금 시점에서 말할 수 있는 것은 여기까지입니다. 자궁축농증 개의 신장은 수치가 정상이어도 다쳐 있는 경우가 많다는 것. 그리고 그 손상을 지금 우리가 쓰는 검사로는 잡아내지 못한다는 것.</p><h3>수술 뒤에도 남는 것이 있습니다</h3><p>2011년 겐트대학교에서 나온 연구는 자궁축농증 개 47마리의 소변을 들여다봤습니다. UPC 중앙값이 0.48(범위 0.05–8.69)로 건강한 암컷의 0.08(0.02–0.16)보다 뚜렷하게 높았고, 22마리가 UPC 0.5를 넘었습니다. 1.0을 넘은 개가 12마리, 2.0을 넘은 개가 7마리였습니다.</p><p>이 중 요 시험지에서 단백 2+ 이상이 나온 10마리를 수술 중에 생검했더니 사구체경화와 세뇨관간질신염이 흔했습니다. 그리고 사구체경화가 확인된 5마리는 수술 당시에도, <b>수술이 끝난 뒤에도</b> UPC가 1.0을 넘은 채였습니다.</p><p>원인을 제거하면 원래대로 돌아온다는 가정이 모두에게 들어맞지는 않는다는 뜻입니다. 이 연구는 9마리의 소변을 수술 후 3주 안에 다시 검사했습니다.</p><p>저는 이 대목이 오늘 읽은 논문들 중에 진료에서 가장 바로 쓸 수 있는 부분이라고 생각합니다. 자궁축농증 수술 후 3주쯤에 소변을 한 번 더 받아 보는 것. 비용도 부담도 크지 않고, 붙잡을 수 있는 환자가 분명히 있습니다.</p><h3>항생제 이야기도 하나 있습니다</h3><p>625마리 연구에는 주제가 하나 더 있었습니다. 자궁에서 자란 균의 감수성과 실제 처방된 항생제를 맞춰 봤습니다. 퇴원 시 항생제를 받아 간 337증례 중 116증례(34.4%)에서, 감수성과 맞지 않는 항생제가 최소 한 가지 이상 처방돼 있었습니다. 그리고 그 116증례 중 102증례(87.9%)가 아목시실린-클라불란산이었습니다.</p><p>비패혈성 환자에서는 수술 전·중 항생제 투여 여부와 퇴원 생존 사이에 차이가 없었습니다.</p><p>국내 균 분포와 감수성 양상은 다를 수 있으니 이 비율을 그대로 가져오는 것은 조심스럽습니다. 다만 비패혈성 증례에 습관적으로 아목시실린-클라불란산을 얹고 있다면, 배양과 감수성 결과로 한 번 확인해 볼 만한 관행이라고 생각합니다.</p><h3>그래서 제가 다시 보기로 한 것</h3><p>자궁축농증 환자를 수술로 보내기 전에 크레아티닌과 요비중을 확인하는 일은 대부분의 병원에서 이미 하고 계실 겁니다. 오늘 읽은 자료가 더한 것은, 그 값이 정상이어도 신장이 무사하다는 뜻은 아니라는 사실입니다. 특히 요비중이 낮은 환자는 조직 병변이 무거운 쪽과 겹쳤습니다.</p><p>그리고 수술로 원인을 없앤 뒤에도 소변을 한 번 더 봐야 하는 환자가 있습니다.</p><p>저에게 의뢰가 오는 환자는 이미 크레아티닌이 오르고 소변이 줄어든 다음입니다. 수액에 반응하지 않는 핍뇨나 무뇨, 조절되지 않는 고칼륨혈증이나 체액 과부하가 확인되면 그때는 전화를 주십시오. 다만 그 단계에 도달하기 전에 붙잡을 수 있는 환자가 오늘 읽은 자료 안에 분명히 있었습니다.</p><p>읽어주셔서 감사합니다.</p><p>신장과 투석을 공부하는 수의사<br>안운찬 드림</p><h3>출처</h3><ul><li>Jones AE, Rishniw M, Raux IL, et al. Sepsis and elevated creatinine predict poor outcomes in uncomplicated canine pyometra, and empirically prescribed antibiotics do not match bacterial susceptibility or improve survival. Journal of the American Veterinary Medical Association. 2026. DOI 10.2460/javma.26.05.0367</li><li>Braz LAN, Maia SR, Gasser B, et al. Urinary cell cycle arrest biomarkers TIMP-2 and IGFBP7 for the assessment of acute kidney injury in dogs with pyometra. Frontiers in Veterinary Science. 2026;13:1788906. DOI 10.3389/fvets.2026.1788906</li><li>Braz LAN, Maia SR, Soares LV, et al. Urinary symmetric dimethylarginine: A promising biomarker for acute kidney injury in dogs with pyometra. The Veterinary Record. 2026. DOI 10.1002/vetr.70733</li><li>Gasser B, Uscategui RAR, Maronezi MC, et al. Clinical and ultrasound variables for early diagnosis of septic acute kidney injury in bitches with pyometra. Scientific Reports. 2020;10(1):8994. DOI 10.1038/s41598-020-65902-4</li><li>Maddens B, Heiene R, Smets P, et al. Evaluation of kidney injury in dogs with pyometra based on proteinuria, renal histomorphology, and urinary biomarkers. Journal of Veterinary Internal Medicine. 2011;25(5):1075-1083. DOI 10.1111/j.1939-1676.2011.0772.x</li></ul>
+<p><b>개인 홈페이지</b><br><a href="https://www.ahnwoonchan.com/">https://www.ahnwoonchan.com/</a></p>
+<p>※ 이 글은 동물의 신장질환과 혈액투석에 관한 일반적인 정보를 전달하기 위한 글입니다. 개별 환자의 치료 필요성과 예후는 검사 결과와 전신 상태를 종합하여 담당 수의사와 상담해 판단해야 합니다.</p>
+  </article>
+</div>
+<script>
+function flash(btn, label) {
+  var old = btn.textContent;
+  btn.textContent = label;
+  setTimeout(function () { btn.textContent = old; }, 1500);
+}
+document.getElementById("copyTitle").addEventListener("click", function () {
+  var t = document.getElementById("title").textContent;
+  navigator.clipboard.writeText(t).then(flash(this, "복사되었습니다"));
+});
+document.getElementById("copyBody").addEventListener("click", function () {
+  var el = document.getElementById("body");
+  var htmlBlob = new Blob([el.innerHTML], { type: "text/html" });
+  var textBlob = new Blob([el.innerText], { type: "text/plain" });
+  var btn = this;
+  if (window.ClipboardItem) {
+    navigator.clipboard.write([new ClipboardItem({ "text/html": htmlBlob, "text/plain": textBlob })])
+      .then(function () { flash(btn, "복사되었습니다"); },
+            function () { navigator.clipboard.writeText(el.innerText).then(function () { flash(btn, "텍스트로 복사됨"); }); });
+  } else {
+    navigator.clipboard.writeText(el.innerText).then(function () { flash(btn, "텍스트로 복사됨"); });
+  }
+});
+</script>
+</body>
+</html>

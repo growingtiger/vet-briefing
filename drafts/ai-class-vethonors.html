@@ -1,0 +1,35 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow"><title>벳아너스 단톡 공지</title>
+<style>
+:root{--paper:#fdfaf3;--ink:#2a251f;--ink2:#5b5245;--line:#e6dcc8;--gold:#a8802f}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:-apple-system,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;word-break:keep-all}
+main{max-width:720px;margin:0 auto;padding:26px 16px 60px}
+.lab{font-size:12px;letter-spacing:.12em;color:var(--gold);font-weight:700}h1{font-size:21px;margin:6px 0 14px}
+.hd{display:flex;justify-content:space-between;align-items:center;margin-top:10px}
+button{font:inherit;font-weight:600;font-size:15px;background:var(--ink);color:#fff;border:0;padding:10px 18px;cursor:pointer}button.ok{background:var(--gold)}
+.box{border:1px solid var(--line);background:#fff;padding:16px;white-space:pre-wrap;line-height:1.8;font-size:15.5px;margin-top:10px}
+.note{font-size:13px;color:var(--ink2);margin-top:16px;line-height:1.6}
+</style></head><body><main>
+<p class="lab">원장을 위한 AI 실전 교육</p><h1>벳아너스 원장님 단톡방 공지</h1>
+<div class="hd"><b>단톡방에 올릴 글</b><button data-t="b">글 복사</button></div>
+<div class="box" id="b">벳아너스 원장님들, 안녕하세요. 학술위원장 이태호입니다.
+
+서상혁 대표님께 양해를 구하고, 내일 외부에 공개하기 전에 원장님들께 먼저 소식 전합니다.
+
+제가 진료하면서 직접 만들어 쓰고 있는 AI 프로그램들을 원장님들 병원에서도 쓰실 수 있게 돕는 강의를 열게 되었습니다. 저는 코드를 쓸 줄 모르는데도 사전문진, 진료 녹음 차트, 심장초음파·CT 소견서, 마취·투석 기록지, 마약류 관리, 홈페이지 관리까지 병원 일에 쓰는 프로그램 26개를 만들어 매일 쓰고 있습니다. 써 보니 혼자 쓰기 아까워 강의를 준비했습니다.
+
+과정은 두 가지입니다.
+· 과정 1 하루 집중 실습: 저희 병원에서 하루, 5명. 노트북을 가져오셔서 원장님 병원에서 쓸 프로그램을 직접 만들어 가십니다. (110만 원)
+· 과정 2 병원 방문 세팅: 제가 병원에 찾아가 원하시는 프로그램을 직접 만들어 쓰실 수 있게 세팅해 드립니다. (550만 원)
+
+진료를 계속 보고 있어 두 과정 모두 한 달에 한 번씩만 진행하는 소규모 선착순 강의입니다. 신청하셔도 실제 수강까지는 시간이 걸릴 수 있어, 전체 공개 전에 원장님들께 먼저 알려 드리는 것이 좋겠다고 생각했습니다.
+
+실제 프로그램 화면과 시간표, 신청서는 아래 링크에서 보실 수 있습니다. 궁금하신 점은 편하게 말씀 주십시오.
+https://leetaeho.co.kr/ai-class</div>
+<p class="note">붙여 넣은 뒤 마지막 줄 링크가 미리보기로 바뀌는지 확인해 주십시오. 포스터를 함께 올리시려면 <a href="ai-class-kit.html">결과물 모음</a>에서 저장하실 수 있습니다.</p>
+</main><script>
+document.querySelectorAll("button[data-t]").forEach(function(b){b.onclick=function(){var el=document.getElementById(b.dataset.t),t=el.innerText,lab=b.textContent;
+function ok(){b.textContent="복사했습니다";b.classList.add("ok");setTimeout(function(){b.textContent=lab;b.classList.remove("ok")},1500)}
+function sel(){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);try{document.execCommand("copy");ok()}catch(e){}}
+if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(ok,sel)}else sel();}});
+</script></body></html>

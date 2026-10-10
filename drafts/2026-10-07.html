@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>블로그 초안 2026-10-07</title>
+<style>
+  :root { --ink:#22303b; --soft:#5b6b76; --accent:#0e7490; --line:#dde4e7; --bg:#fafaf8; }
+  @media (prefers-color-scheme: dark) {
+    :root { --ink:#d9e2e8; --soft:#8fa1ac; --accent:#4cc4dd; --line:#26333d; --bg:#10171d; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); line-height:1.8;
+    font-family:"Apple SD Gothic Neo","Pretendard","Noto Sans KR",sans-serif; }
+  .wrap { max-width:42rem; margin:0 auto; padding:1.5rem 1.25rem 4rem; }
+  .meta { font-size:0.85rem; color:var(--soft); border:1px solid var(--line);
+    border-radius:10px; padding:0.8rem 1rem; margin-bottom:1.2rem; }
+  .btns { display:flex; gap:0.6rem; flex-wrap:wrap; margin-bottom:1.6rem; }
+  button { font:inherit; font-size:0.9rem; font-weight:600; color:#fff;
+    background:var(--accent); border:none; border-radius:8px;
+    padding:0.6rem 1.1rem; cursor:pointer; }
+  button.secondary { color:var(--accent); background:transparent;
+    border:1.5px solid var(--accent); }
+  h1 { font-size:1.5rem; line-height:1.4; }
+  article h3 { font-size:1.1rem; margin-top:2em; }
+  article p { margin:1em 0; }
+  article blockquote { margin:1.4em 0; padding:0.2em 1em; border-left:3px solid var(--accent); color:var(--soft); }
+  article img { max-width:100%; height:auto; border:1px solid var(--line); border-radius:8px; }
+  article table { border-collapse:collapse; width:100%; margin:1.2em 0; font-size:0.92em; }
+  article th, article td { border:1px solid var(--line); padding:0.5em 0.7em; text-align:left; }
+  article th { background:rgba(14,116,144,0.08); }
+  hr { border:none; border-top:1px solid var(--line); margin:2rem 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="meta">
+    블로그 글 초안 · 2026-10-07 · 카테고리 제안: 가슴 뛰는 신장·중환자·투석<br>
+    검토 후 수정할 부분이 있으면 편하게 고쳐서 올려주세요.<br>
+    그림이 붙여넣기에 포함되지 않으면, 그림을 길게 눌러(또는 우클릭) 저장한 뒤 에디터에서 삽입해 주세요.
+  </div>
+  <div class="btns">
+    <button id="copyTitle" type="button">제목 복사</button>
+    <button id="copyBody" class="secondary" type="button">본문 복사 (서식 유지)</button>
+  </div>
+  <h1 id="title">수액을 줄였는데 왜 계속 붓나요 — 처방표에 적히지 않는 물과 나트륨</h1>
+  <hr>
+  <article id="body">
+<p>안녕하세요. 신장질환과 혈액투석, 응급중환자 진료를 하는 수의사 안운찬입니다.</p><p>급성신손상으로 입원한 아이의 보호자께 이런 질문을 받을 때가 있습니다.</p><p>"어제 수액 속도를 줄였다고 하셨는데, 얼굴이랑 다리는 오히려 더 부은 것 같아요."</p><p>이 질문에는 여러 답이 있을 수 있습니다. 소변이 거의 나오지 않으면 줄인 수액조차 몸 밖으로 나가지 못합니다. 그런데 이번 주에 나온 논문 한 편이 제가 그동안 덜 들여다본 다른 답 하나를 짚어 주었습니다.</p><p>수액 처방표에 적힌 숫자가 그 환자에게 들어간 물과 나트륨의 전부가 아니라는 것입니다.</p><h3>처방표 밖에서 들어가는 수액이 있습니다</h3><p>입원한 환자에게는 정해진 속도로 들어가는 수액 말고도 여러 경로로 액체가 들어갑니다. 항생제나 진통제를 녹이는 희석액, 약을 넣기 전후로 카테터를 씻어 내는 플러시, 약 자체에 들어 있는 수분입니다.</p><p>사람 중환자의학에서는 이것을 fluid creep, 또는 숨은 수액(hidden fluid)이라고 부릅니다. 하나하나는 몇 mL에 불과해서 기록에서 빠지기 쉽습니다.</p><p>에든버러 대학 동물병원의 McNally와 Llewellyn은 ICU에 24시간 이상 입원할 것으로 예상된 개 29마리에서 들어간 모든 액체의 종류와 양을 하나씩 기록했습니다. 그리고 하루 동안 들어간 수분과 나트륨을 계산했습니다.</p><table><tr><th>입원일</th><th>전체 수액 (평균, mL/kg/day)</th><th>전체 나트륨 (평균, mEq/kg/day)</th><th>fluid creep 수액 (중앙값, mL/kg/day)</th><th>fluid creep 나트륨 (중앙값, mEq/kg/day)</th></tr><tr><td>1일째</td><td>64.6</td><td>8.0</td><td>5.6</td><td>0.35</td></tr><tr><td>2일째</td><td>48.6</td><td>6.2</td><td>4.6</td><td>0.28</td></tr><tr><td>3일째</td><td>43.1</td><td>5.7</td><td>2.7</td><td>0.22</td></tr></table><p>전체 수액과 나트륨은 입원 기간 동안 유의하게 줄었습니다. fluid creep으로 들어간 수액의 양도 줄었습니다.</p><p>그런데 fluid creep으로 들어간 나트륨은 통계적으로 유의한 변화가 없었습니다(p = 0.06). 전체에서 fluid creep이 차지하는 비율도 1일째와 3일째가 다르지 않았습니다.</p><blockquote>수액 속도를 내려도, 약을 녹이고 씻어 내는 몫의 나트륨은 거의 그대로 남습니다.</blockquote><img src="https://vet-briefing.vercel.app/drafts/img/2026-10-07-fluid-creep.png" alt="ICU 입원 개 29마리의 입원 1~3일째 하루 나트륨 투여량. 전체 평균은 8.0, 6.2, 5.7 mEq/kg/day로 줄었고 그중 fluid creep 몫의 중앙값은 0.35, 0.28, 0.22 mEq/kg/day였다."><p>McNally·Llewellyn(2026, JVECC) 초록 수치를 바탕으로 자체 제작한 그림입니다. 전체 값은 평균, fluid creep 값은 중앙값이어서 둘을 나눠 비율로 계산하지는 않았습니다.</p><p>저자들은 중환자인 개들이 입원 중에 임상적으로 의미 있는 나트륨 부하를 받는다고 결론지었습니다. fluid creep은 그중 작은 몫이지만, 수액을 줄이는 동안에도 꾸준히 들어가는 몫이라는 것입니다.</p><h3>이 작은 몫이 신장 환자에게 더 무거운 이유</h3><p>소변을 잘 만드는 환자라면 이 정도 나트륨은 신장이 알아서 내보냅니다.</p><p>문제는 그 길이 막힌 환자입니다. 소변이 거의 나오지 않는 핍뇨·무뇨 급성신손상 환자에게는 들어온 물과 나트륨이 고스란히 몸에 남습니다. 그 결과가 수액 과부하(fluid overload)입니다. 피하 부종, 흉수나 복수, 폐부종으로 나타나고, 숨이 가빠지는 것으로 처음 드러나기도 합니다.</p><p>2025년 Tufts 대학의 Pfaff 등은 입원 중 수액을 맞다가 수액 과부하 징후가 생긴 개 136마리와 그렇지 않은 개 109마리를 비교했습니다.</p><ul><li>수액 과부하군에는 심혈관 질환(오즈비 18.1), 단백소실성 신병증(15.3), 만성신장병(10.0), 급성신손상(5.2)이 유의하게 많았습니다.</li><li>그런데 5일 동안 들어간 정맥 수액의 총량은 두 군이 다르지 않았습니다. 체중당으로 보면 중앙값 222 mL/kg과 224 mL/kg이었습니다.</li><li>생존 퇴원은 수액 과부하군 68.4%, 대조군 92.7%였고, 입원 기간 중앙값도 6일 대 5일로 길었습니다.</li></ul><p>같은 양을 받아도 누구는 붓고 누구는 붓지 않았습니다. 결국 문제는 얼마나 넣었느냐보다, 그 환자가 넣은 만큼을 내보낼 수 있느냐였습니다.</p><p>다만 이 연구는 후향 연구이고, 수액 과부하가 사망의 원인이었다고 말할 수는 없습니다. 심장병이나 호흡기 질환처럼 원래 예후가 나쁜 질환이 수액 과부하군에 더 많았다는 점을 저자들도 한계로 적었습니다. 카테터 플러시 양은 기록되지 않아 계산에서 빠졌다는 점도 밝혔습니다.</p><h3>체중계가 놓치는 것도 있습니다</h3><p>수액 과부하를 볼 때 가장 먼저 보는 것은 체중입니다. 사람 의학에서는 탈수가 없는 기준 체중보다 10% 넘게 늘면 수액 과부하로 정의하기도 합니다.</p><p>그런데 Pfaff 등의 자료에서 임상적으로 수액 과부하 징후가 있던 개 가운데 이 기준을 넘은 개는 6.0%(116마리 중 7마리)뿐이었습니다. 수액 과부하군의 체중은 입원 1일째와 비교해 중앙값으로 2.4~3% 늘어난 수준이었습니다.</p><p>2016년 Colorado State 대학의 Cavanagh 등은 들어간 양에서 나간 양과 입원 시 탈수분을 빼서 수액 과부하 비율을 계산했습니다. 중환자인 개 34마리는 평균 12.1%, 비교적 안정적인 수술 후 개 15마리는 0.5%였습니다. 12% 이상이었던 16마리 중 8마리가 사망했고, 1%가 늘 때마다 사망의 오즈비는 1.08이었습니다.</p><p>두 연구를 함께 읽으면 정리되는 것이 있습니다. 체중 하나만으로는 늦거나 부족할 수 있고, 들어간 것과 나간 것을 함께 적어야 그림이 보입니다. 그리고 들어간 것에는 처방표 밖의 몫도 포함되어야 합니다.</p><h3>진료실에서 다시 점검해 보려는 것</h3><p>이 논문들을 읽고 제가 스스로에게 던진 질문은 단순했습니다. 저희 중환자실의 입량 기록에 약물 희석액과 플러시가 정말 다 들어가 있는가 하는 것입니다.</p><p>소변이 줄어든 환자라면 저는 이런 것들을 함께 보려고 합니다.</p><ul><li>정해진 수액 속도와 별개로, 약물 희석액과 플러시의 양과 횟수를 입량에 포함시키는지</li><li>같은 체중계로 같은 조건에서 체중을 반복해서 재는지</li><li>소변량을 실제로 재고 있는지, 그리고 입량과 나란히 비교하는지</li><li>약을 녹이는 용액과 그 양이 꼭 지금 그대로여야 하는지</li></ul><p>그래도 넘치는 물을 내보낼 길이 없을 때가 있습니다. 이뇨제에 반응하지 않는 무뇨 환자입니다. 이때 혈액투석이나 지속적 신대체요법(CRRT)의 한외여과(ultrafiltration)로 물을 직접 빼내는 것이 선택지가 됩니다. Cowgill은 2011년 리뷰에서 혈액투석이 요독증과 중독뿐 아니라 다른 대안이 없는 수액 과부하의 관리에도 쓰인다고 적었습니다.</p><p>다만 투석으로 물을 빼는 것은 마지막 수단에 가깝습니다. 그 전에 들어가는 물을 정확히 세는 것이 먼저라고 생각합니다.</p><h3>아직 모르는 것</h3><p>McNally·Llewellyn의 연구는 29마리의 단일기관 관찰 연구입니다. 이 나트륨 부하가 환자의 결과를 실제로 바꾸는지는 다루지 않았습니다. 대상도 신장 환자만 모은 것이 아니어서, 핍뇨 급성신손상 환자에게 fluid creep이 얼마나 쌓이는지를 따로 본 자료는 제가 찾아본 범위에서는 없었습니다.</p><p>개와 고양이에서 수액 과부하를 어떤 기준으로 정의할지도 아직 합의된 답이 없습니다. 체중, 출납 계산, 초음파 소견 중 무엇을 기준으로 삼을지는 앞으로 더 많은 자료가 필요한 부분입니다.</p><p>그래서 지금 할 수 있는 일은 들어간 것을 빠짐없이 세는 것입니다. 단순하지만, 작은 몫이 쌓이는 환자에게는 그 차이가 작지 않을 수 있습니다.</p><p>이 글을 읽은 보호자 한 분이 "수액을 줄였는데 왜 붓나요"라는 질문의 배경을 조금 더 이해하시고, 동료 수의사 한 분이 오늘 중환자실의 입량 기록에 플러시 한 줄을 더 적어 보신다면 충분합니다.</p><p>읽어주셔서 감사합니다.</p><p>신장과 투석을 공부하는 수의사<br>안운찬 드림</p><h3>참고 문헌</h3><ul><li>McNally AE, Llewellyn E. Sodium Administration and the Contribution of Fluid Creep to the Sodium Burden of Hospitalized Dogs in the ICU. Journal of Veterinary Emergency and Critical Care. 2026. doi:10.1111/vec.70168</li><li>Pfaff A, Butty EM, Rozanski EA, deLaforcade AM, Hicks JN, Berlin N. Retrospective Evaluation of Risk Factors and Outcome in Dogs With and Without Fluid Overload During Hospitalization. Journal of Veterinary Internal Medicine. 2025;39(4):e70132. doi:10.1111/jvim.70132</li><li>Cavanagh AA, Sullivan LA, Hansen BD. Retrospective evaluation of fluid overload and relationship to outcome in critically ill dogs. Journal of Veterinary Emergency and Critical Care. 2016;26(4):578-586.</li><li>Cowgill LD. Urea kinetics and intermittent dialysis prescription in small animals. Veterinary Clinics of North America: Small Animal Practice. 2011;41(1):193-225.</li></ul>
+<p><b>개인 홈페이지</b><br><a href="https://www.ahnwoonchan.com/">https://www.ahnwoonchan.com/</a></p>
+<p>※ 이 글은 동물의 신장질환과 혈액투석에 관한 일반적인 정보를 전달하기 위한 글입니다. 개별 환자의 치료 필요성과 예후는 검사 결과와 전신 상태를 종합하여 담당 수의사와 상담해 판단해야 합니다.</p>
+  </article>
+</div>
+<script>
+function flash(btn, label) {
+  var old = btn.textContent;
+  btn.textContent = label;
+  setTimeout(function () { btn.textContent = old; }, 1500);
+}
+document.getElementById("copyTitle").addEventListener("click", function () {
+  var t = document.getElementById("title").textContent;
+  navigator.clipboard.writeText(t).then(flash(this, "복사되었습니다"));
+});
+document.getElementById("copyBody").addEventListener("click", function () {
+  var el = document.getElementById("body");
+  var htmlBlob = new Blob([el.innerHTML], { type: "text/html" });
+  var textBlob = new Blob([el.innerText], { type: "text/plain" });
+  var btn = this;
+  if (window.ClipboardItem) {
+    navigator.clipboard.write([new ClipboardItem({ "text/html": htmlBlob, "text/plain": textBlob })])
+      .then(function () { flash(btn, "복사되었습니다"); },
+            function () { navigator.clipboard.writeText(el.innerText).then(function () { flash(btn, "텍스트로 복사됨"); }); });
+  } else {
+    navigator.clipboard.writeText(el.innerText).then(function () { flash(btn, "텍스트로 복사됨"); });
+  }
+});
+</script>
+</body>
+</html>

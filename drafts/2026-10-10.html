@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>블로그 초안 2026-10-10</title>
+<style>
+  :root { --ink:#22303b; --soft:#5b6b76; --accent:#0e7490; --line:#dde4e7; --bg:#fafaf8; }
+  @media (prefers-color-scheme: dark) {
+    :root { --ink:#d9e2e8; --soft:#8fa1ac; --accent:#4cc4dd; --line:#26333d; --bg:#10171d; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); line-height:1.8;
+    font-family:"Apple SD Gothic Neo","Pretendard","Noto Sans KR",sans-serif; }
+  .wrap { max-width:42rem; margin:0 auto; padding:1.5rem 1.25rem 4rem; }
+  .meta { font-size:0.85rem; color:var(--soft); border:1px solid var(--line);
+    border-radius:10px; padding:0.8rem 1rem; margin-bottom:1.2rem; }
+  .btns { display:flex; gap:0.6rem; flex-wrap:wrap; margin-bottom:1.6rem; }
+  button { font:inherit; font-size:0.9rem; font-weight:600; color:#fff;
+    background:var(--accent); border:none; border-radius:8px;
+    padding:0.6rem 1.1rem; cursor:pointer; }
+  button.secondary { color:var(--accent); background:transparent;
+    border:1.5px solid var(--accent); }
+  h1 { font-size:1.5rem; line-height:1.4; }
+  article h3 { font-size:1.1rem; margin-top:2em; }
+  article p { margin:1em 0; }
+  article blockquote { margin:1.4em 0; padding:0.2em 1em; border-left:3px solid var(--accent); color:var(--soft); }
+  article img { max-width:100%; height:auto; border:1px solid var(--line); border-radius:8px; }
+  article table { border-collapse:collapse; width:100%; margin:1.2em 0; font-size:0.92em; }
+  article th, article td { border:1px solid var(--line); padding:0.5em 0.7em; text-align:left; }
+  article th { background:rgba(14,116,144,0.08); }
+  hr { border:none; border-top:1px solid var(--line); margin:2rem 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="meta">
+    블로그 글 초안 · 2026-10-10 · 카테고리 제안: 배움의 끈, 주간 저널클럽<br>
+    검토 후 수정할 부분이 있으면 편하게 고쳐서 올려주세요.<br>
+    그림이 붙여넣기에 포함되지 않으면, 그림을 길게 눌러(또는 우클릭) 저장한 뒤 에디터에서 삽입해 주세요.
+  </div>
+  <div class="btns">
+    <button id="copyTitle" type="button">제목 복사</button>
+    <button id="copyBody" class="secondary" type="button">본문 복사 (서식 유지)</button>
+  </div>
+  <h1 id="title">투석을 하면 항생제도 같이 빠지나요 — 개 9마리의 투석 전후 농도를 읽다</h1>
+  <hr>
+  <article id="body">
+<p>안녕하세요. 신장질환과 혈액투석, 응급중환자 진료를 하는 수의사 안운찬입니다.</p><p>감염이 원인이 된 급성신손상 환자를 투석할 때는 거의 항상 항생제가 함께 들어갑니다. 렙토스피라증이 의심되는 개가 대표적입니다.</p><p>그런데 투석은 혈액 속의 작은 물질을 걸러내는 치료입니다. 요소와 크레아티닌만 골라서 빼 주지는 않습니다.</p><p>"투석을 하면 항생제도 같이 빠지는 것 아닌가요?"</p><p>투석을 처음 접하는 동료 수의사분들께 자주 듣는 질문입니다. 막연히 "빠진다"는 것은 알지만, 저자들에 따르면 암피실린·설박탐이 개에서 투석으로 얼마나 빠지는지는 정량된 적이 없었습니다. 이번 달 프랑스 리옹 VetAgro Sup의 응급중환자팀(SIAMU)이 그 숫자를 내놓았습니다.</p><h3>연구는 이렇게 설계됐습니다</h3><p>대상은 IRIS 급성신손상 4등급 이상이면서 소변이 거의 나오지 않는 핍뇨성 급성신손상 개 9마리였습니다. 한 병원에서 전향적으로 관찰한 연구입니다.</p><p>9마리 모두 투석을 시작하기 전부터 암피실린·설박탐을 22 mg/kg, 8시간 간격으로 정맥 투여받고 있었습니다. 투석 방식은 저효율 혈액여과투석(low-efficiency hemodiafiltration, LE-HDF)이었습니다. 확산으로 거르는 투석과 압력으로 밀어내는 여과를 함께 쓰되, 효율을 낮춰 천천히 진행하는 방식입니다.</p><p>측정은 단순했습니다. 첫 번째 투석 직전과 직후에 혈액을 받아 두 약물의 혈장 농도를 LC-MS/MS로 쟀습니다. 그리고 그 값을 대장균과 렙토스피라에 대해 발표된 최소억제농도(MIC)와 비교했습니다.</p><h3>한 번의 투석으로 4분의 3이 빠졌습니다</h3><p>숫자부터 보겠습니다.</p><ul><li>암피실린: 투석 전 중앙값 81.2 μg/mL에서 투석 후 19.5 μg/mL로 감소(개체별 감소율 중앙값 75.6%)</li><li>설박탐: 64.6 μg/mL에서 18.7 μg/mL로 감소(개체별 감소율 중앙값 73.2%)</li><li>투석 전 농도가 높은 개일수록 투석 후 농도도 높았습니다(Spearman ρ = 0.93, 0.75)</li></ul><p><img src="https://vet-briefing.vercel.app/drafts/img/2026-10-10-dialysis-antibiotic.png" alt="저효율 혈액여과투석 1회 전후 암피실린과 설박탐의 혈장 농도 중앙값을 비교한 막대그림"></p><p>Research in Veterinary Science(2026) 논문에 보고된 중앙값을 바탕으로 자체 제작한 그림입니다.</p><p>한 번의 투석이 끝났을 때 혈액 속 암피실린의 4분의 3 남짓이 사라져 있었다는 뜻입니다.</p><p>다만 이 논문의 결론은 "그러니 위험하다"가 아니었습니다. 9마리 모두에서 투석 직후의 암피실린 농도가 비교한 MIC 기준을 전부 넘었습니다. 저자들은 그 이유를 투석 전 농도가 이미 치료에 필요한 수준보다 훨씬 높았기 때문이라고 봤습니다.</p><blockquote>많이 빠졌지만, 처음부터 충분히 들어가 있었기 때문에 버틸 수 있었던 것입니다.</blockquote><h3>제가 더 오래 본 것은 상관계수였습니다</h3><p>75.6%라는 숫자가 눈에 먼저 들어오지만, 저는 ρ = 0.93이라는 숫자를 더 오래 봤습니다.</p><p>투석 후 농도가 투석 전 농도를 거의 그대로 따라갔습니다. 투석 후와 전의 농도 비(기하평균)도 암피실린 0.23(95% 신뢰구간 0.19~0.29), 설박탐 0.29(0.22~0.38)로 폭이 좁았습니다. 저는 이것을 투석이 대략 일정한 비율로 약을 걷어낸다는 뜻으로 읽었습니다. 그렇다면 투석이 끝났을 때 얼마가 남는지는 결국 투석을 시작할 때 얼마가 들어 있었는지에 달려 있습니다.</p><p>이 연구의 개들은 8시간 간격 투여를 이미 받고 있었고, 신장으로 약이 거의 빠져나가지 못하는 핍뇨 상태였습니다. 투석 전 농도가 높았던 데에는 이런 조건이 함께 작용했을 것입니다.</p><p>반대로 마지막 투여에서 시간이 꽤 지나 혈중 농도가 이미 내려간 시점에 투석을 시작한다면 어떨까요. 같은 비율로 빠진다면 투석 직후 농도는 MIC 근처까지 내려갈 수 있습니다. 이 연구가 직접 보여준 것은 아니지만, 결과를 그대로 따라가면 자연스럽게 나오는 질문입니다.</p><p>그래서 저는 이 논문을 "걱정할 필요 없다"보다는 "투석과 투여 시간을 함께 놓고 보라"는 이야기로 읽었습니다.</p><h3>다른 약에서는 어땠을까요</h3><p>개에서 투석 중 항생제 농도를 잰 자료는 많지 않습니다. 그중 국내 연구진의 메로페넴 연구가 하나 있습니다.</p><p>2016년 충남대 연구팀은 건강한 비글 5마리에게 메로페넴 24 mg/kg을 한 번 정맥 투여하고 간헐적 혈액투석을 시행했습니다. 투석기를 한 번 지나갈 때 걸러지는 비율(추출률)은 평균 0.455였고, 투여한 약의 21%가 투석액에서 변하지 않은 형태로 회수됐습니다. 69%는 소변으로 나왔습니다.</p><p>저자들은 시뮬레이션을 근거로, 환자에게 남아 있는 신장 기능에 따라 투석 후 추가 투여가 필요할 수 있다고 정리했습니다.</p><p>두 연구를 나란히 놓으면 이렇습니다.</p><table><tr><th></th><th>암피실린·설박탐 연구 (2026)</th><th>메로페넴 연구 (2016)</th></tr><tr><td>대상</td><td>핍뇨성 급성신손상 개 9마리</td><td>건강한 비글 5마리</td></tr><tr><td>투석 방식</td><td>저효율 혈액여과투석</td><td>간헐적 혈액투석</td></tr><tr><td>투여</td><td>22 mg/kg, 8시간 간격 정맥</td><td>24 mg/kg, 1회 정맥</td></tr><tr><td>핵심 결과</td><td>1회 투석으로 혈장 농도 감소(개체별 감소율 중앙값 73.2~75.6%), 투석 직후 암피실린은 9마리 모두 MIC 이상</td><td>추출률 0.455, 투여량의 21%가 투석액으로 회수</td></tr></table><p>메로페넴 연구는 건강한 개에서 소변이 정상적으로 나오는 상태로 진행됐습니다. 핍뇨 환자라면 소변으로 나가는 길이 거의 막혀 있으니, 투석이 약을 없애는 몫은 상대적으로 더 커집니다. 두 연구가 같은 방향을 가리킨다고 생각합니다.</p><h3>렙토스피라 환자에게 이 질문이 특히 중요한 이유</h3><p>2023년 개정된 ACVIM 렙토스피라증 합의문은 렙토스피라증을 체외 신장 보조 치료가 가장 흔하게 필요해지는 원인 중 하나로 꼽았습니다. 동시에 초기 치료로 정맥 페니실린 계열 항생제로 균혈증을 잡고, 이후 경구 독시사이클린으로 신장 안에 남은 균을 정리하는 순서를 전통적인 전략으로 제시합니다.</p><p>다시 말해 렙토스피라로 투석하는 개는 흔히 투석기와 페니실린 계열 항생제를 동시에 달고 있습니다. 이번 연구가 바로 그 조합을 다뤘다는 점에서 임상적으로 쓸모가 있습니다.</p><h3>이 연구가 답하지 못한 것</h3><ul><li>9마리, 한 병원의 자료입니다.</li><li>초록에 보고된 측정 시점은 첫 번째 투석의 직전과 직후입니다. 다음 투여 전까지 농도가 MIC 위에 머물렀는지는 알 수 없습니다.</li><li>저효율 혈액여과투석 한 가지 방식의 결과입니다. 투석 시간이나 혈류 속도, 방식이 다르면 빠지는 양도 달라질 수 있습니다.</li><li>초록에는 회복이나 감염 조절 같은 임상 결과가 보고되지 않았습니다.</li></ul><p>그래서 이 숫자를 다른 투석 처방이나 다른 항생제에 그대로 옮겨서는 안 됩니다.</p><h3>투석 일정표 옆에 투약 시간표를 함께 놓습니다</h3><p>이 논문을 읽고 제가 정리한 것은 거창하지 않습니다.</p><p>투석을 하는 환자에게 항생제를 쓸 때, 투약 시간을 투석 일정과 따로 떼어 생각하지 않는 것입니다. 마지막 투여가 언제였는지, 투석이 끝난 뒤 다음 투여까지 몇 시간이 남는지를 함께 봐야 합니다. 그리고 그 약이 투석으로 잘 빠지는 약인지를 먼저 확인해야 합니다.</p><p>투석은 신장이 회복할 시간을 벌어주는 치료입니다. 하지만 그 시간 동안 감염을 함께 잡지 못하면 벌어 둔 시간이 의미를 잃습니다. 투석기가 요독소만 골라 빼 주지 않는다는 사실을 한 번 더 숫자로 확인한 논문이었습니다.</p><p>이 글을 읽은 동료 수의사 한 분이 투석 환자의 항생제 처방을 보면서 투석 시간을 한 번 더 떠올려 주시고, 보호자 한 분이 투석 중에도 약 시간이 왜 그렇게 정해지는지 조금 더 이해하실 수 있다면 충분합니다.</p><p>읽어주셔서 감사합니다.</p><p>신장과 투석을 공부하는 수의사<br>안운찬 드림</p><h3>참고 문헌</h3><ul><li>André A, Espana B, Nectoux A, Pouzot-Nevoret C, Kim MW. Intermittent low-efficiency hemodiafiltration causes a marked decrease in ampicillin and sulbactam plasma concentration in dogs with oliguric acute kidney injury. Research in Veterinary Science. 2026;212:106430.</li><li>Byun SY, Jeong JW, Choi JH, et al. Pharmacokinetic study of meropenem in healthy beagle dogs receiving intermittent hemodialysis. Journal of Veterinary Pharmacology and Therapeutics. 2016;39(6):560-565.</li><li>Sykes JE, Francey T, Schuller S, Stoddard RA, Cowgill LD, Moore GE. Updated ACVIM consensus statement on leptospirosis in dogs. Journal of Veterinary Internal Medicine. 2023;37(6):1966-1982.</li></ul>
+<p><b>개인 홈페이지</b><br><a href="https://www.ahnwoonchan.com/">https://www.ahnwoonchan.com/</a></p>
+<p>※ 이 글은 동물의 신장질환과 혈액투석에 관한 일반적인 정보를 전달하기 위한 글입니다. 개별 환자의 치료 필요성과 예후는 검사 결과와 전신 상태를 종합하여 담당 수의사와 상담해 판단해야 합니다.</p>
+  </article>
+</div>
+<script>
+function flash(btn, label) {
+  var old = btn.textContent;
+  btn.textContent = label;
+  setTimeout(function () { btn.textContent = old; }, 1500);
+}
+document.getElementById("copyTitle").addEventListener("click", function () {
+  var t = document.getElementById("title").textContent;
+  navigator.clipboard.writeText(t).then(flash(this, "복사되었습니다"));
+});
+document.getElementById("copyBody").addEventListener("click", function () {
+  var el = document.getElementById("body");
+  var htmlBlob = new Blob([el.innerHTML], { type: "text/html" });
+  var textBlob = new Blob([el.innerText], { type: "text/plain" });
+  var btn = this;
+  if (window.ClipboardItem) {
+    navigator.clipboard.write([new ClipboardItem({ "text/html": htmlBlob, "text/plain": textBlob })])
+      .then(function () { flash(btn, "복사되었습니다"); },
+            function () { navigator.clipboard.writeText(el.innerText).then(function () { flash(btn, "텍스트로 복사됨"); }); });
+  } else {
+    navigator.clipboard.writeText(el.innerText).then(function () { flash(btn, "텍스트로 복사됨"); });
+  }
+});
+</script>
+</body>
+</html>

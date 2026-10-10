@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>블로그 초안 2026-09-29</title>
+<style>
+  :root { --ink:#22303b; --soft:#5b6b76; --accent:#0e7490; --line:#dde4e7; --bg:#fafaf8; }
+  @media (prefers-color-scheme: dark) {
+    :root { --ink:#d9e2e8; --soft:#8fa1ac; --accent:#4cc4dd; --line:#26333d; --bg:#10171d; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); line-height:1.8;
+    font-family:"Apple SD Gothic Neo","Pretendard","Noto Sans KR",sans-serif; }
+  .wrap { max-width:42rem; margin:0 auto; padding:1.5rem 1.25rem 4rem; }
+  .meta { font-size:0.85rem; color:var(--soft); border:1px solid var(--line);
+    border-radius:10px; padding:0.8rem 1rem; margin-bottom:1.2rem; }
+  .btns { display:flex; gap:0.6rem; flex-wrap:wrap; margin-bottom:1.6rem; }
+  button { font:inherit; font-size:0.9rem; font-weight:600; color:#fff;
+    background:var(--accent); border:none; border-radius:8px;
+    padding:0.6rem 1.1rem; cursor:pointer; }
+  button.secondary { color:var(--accent); background:transparent;
+    border:1.5px solid var(--accent); }
+  h1 { font-size:1.5rem; line-height:1.4; }
+  article h3 { font-size:1.1rem; margin-top:2em; }
+  article p { margin:1em 0; }
+  article blockquote { margin:1.4em 0; padding:0.2em 1em; border-left:3px solid var(--accent); color:var(--soft); }
+  article img { max-width:100%; height:auto; border:1px solid var(--line); border-radius:8px; }
+  article table { border-collapse:collapse; width:100%; margin:1.2em 0; font-size:0.92em; }
+  article th, article td { border:1px solid var(--line); padding:0.5em 0.7em; text-align:left; }
+  article th { background:rgba(14,116,144,0.08); }
+  hr { border:none; border-top:1px solid var(--line); margin:2rem 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="meta">
+    블로그 글 초안 · 2026-09-29 · 카테고리 제안: 가슴 뛰는 신장·중환자·투석<br>
+    검토 후 수정할 부분이 있으면 편하게 고쳐서 올려주세요.<br>
+    그림이 붙여넣기에 포함되지 않으면, 그림을 길게 눌러(또는 우클릭) 저장한 뒤 에디터에서 삽입해 주세요.
+  </div>
+  <div class="btns">
+    <button id="copyTitle" type="button">제목 복사</button>
+    <button id="copyBody" class="secondary" type="button">본문 복사 (서식 유지)</button>
+  </div>
+  <h1 id="title">신장 수치는 정상이라고 하셨습니다 — 그래도 소변과 혈압을 함께 보는 이유</h1>
+  <hr>
+  <article id="body">
+<p>안녕하세요. 신장질환과 혈액투석, 응급중환자 진료를 하는 수의사 안운찬입니다.</p>
+
+<p>진료실에서 자주 보는 장면이 있습니다. 열두 살 된 아이를 데리고 오신 보호자께서 건강검진 결과지를 펼쳐 놓고 이렇게 말씀하십니다.</p>
+
+<blockquote>"신장 수치는 괜찮다고 하셨어요."</blockquote>
+
+<p>맞는 말씀입니다. 그 말을 의심하려고 이 글을 쓰는 것이 아닙니다.</p>
+
+<p>다만 검사지에 적힌 "정상"이라는 두 글자가 무엇까지 확인해준 것이고 무엇은 확인해주지 못한 것인지, 한 번 정리해 두고 싶었습니다. 노령견 보호자를 뵐 때마다 진료실에서 처음부터 다시 설명드리게 되는 내용이기도 합니다.</p>
+
+<p>마침 이 이야기를 하기 좋은 연구가 최근에 나왔습니다. 루마니아 클루지나포카 수의대에서 겉으로 건강한 노령견 61마리를 모아 검사한 자료입니다.</p>
+
+<h3>크레아티닌은 신장이 아니라 근육에서 출발합니다</h3>
+
+<p>신장 항목에서 가장 먼저 보는 크레아티닌은 근육 대사의 부산물입니다. 근육에서 만들어져 혈액을 돌다가 사구체에서 걸러집니다. 신장이 덜 걸러내면 혈액에 남아 수치가 올라갑니다. 여기까지는 간단합니다.</p>
+
+<p>문제는 출발점이 근육이라는 데 있습니다. 만들어지는 양 자체가 적으면, 걸러내는 능력이 떨어져도 수치는 그만큼 올라가지 않습니다.</p>
+
+<p>건강한 비글 41마리를 6개월 동안 따라가며 이 관계를 직접 잰 연구가 있습니다. 제지방량(근육량)과 나이는 크레아티닌 농도를 설명하는 유의한 변수였지만, SDMA에 대해서는 그렇지 않았습니다. 저자들의 결론은 분명합니다. 제지방량이 줄면 크레아티닌이 낮아지고, 그만큼 사구체여과율을 실제보다 좋게 보이게 한다는 것입니다.</p>
+
+<p>노령견에게 이 말은 그대로 적용됩니다. 나이가 들며 근육이 빠지는 것은 병이 아니라 노화의 일부인데, 그 노화가 검사 수치를 낙관적인 쪽으로 밀어 놓습니다.</p>
+
+<p>여기에 하나가 더 붙습니다. 크레아티닌과 BUN, SDMA는 모두 "사구체가 얼마나 걸러내는가"만 봅니다. 걸러낸 물을 다시 흡수하고 소변을 농축하는 세뇨관 쪽에 무슨 일이 생겼는지는 이 세 가지로는 알 수 없습니다.</p>
+
+<h3>SDMA는 분명히 한 걸음 앞섰습니다. 그런데 이번에는 한 마리도 잡지 못했습니다</h3>
+
+<p>SDMA가 노령 동물 건강검진의 기본 항목으로 자리 잡은 데에는 이유가 있습니다. 부검으로 만성신장병이 확인된 개 19마리를 되짚어 본 연구에서, 17마리는 크레아티닌이 올라가기 전에 SDMA가 먼저 올라가 있었습니다. 평균 9.8개월, 짧게는 2.2개월에서 길게는 27개월 앞섰습니다. 다만 이번 논문의 저자들은 이 9.8개월이라는 값이 소규모 집단을 불규칙한 간격으로 채혈해 얻은 것이라 근사치로 봐야 한다는 단서를 달아 두었습니다. 그래도 방향은 분명합니다. 저도 노령견 검진에 SDMA를 넣습니다.</p>
+
+<p>이번 연구는 그 SDMA가 비어 있는 자리를 보여줍니다.</p>
+
+<p>연구진은 만성질환 병력이 없고 약을 먹지 않으며 신체검사·혈액검사·요검사가 모두 정상인 중성화된 노령견만 추렸습니다(15 kg 이상은 8세, 15 kg 미만은 10세를 노령 기준으로 삼았습니다). 처음 등록된 131마리 중 61마리가 남았습니다. 이 61마리에 통상적인 항목과 함께 혈청 시스타틴 C와 요 NAG 지수를 더해 쟀습니다.</p>
+
+<p>NAG는 근위세뇨관 세포의 라이소좀 효소입니다. 분자가 커서 정상 사구체는 이것을 걸러 내보내지 못합니다. 그래서 소변에서 검출된다는 것 자체가 세뇨관 세포가 상했다는 뜻이 됩니다. 시스타틴 C는 반대로 작아서 자유롭게 걸러지는데, 모든 유핵세포가 일정한 속도로 만들어 내기 때문에 근육량에 흔들리지 않습니다.</p>
+
+<p>결과는 이렇습니다. 61마리 중 17마리(27.9%)가 크레아티닌이 정상이면서 세 지표 중 하나 이상이 기준을 넘었습니다. 이 17마리는 BUN도 전부 정상이었습니다.</p>
+
+<p><img src="https://vet-briefing.vercel.app/drafts/img/2026-09-29-geriatric-renal-markers.png" alt="크레아티닌이 정상이던 노령견 17마리에서 시스타틴 C는 16마리, 요 NAG 지수는 6마리에서 올라갔고 SDMA는 한 마리도 올라가지 않았다는 막대그림"></p>
+
+<p>시스타틴 C가 16마리, 요 NAG 지수가 6마리에서 올라가 있었고, SDMA는 한 마리도 없었습니다. 질소혈증이 이미 있던 8마리에서는 반대로 SDMA가 여덟 마리 모두 올라가 있었습니다.</p>
+
+<h3>이 논문에서 제가 가장 신뢰한 부분은, 저자들이 자기 결과를 스스로 깎아낸 단락입니다</h3>
+
+<p>여기까지만 읽으면 "시스타틴 C가 더 예민한 검사구나"로 끝날 것 같습니다. 그런데 저자들이 고찰에서 직접 그 해석을 막아 놓았습니다.</p>
+
+<p>시스타틴 C의 기준값 0.86 mg/L는 정상 개들의 분포 바로 위에 놓여 있습니다. 대조군의 중앙값이 0.70, 3사분위수가 0.77이었으니 조금만 움직여도 기준을 넘습니다. 반면 SDMA의 기준값 14 µg/dL는 질소혈증이 없는 개들이 도달하지 못하는 위치에 있습니다. 이 연구에서 질소혈증이 없던 53마리 중 가장 높은 값이 11.8이었습니다.</p>
+
+<p>기준선이 건강한 개들의 어깨 높이에 걸쳐 있는 검사와, 한참 위에 걸려 있는 검사를 나란히 놓고 "이쪽이 더 예민하다"고 말할 수는 없다는 것입니다. 실제로 시스타틴 C 기준값을 10%만 움직여 보니 "이상 소견이 있는 개"의 비율이 19.7%에서 42.6%까지 달라졌습니다.</p>
+
+<p>저자들은 결론에서도 이 연구가 진단 정확도를 보인 것이 아니라 생화학적 표현형을 기술한 것이라고 못 박았습니다. 사구체여과율을 따로 재지 않았고, 시스타틴 C 수치가 애초에 군을 나누는 기준의 일부로 쓰였기 때문입니다.</p>
+
+<p>저는 이런 단락이 들어 있는 논문을 더 믿습니다.</p>
+
+<h3>그래서 이 자료에서 제 눈에 오래 남은 것은 혈압이었습니다</h3>
+
+<p>지표들이 맺은 상관관계 중 가장 강한 것은 시스타틴 C와 다른 신장 수치 사이가 아니라, 시스타틴 C와 수축기 혈압 사이였습니다(ρ = 0.543). 지표가 올라간 17마리는 대조군보다 혈압이 유의하게 높았고, 이미 질소혈증이 있던 개들과 비교하면 혈압에 차이가 없었습니다.</p>
+
+<p>이 연구는 애초에 수축기 혈압이 160 mmHg를 넘는 개를 제외하고 시작했습니다. 그 문턱 아래에서도 이런 차이가 나왔다는 뜻입니다. 반대로 기준을 넘은 지표의 개수와 나이 사이에는 상관이 없었습니다(ρ = -0.041).</p>
+
+<p>저자들은 여기서 물러섰습니다. 이 17마리의 이상 소견이 신장 자체가 상해서 생긴 것인지, 혈압이 높아 사구체로 가는 유효 여과압이 떨어진 결과인지 이 설계로는 구분할 수 없다고 적었습니다. 맞는 말입니다.</p>
+
+<p>그런데 보호자 입장에서는 오히려 이쪽이 지금 할 수 있는 일에 가깝습니다. 시스타틴 C는 아직 대부분의 동물병원에서 바로 돌릴 수 있는 검사가 아니지만, 혈압은 오늘 잴 수 있습니다.</p>
+
+<table>
+<tr><th>항목</th><th>무엇을 보는가</th><th>무엇에 흔들리는가</th><th>이 연구의 17마리에서</th></tr>
+<tr><td>크레아티닌</td><td>사구체 여과</td><td>근육량, 나이</td><td>전부 정상(선정 기준)</td></tr>
+<tr><td>BUN</td><td>사구체 여과</td><td>식이 단백, 탈수, 위장관 출혈, 간 기능</td><td>전부 정상</td></tr>
+<tr><td>SDMA</td><td>사구체 여과</td><td>견종(그레이하운드에서 높음), 림프종, 체지방률</td><td>0마리 상승</td></tr>
+<tr><td>혈청 시스타틴 C</td><td>사구체 여과</td><td>근육량의 영향을 받지 않음</td><td>16마리 상승</td></tr>
+<tr><td>요 NAG 지수</td><td>근위세뇨관 손상</td><td>나이(6세 이후 상승 보고)</td><td>6마리 상승</td></tr>
+</table>
+
+<p>위 표의 교란 요인은 이 논문의 서론에 정리된 내용을 옮긴 것입니다.</p>
+
+<h3>노령견 검진에서 제가 부탁드리는 것</h3>
+
+<p>첫째, <b>소변을 함께 받아 오시는 것입니다.</b> 혈액만으로 끝나는 검진이 생각보다 많습니다. 질소혈증이 없는 1기 만성신장병은 혈액이 아니라 소변에서 먼저 잡히는 경우가 흔합니다. 1기 환자 36마리를 모은 연구를 보면, 20마리는 묽은 소변만으로, 6마리는 단백뇨만으로, 10마리는 둘 다로 진단되었습니다. 아침 첫 소변이 가장 좋습니다.</p>
+
+<p>둘째, <b>혈압을 재는 것입니다.</b> 노령견에서 혈압은 심장 항목이 아니라 신장 항목이기도 합니다. 위 연구가 그 점을 다시 보여줍니다.</p>
+
+<p>셋째, <b>작년 숫자를 가져오시는 것입니다.</b> 이건 제 진료 방식에 가깝습니다만, 저는 한 시점의 정상·비정상보다 같은 아이의 지난 숫자와 비교하는 쪽을 더 봅니다. 크레아티닌이 재작년 0.8, 올해 1.3이라면 둘 다 정상 범위 안에 있어도 저는 같은 눈으로 보지 않습니다.</p>
+
+<p>반대로, 시스타틴 C나 요 NAG를 지금 검진에 넣어 달라고 요구하실 필요는 없습니다. 두 가지 모두 아직 연구용 검사 단계에 가깝고, 무엇보다 이 결과만으로는 어떤 개가 그 검사로 이득을 볼지 정해지지 않았습니다.</p>
+
+<h3>27.9%를 "10마리 중 3마리는 신장병"으로 읽으면 안 됩니다</h3>
+
+<p>이 숫자는 진단이 아닙니다. 검사 수치의 조합이 같은 나이의 다른 개들과 달랐다는 뜻이고, 그 이상은 아닙니다. 61마리를 한 시점에 재고 끝난 연구라서 이 개들이 나중에 실제로 질소혈증까지 갔는지는 아무도 모릅니다. 저자들이 앞으로 해야 할 일로 적어 둔 것도 정확히 그것 — 여과율을 직접 재면서 이 개들을 따라가 보는 일입니다.</p>
+
+<p>그러니 결과지에 적힌 "정상"은 여전히 좋은 소식입니다. 다만 그것은 "지금 이 시점에 사구체 여과가 크게 무너져 있지는 않다"는 뜻이지, "신장에 아무 일도 없다"는 뜻은 아닙니다. 검사는 신장을 들여다보는 창이지 신장 그 자체가 아닙니다. 창이 몇 개인지, 어느 방향으로 나 있는지에 따라 보이는 것이 달라집니다.</p>
+
+<p>노령견 보호자께서 다음 검진 때 소변 통 하나를 더 챙겨 오시고, 혈압 한 번 재고 가시는 것. 이 글이 바라는 것은 그 정도입니다.</p>
+
+<p>읽어주셔서 감사합니다.</p>
+
+<p>신장과 투석을 공부하는 수의사<br>안운찬 드림</p>
+
+<h3>출처</h3>
+
+<ul>
+<li>Codea AR, Biriș A, Neagu D, Hașaș AD, Popovici C, Ursache AL, Popa R, Mircean M. Serum Cystatin C and the Urinary NAG Index Identify an Altered Renal Biochemical Phenotype in Clinically Healthy Geriatric Dogs with Normal Serum Creatinine: A Three-Tier Cross-Sectional Study. Veterinary Sciences, 2026;13(9):881. doi:10.3390/vetsci13090881</li>
+<li>Hall JA, Yerramilli M, Obare E, Yerramilli M, Melendez LD, Jewell DE. Relationship between lean body mass and serum renal biomarkers in healthy dogs. Journal of Veterinary Internal Medicine, 2015;29(3):808-814. doi:10.1111/jvim.12607</li>
+<li>Hall JA, Yerramilli M, Obare E, Yerramilli M, Almes K, Jewell DE. Serum Concentrations of Symmetric Dimethylarginine and Creatinine in Dogs with Naturally Occurring Chronic Kidney Disease. Journal of Veterinary Internal Medicine, 2016;30(3):794-802. doi:10.1111/jvim.13942</li>
+<li>Hall JA, Fritsch DA, Yerramilli M, Obare E, Yerramilli M, Jewell DE. A longitudinal study on the acceptance and effects of a therapeutic renal food in pet dogs with IRIS-Stage 1 chronic kidney disease. Journal of Animal Physiology and Animal Nutrition, 2018;102(1):297-307. doi:10.1111/jpn.12692</li>
+<li>Hokamp JA, Nabity MB. Renal biomarkers in domestic species. Veterinary Clinical Pathology, 2016;45(1):28-56. doi:10.1111/vcp.12333</li>
+</ul>
+<p><b>개인 홈페이지</b><br><a href="https://www.ahnwoonchan.com/">https://www.ahnwoonchan.com/</a></p>
+<p>※ 이 글은 동물의 신장질환과 혈액투석에 관한 일반적인 정보를 전달하기 위한 글입니다. 개별 환자의 치료 필요성과 예후는 검사 결과와 전신 상태를 종합하여 담당 수의사와 상담해 판단해야 합니다.</p>
+  </article>
+</div>
+<script>
+function flash(btn, label) {
+  var old = btn.textContent;
+  btn.textContent = label;
+  setTimeout(function () { btn.textContent = old; }, 1500);
+}
+document.getElementById("copyTitle").addEventListener("click", function () {
+  var t = document.getElementById("title").textContent;
+  navigator.clipboard.writeText(t).then(flash(this, "복사되었습니다"));
+});
+document.getElementById("copyBody").addEventListener("click", function () {
+  var el = document.getElementById("body");
+  var htmlBlob = new Blob([el.innerHTML], { type: "text/html" });
+  var textBlob = new Blob([el.innerText], { type: "text/plain" });
+  var btn = this;
+  if (window.ClipboardItem) {
+    navigator.clipboard.write([new ClipboardItem({ "text/html": htmlBlob, "text/plain": textBlob })])
+      .then(function () { flash(btn, "복사되었습니다"); },
+            function () { navigator.clipboard.writeText(el.innerText).then(function () { flash(btn, "텍스트로 복사됨"); }); });
+  } else {
+    navigator.clipboard.writeText(el.innerText).then(function () { flash(btn, "텍스트로 복사됨"); });
+  }
+});
+</script>
+</body>
+</html>
