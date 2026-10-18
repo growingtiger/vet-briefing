@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>블로그 초안 2026-10-19</title>
+<style>
+  :root { --ink:#22303b; --soft:#5b6b76; --accent:#0e7490; --line:#dde4e7; --bg:#fafaf8; }
+  @media (prefers-color-scheme: dark) {
+    :root { --ink:#d9e2e8; --soft:#8fa1ac; --accent:#4cc4dd; --line:#26333d; --bg:#10171d; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); line-height:1.8;
+    font-family:"Apple SD Gothic Neo","Pretendard","Noto Sans KR",sans-serif; }
+  .wrap { max-width:42rem; margin:0 auto; padding:1.5rem 1.25rem 4rem; }
+  .meta { font-size:0.85rem; color:var(--soft); border:1px solid var(--line);
+    border-radius:10px; padding:0.8rem 1rem; margin-bottom:1.2rem; }
+  .btns { display:flex; gap:0.6rem; flex-wrap:wrap; margin-bottom:1.6rem; }
+  button { font:inherit; font-size:0.9rem; font-weight:600; color:#fff;
+    background:var(--accent); border:none; border-radius:8px;
+    padding:0.6rem 1.1rem; cursor:pointer; }
+  button.secondary { color:var(--accent); background:transparent;
+    border:1.5px solid var(--accent); }
+  h1 { font-size:1.5rem; line-height:1.4; }
+  article h3 { font-size:1.1rem; margin-top:2em; }
+  article p { margin:1em 0; }
+  article blockquote { margin:1.4em 0; padding:0.2em 1em; border-left:3px solid var(--accent); color:var(--soft); }
+  article img { max-width:100%; height:auto; border:1px solid var(--line); border-radius:8px; }
+  article table { border-collapse:collapse; width:100%; margin:1.2em 0; font-size:0.92em; }
+  article th, article td { border:1px solid var(--line); padding:0.5em 0.7em; text-align:left; }
+  article th { background:rgba(14,116,144,0.08); }
+  hr { border:none; border-top:1px solid var(--line); margin:2rem 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="meta">
+    블로그 글 초안 · 2026-10-19 · 카테고리 제안: 가슴 뛰는 신장·중환자·투석<br>
+    검토 후 수정할 부분이 있으면 편하게 고쳐서 올려주세요.<br>
+    그림이 붙여넣기에 포함되지 않으면, 그림을 길게 눌러(또는 우클릭) 저장한 뒤 에디터에서 삽입해 주세요.
+  </div>
+  <div class="btns">
+    <button id="copyTitle" type="button">제목 복사</button>
+    <button id="copyBody" class="secondary" type="button">본문 복사 (서식 유지)</button>
+  </div>
+  <h1 id="title">막힌 요도를 뚫었는데 신장 수치가 아직 높습니다 — 요도폐색 고양이에서 크레아티닌이 말해주지 않는 것</h1>
+  <hr>
+  <article id="body">
+<p>안녕하세요. 신장질환과 혈액투석, 응급중환자 진료를 하는 수의사 안운찬입니다.</p><p>요도가 막힌 수컷 고양이가 오면 응급실은 바쁘게 돌아갑니다. 칼륨을 확인하고, 심전도를 붙이고, 진정을 하고, 카테터로 막힌 길을 엽니다. 방광에서 소변이 빠져나오기 시작하면 다들 한숨을 돌립니다.</p><p>그런데 그다음 날부터 보호자분들이 묻는 질문은 조금 달라집니다.</p><blockquote>"뚫었는데 신장 수치는 왜 아직 높아요?"<br>"수치가 정상으로 내려왔으면 신장은 괜찮은 거죠?"</blockquote><p>두 질문 모두 크레아티닌 숫자 하나에 기대고 있습니다. 오늘은 이 숫자가 요도폐색 고양이에서 무엇을 말해주고, 무엇을 말해주지 않는지 정리해 보려고 합니다. 마침 지난주에 관련 논문이 한 편 더 나와 함께 읽어 보았습니다.</p><h3>막힌 동안 오르는 수치는 대부분 '길'의 문제입니다</h3><p>요도가 막히면 소변이 나갈 곳이 없습니다. 방광이 차고, 그 압력이 요관을 거쳐 신장 안쪽 세뇨관까지 거슬러 올라갑니다. 세뇨관 안의 압력이 높아지면 사구체에서 혈액을 걸러내는 힘, 즉 사구체여과율이 떨어집니다.</p><p>그래서 크레아티닌과 BUN이 오릅니다. 신장 조직이 망가져서라기보다, 걸러낸 것을 내보낼 길이 막혀서 오르는 경우가 많습니다. 이것을 신후성(post-renal) 고질소혈증이라고 부릅니다.</p><p>길이 다시 열리면 이 부분은 빠르게 풀립니다. 미국에서 요도폐색 고양이 25마리를 전향적으로 추적한 연구에서는 크레아티닌 평균이 2.5 mg/dL에서 카테터 삽입 24시간 뒤 1.5 mg/dL로, 38.4% 내려갔습니다. SDMA도 같은 기간 17.6에서 10.3 µg/dL로 41.8% 떨어졌습니다.</p><h3>대부분은 48시간 안에 내려옵니다</h3><p>올해 5월 Journal of Feline Medicine and Surgery에 호주 시드니의 2차 동물병원 다섯 곳이 모은 수컷 요도폐색 고양이 601마리의 기록이 실렸습니다. 2020년부터 2024년까지의 자료입니다.</p><ul><li>내원 시 고질소혈증(크레아티닌 140 µmol/L, 약 1.6 mg/dL 초과)이 있던 고양이: 333마리, 55.4%</li><li>그중 수치가 정상 범위로 돌아올 때까지 추적된 127마리에서, 정상화까지 걸린 시간의 중앙값: 24시간</li><li>48시간 안에 정상화: 89마리(70.1%), 60시간 안에 정상화: 116마리(91.3%)</li><li>가장 오래 걸린 고양이: 144시간</li></ul><img src="https://vet-briefing.vercel.app/drafts/img/2026-10-19-uo-azotemia.png" alt="요도폐색 고양이에서 고질소혈증이 정상화되기까지 걸린 시간 막대그림"><p>Skinner 등(J Feline Med Surg, 2026)의 601마리 다기관 후향 연구 중, 정상화까지 추적된 127마리의 수치를 바탕으로 자체 제작한 그림입니다.</p><p>고질소혈증이 있던 고양이는 그렇지 않은 고양이보다 요도 카테터를 더 오래 유지하게 될 가능성이 1.92배, 입원이 길어질 가능성이 1.81배 높았습니다. 결과가 기록된 599마리 중 590마리(98.5%)가 퇴원했습니다.</p><p>보호자께 드릴 수 있는 말은 이렇습니다. 첫날 수치가 높더라도 대부분은 이틀 안팎에 내려옵니다. 그리고 수치가 높았던 아이는 입원이 더 길어질 수 있다는 것을 미리 알고 계시면 좋습니다.</p><p>다만 이 숫자를 읽을 때 걸리는 점이 있습니다. 고질소혈증이 있던 333마리 중 정상화까지 따라간 것은 127마리뿐입니다. 저자들도 비용과 추적 한계 때문에 끝까지 확인된 고양이가 적었고, 그래서 신장이 완전히 회복되지 않은 경우는 평가할 수 없었다고 적었습니다. 이미 만성신장병을 갖고 있었지만 진단받지 않은 고양이가 섞였을 가능성도 저자들이 직접 언급합니다.</p><h3>수치가 내려왔다는 것과 신장이 다치지 않았다는 것은 다른 이야기입니다</h3><p>크레아티닌은 신장이 얼마나 걸러내고 있는지를 보여주는 기능의 지표입니다. 세뇨관 세포가 지금 손상을 받고 있는지를 직접 보여주지는 않습니다. 그리고 기능이 꽤 떨어지기 전까지는 잘 오르지 않습니다.</p><p>그래서 최근 몇 년 사이, 막힌 고양이의 소변에서 세뇨관 손상의 흔적을 직접 찾으려는 연구들이 나오고 있습니다.</p><table><tr><th>소변 지표</th><th>연구 대상</th><th>확인된 것</th></tr><tr><td>KIM-1<br>(Animals, 2026)</td><td>수컷 24마리. 크레아티닌이 정상 범위인 요도폐색 12마리, 대조군 12마리</td><td>크레아티닌·BUN은 두 군이 차이가 없었는데, 소변 KIM-1은 폐색군이 더 높았습니다</td></tr><tr><td>L-FABP<br>(J Small Anim Pract, 2026)</td><td>하부요로질환 24마리(폐색 16, 비폐색 8), 건강 8마리</td><td>폐색군이 비폐색군·건강군보다 높았습니다. 폐색 36시간 미만과 이상 사이의 차이는 유의하지 않았습니다</td></tr><tr><td>시스타틴 B<br>(Vet J, 2024)</td><td>건강, 요도폐색, 만성신장병, 급성신손상 등 고양이 76마리</td><td>급성신손상 고양이가 요도폐색 고양이보다 높았습니다</td></tr></table><p>KIM-1 연구가 특히 눈에 들어왔습니다. 혈액검사로는 아무 이상이 없던 막힌 고양이에서도 세뇨관 손상의 신호가 잡혔다는 뜻이기 때문입니다. 크레아티닌이 정상이라고 해서 신장이 그 시간을 아무 일 없이 지나갔다고 말할 수는 없다는 것을 시사합니다. 다만 저자들도 막힌 상태에서 잰 값이라 소변 정체의 영향을 완전히 배제할 수 없고, 방광 염증의 영향도 남아 있으며, 조직 검사로 확인한 것은 아니라고 적었습니다.</p><p>지난주에 나온 L-FABP 연구는 저자들이 '오래 막힌 고양이에서 특히 쓸모가 있을 것'이라고 결론을 냈습니다. 그런데 정작 이 연구 안에서는 36시간 기준으로 나눈 두 군의 차이가 유의하지 않았습니다. 각 군은 8마리입니다. 저는 이 결론을 아직 가설로 읽습니다.</p><p>세 연구 모두 고양이 수가 적고, 요도폐색 고양이들이 몇 달 뒤 어떻게 되었는지는 알려주지 않습니다. 소변 지표가 높았던 고양이가 나중에 만성신장병으로 넘어가는지, 그래서 퇴원 뒤 더 자주 봐야 하는지는 아직 아무도 답하지 못했습니다. 지금 진료실에서 이 검사들로 치료를 바꿀 단계는 아닙니다.</p><h3>그래서 진료실에서 이렇게 봅니다</h3><p>첫날의 크레아티닌 숫자가 크다고 해서 그 고양이의 신장이 그만큼 망가졌다고 단정하지 않습니다. 앞의 25마리 연구에서 처음 크레아티닌은 5~20일 뒤 값과 중간 정도의 상관만 보였고, 처음 SDMA는 뒤의 값과 상관이 없었습니다. 저자들도 처음 수치만으로 회복 뒤의 신장 기능을 예측할 수는 없다고 결론지었습니다.</p><p>대신 수치가 내려오는 속도를 봅니다. 연구 자료로 보면 대부분은 이틀 안팎에 정상 범위로 돌아옵니다. 그 시간을 넘겨도 내려오지 않는다면, 막힘 말고 다른 이유가 함께 있는지 다시 살펴야 합니다. 신장 자체의 손상일 수도, 원래 있던 만성신장병일 수도, 감염이 함께 있었을 수도 있습니다. 앞의 25마리 연구에서 처음 소변 배양에서 세균이 자라 분석에서 빠진 고양이들은 내원 시 크레아티닌 중앙값이 10.9 mg/dL로, 배양 음성 고양이(1.6 mg/dL)보다 훨씬 높았습니다. 수치가 내려오는 속도까지 본 것은 아니지만, 감염이 함께 있는 경우를 따로 의심해 볼 이유는 됩니다.</p><p>그리고 수치가 정상으로 돌아와 퇴원하는 고양이에게도, 한 번쯤은 신장을 다시 확인해 볼 이유가 있다고 생각합니다. 막혀 있던 시간 동안 세뇨관이 받은 손상이 크레아티닌에 다 드러나지 않을 수 있기 때문입니다. 이것이 장기적으로 어떤 의미가 있는지는 위에서 말씀드린 대로 아직 근거가 부족합니다. 그래서 더 단정하지 않고, 지켜보자고 말씀드립니다.</p><blockquote>길을 여는 것은 하루면 됩니다. 그 길 위쪽에서 신장이 무엇을 겪었는지는, 숫자가 내려온 뒤에야 조금씩 보입니다.</blockquote><h3>맺으며</h3><p>요도폐색은 대부분 잘 회복되는 응급입니다. 599마리 중 590마리가 퇴원했다는 숫자가 그것을 보여줍니다. 그래서 오히려 수치가 내려오면 다 끝났다고 생각하기 쉽습니다.</p><p>이 글을 읽은 보호자 한 분이 '수치는 내려왔는데 한 번 더 확인해 보자'는 말을 덜 불안하게 받아들이시고, 동료 수의사 한 분이 사흘째에도 내려오지 않는 크레아티닌을 다시 한번 의심해 보신다면 충분합니다.</p><p>읽어주셔서 감사합니다.</p><p>신장과 투석을 공부하는 수의사<br>안운찬 드림</p><h3>참고 문헌</h3><ul><li>Skinner VJ, Zhong M, Hall EJ, Eramanis LM, Thompson MF. Azotaemia and outcomes in male cats with initial and recurrent urethral obstruction: a multicentre, retrospective study of 601 cats (2020-2024). J Feline Med Surg. 2026;28(7).</li><li>Wilson KE, Berent AC, Weisse CW, Szlosek D. Assessment of serum symmetric dimethylarginine and creatinine concentrations in cats with urethral obstruction. J Feline Med Surg. 2022;24(10):1017-1025.</li><li>Xavier Júnior FAF, Araujo SL, Pereira THS, et al. Urinary KIM-1 as a Marker of Renal Tubular Injury Associated with Urethral Obstruction in Non-Azotemic Cats. Animals (Basel). 2026;16(12):1907.</li><li>Culha N, Acar A, Ulutas B, Dinler Ay C. Urinary liver-type fatty acid-binding protein in cats with lower urinary tract disease. J Small Anim Pract. 2026. doi:10.1111/jsap.70212</li><li>Chen H, Avital Y, Peterson S, Ouyang Z, Yerramilli M, Aroch I, Segev G. Urinary Cystatin B as a marker of acute kidney injury in cats. Vet J. 2024;308:106262.</li></ul>
+<p><b>개인 홈페이지</b><br><a href="https://www.ahnwoonchan.com/">https://www.ahnwoonchan.com/</a></p>
+<p>※ 이 글은 동물의 신장질환과 혈액투석에 관한 일반적인 정보를 전달하기 위한 글입니다. 개별 환자의 치료 필요성과 예후는 검사 결과와 전신 상태를 종합하여 담당 수의사와 상담해 판단해야 합니다.</p>
+  </article>
+</div>
+<script>
+function flash(btn, label) {
+  var old = btn.textContent;
+  btn.textContent = label;
+  setTimeout(function () { btn.textContent = old; }, 1500);
+}
+document.getElementById("copyTitle").addEventListener("click", function () {
+  var t = document.getElementById("title").textContent;
+  navigator.clipboard.writeText(t).then(flash(this, "복사되었습니다"));
+});
+document.getElementById("copyBody").addEventListener("click", function () {
+  var el = document.getElementById("body");
+  var htmlBlob = new Blob([el.innerHTML], { type: "text/html" });
+  var textBlob = new Blob([el.innerText], { type: "text/plain" });
+  var btn = this;
+  if (window.ClipboardItem) {
+    navigator.clipboard.write([new ClipboardItem({ "text/html": htmlBlob, "text/plain": textBlob })])
+      .then(function () { flash(btn, "복사되었습니다"); },
+            function () { navigator.clipboard.writeText(el.innerText).then(function () { flash(btn, "텍스트로 복사됨"); }); });
+  } else {
+    navigator.clipboard.writeText(el.innerText).then(function () { flash(btn, "텍스트로 복사됨"); });
+  }
+});
+</script>
+</body>
+</html>
