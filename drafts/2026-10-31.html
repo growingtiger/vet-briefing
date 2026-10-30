@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>블로그 초안 2026-10-31</title>
+<style>
+  :root { --ink:#22303b; --soft:#5b6b76; --accent:#0e7490; --line:#dde4e7; --bg:#fafaf8; }
+  @media (prefers-color-scheme: dark) {
+    :root { --ink:#d9e2e8; --soft:#8fa1ac; --accent:#4cc4dd; --line:#26333d; --bg:#10171d; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); line-height:1.8;
+    font-family:"Apple SD Gothic Neo","Pretendard","Noto Sans KR",sans-serif; }
+  .wrap { max-width:42rem; margin:0 auto; padding:1.5rem 1.25rem 4rem; }
+  .meta { font-size:0.85rem; color:var(--soft); border:1px solid var(--line);
+    border-radius:10px; padding:0.8rem 1rem; margin-bottom:1.2rem; }
+  .btns { display:flex; gap:0.6rem; flex-wrap:wrap; margin-bottom:1.6rem; }
+  button { font:inherit; font-size:0.9rem; font-weight:600; color:#fff;
+    background:var(--accent); border:none; border-radius:8px;
+    padding:0.6rem 1.1rem; cursor:pointer; }
+  button.secondary { color:var(--accent); background:transparent;
+    border:1.5px solid var(--accent); }
+  h1 { font-size:1.5rem; line-height:1.4; }
+  article h3 { font-size:1.1rem; margin-top:2em; }
+  article p { margin:1em 0; }
+  article blockquote { margin:1.4em 0; padding:0.2em 1em; border-left:3px solid var(--accent); color:var(--soft); }
+  article img { max-width:100%; height:auto; border:1px solid var(--line); border-radius:8px; }
+  article table { border-collapse:collapse; width:100%; margin:1.2em 0; font-size:0.92em; }
+  article th, article td { border:1px solid var(--line); padding:0.5em 0.7em; text-align:left; }
+  article th { background:rgba(14,116,144,0.08); }
+  hr { border:none; border-top:1px solid var(--line); margin:2rem 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="meta">
+    블로그 글 초안 · 2026-10-31 · 카테고리 제안: 가슴 뛰는 신장·중환자·투석<br>
+    검토 후 수정할 부분이 있으면 편하게 고쳐서 올려주세요.<br>
+    그림이 붙여넣기에 포함되지 않으면, 그림을 길게 눌러(또는 우클릭) 저장한 뒤 에디터에서 삽입해 주세요.
+  </div>
+  <div class="btns">
+    <button id="copyTitle" type="button">제목 복사</button>
+    <button id="copyBody" class="secondary" type="button">본문 복사 (서식 유지)</button>
+  </div>
+  <h1 id="title">방광염 때문에 단백뇨가 나온 걸까요 — 소변 단백 수치(UPC)를 염증 탓으로 미루기 전에</h1>
+  <hr>
+  <article id="body">
+<p>안녕하세요. 신장질환과 혈액투석, 응급중환자 진료를 하는 수의사 안운찬입니다.</p><p>"소변에서 단백이 나왔는데, 방광염이 있어서 그렇대요. 항생제 먹고 다시 보자고 하셨어요."</p><p>다른 병원에서 소변 검사를 받고 오신 보호자분께 가끔 듣는 이야기입니다.</p><p>틀린 설명은 아닙니다. 방광에 염증이 생기면 소변으로 단백질이 섞여 나올 수 있다는 것은 교과서에도 있는 내용입니다. 문제는 그 설명이 너무 편하다는 데 있습니다. 염증 때문이라고 정리하는 순간, 신장에서 새고 있는 단백뇨를 찾아볼 이유가 사라지기 때문입니다.</p><p>마침 이번 주에 이 질문을 숫자로 따져 본 국내 연구가 나왔습니다. 충북대학교 수의내과학 연구실의 자료입니다. 오늘은 이 논문을 중심으로, 앞서 나온 연구 몇 편을 함께 엮어 보려고 합니다.</p><h3>UPC라는 숫자부터 짚고 가겠습니다</h3><p>소변 단백/크레아티닌 비(UPC)는 소변으로 빠져나가는 단백질의 양을 크레아티닌으로 나눠 보정한 값입니다. 소변이 진하든 묽든 비교할 수 있도록 만든 지표입니다.</p><p>국제신장학회(IRIS)는 개에서 UPC가 0.2 미만이면 단백뇨가 아닌 것으로, 0.2~0.5는 경계, 0.5를 넘으면 단백뇨로 분류합니다.</p><p>그런데 이 숫자는 소변에 섞여 들어온 단백질이 어디에서 왔는지까지 알려주지는 않습니다. 사구체에서 샌 것일 수도 있고, 방광 점막의 염증이나 출혈에서 온 것일 수도 있습니다. 그래서 UPC를 해석하기 전에 소변 침사와 배양을 먼저 확인하라는 말이 나옵니다.</p><p>순서 자체는 맞습니다. 다만 그 순서가 어느 순간 "방광염이 있으면 UPC는 믿을 수 없다"로 바뀌어 버린 것이 아닌가 하는 생각을 자주 합니다.</p><h3>방광염만 있는 개는 UPC가 오르지 않았습니다</h3><p>Lym 등은 2016년부터 2025년까지의 진료 기록에서 개 156마리의 UPC를 다섯 무리로 나눠 비교했습니다.</p><ul><li>건강한 개 37마리</li><li>다른 질환 없이 세균성 방광염만 있는 개(산발성 방광염) 13마리</li><li>세균성 방광염과 다른 질환이 함께 있는 개 65마리</li><li>만성신장병 26마리</li><li>부신피질기능항진증(쿠싱) 15마리</li></ul><p>결과는 생각보다 단순했습니다.</p><p>방광염만 있는 개의 UPC 중앙값은 0.20이었습니다. 건강한 개도 0.20이었고, 두 무리 사이에 차이가 없었습니다(p = 0.392).</p><p>반면 방광염과 다른 질환이 함께 있는 개는 0.62, 만성신장병이나 쿠싱이 있는 개는 0.73으로, 방광염만 있는 개보다 뚜렷하게 높았습니다(p < 0.001).</p><img src="https://vet-briefing.vercel.app/drafts/img/2026-10-31-cystitis-upc.png" alt="건강한 개, 방광염만 있는 개, 방광염과 동반 질환이 있는 개, 만성신장병·쿠싱 개의 UPC 중앙값 비교 막대그림"><p>Lym 등(In Vivo, 2026) 초록에 보고된 중앙값을 바탕으로 자체 제작한 그림입니다.</p><p>같은 방광염이라도 UPC를 끌어올린 것은 방광이 아니라, 그 개가 함께 가지고 있던 다른 병이었다는 뜻으로 읽힙니다.</p><h3>0.425라는 기준값, 어떻게 받아들여야 할까요</h3><p>연구진은 방광염만 있는 개와 신장성 단백뇨가 있는 개를 UPC로 얼마나 잘 가를 수 있는지도 계산했습니다. 곡선하면적은 0.9373이었고, 가장 잘 가르는 기준값은 0.425였습니다.</p><p>이 기준에서 특이도는 100%, 민감도는 73.2%였습니다.</p><p>특이도 100%라는 말은, 방광염만 있는 개 중에 UPC가 0.425를 넘은 개가 한 마리도 없었다는 뜻입니다. 그러니 방광염이 있는 개의 UPC가 0.425를 넘는다면, 방광염 하나로 설명하기는 어렵다고 보는 편이 맞습니다.</p><p>민감도 73.2%는 반대쪽 이야기입니다. 신장성 단백뇨가 있는 개 넷 중 하나 정도는 0.425 아래에 있었습니다. 기준값 아래라고 신장 문제가 없다고 안심할 수는 없다는 뜻입니다.</p><p>저자들은 방광염이 있는 개에서 UPC가 0.32를 넘으면 기저 질환을 더 찾아보고, 0.425를 넘으면 신장성 단백뇨를 시사하는 것으로 보자고 제안했습니다.</p><p>다만 이 숫자를 그대로 진료 기준으로 쓰기에는 조심스러운 부분이 있습니다. 방광염만 있는 개가 13마리뿐이었고, 한 연구진이 과거 진료 기록을 거슬러 올라가 분석한 후향 연구입니다. 기준값은 다른 병원, 다른 집단에서 다시 확인되어야 합니다. 저는 이 논문을 "0.425를 외우자"는 이야기보다는 "방광염은 생각보다 UPC를 많이 올리지 않는다"는 방향으로 읽었습니다.</p><h3>다른 연구들도 비슷한 방향을 가리킵니다</h3><p>이 결론이 처음 나온 것은 아닙니다.</p><p>2023년 영국 글래스고 대학의 Fulton 등은 방광천자로 채취한 개 소변 491건을 분석했습니다. 이 중 192건(39.1%)이 단백뇨였습니다. 나이를 보정하면 활동성 침사(적혈구·백혈구·세균이 보이는 침사)가 단백뇨와 연관이 있었지만, 활동성 침사가 있는 샘플 중 실제로 단백뇨였던 것은 49.8%에 그쳤습니다.</p><p>더 눈여겨볼 부분은 재검 결과입니다. 침사 이상이나 배양 양성이 해결된 뒤에도 단백뇨 비율이나 UPC가 통계적으로 의미 있게 내려가지 않았습니다. 저자들은 단백뇨를 소변 이상이나 배양 양성 탓으로 돌리는 것은 근거가 없고, 그러다 신장성 단백뇨를 놓칠 수 있다고 결론을 냈습니다.</p><p>반대 방향에서 본 연구도 있습니다. 2020년 텍사스 A&M 대학의 Grimes 등은 UPC가 0.5를 넘는 개 451마리의 소변 배양 결과를 살폈습니다. 세균이 자란 개는 30마리(6.7%)였습니다. 단백뇨가 있는 개 대부분은 감염과 관계가 없었다는 뜻입니다.</p><h3>그래도 피가 섞인 소변은 따로 생각해야 합니다</h3><p>방광염과 함께 자주 보는 것이 혈뇨입니다. 피에는 단백질이 많으니, 피가 섞이면 UPC가 오를 수밖에 없습니다. 문제는 얼마나 섞여야 판정이 뒤집히느냐입니다.</p><p>2019년 뉴질랜드 매시 대학의 Jillings 등은 UPC가 0.2 미만인 개 18마리의 소변에 각자의 혈액을 0.125%에서 5%까지 섞어 보았습니다. 피를 조금만 섞어도 UPC는 올라갔습니다. 그런데 소변 색에 따라 결과가 크게 갈렸습니다.</p><table><tr><th>혈액을 섞은 소변의 상태</th><th>UPC가 0.5를 넘은 샘플</th></tr><tr><td>색은 노란색 그대로(현미경적 혈뇨)</td><td>54건 중 0건</td></tr><tr><td>색이 변함(육안적 혈뇨)</td><td>108건 중 21건(19.4%)</td></tr><tr><td>붉은 소변(심한 혈뇨)</td><td>54건 중 39건(72%)</td></tr></table><p>Jillings 등(N Z Vet J, 2019)의 결과를 바탕으로 정리한 표입니다.</p><p>혈액을 5%까지 섞은 경우에도 UPC가 2.0을 넘은 샘플은 18건 중 3건뿐이었습니다.</p><p>소변이 노란색을 유지한다면 피 때문에 UPC가 0.5를 넘을 가능성은 거의 없다는 것이 저자들의 결론이었습니다. 반대로 소변 색이 변할 정도의 혈뇨라면 혈액 오염을 단백뇨의 원인 후보로 함께 고려해야 합니다.</p><p>한 가지는 덧붙여 두겠습니다. 2018년 Vientós-Plotts 등의 실험에서는 진한 노란색 소변에서도 UPC가 의미 있게 올랐습니다. 노란색이라고 해서 혈액 오염의 영향을 완전히 무시할 수는 없다는 뜻입니다. 두 연구 모두 실제 환자의 혈뇨가 아니라, 채취한 소변에 피를 인위적으로 섞은 실험이라는 점도 함께 기억해 두어야 합니다.</p><h3>진료실에서 저는 이렇게 정리합니다</h3><p>방광염이 있는 개에서 UPC가 높게 나왔을 때, "치료 끝나고 다시 보자"는 결정 자체가 잘못된 것은 아닙니다. 감염을 정리한 뒤 다시 재는 것은 여전히 합리적인 순서입니다.</p><p>다만 그 사이에 확인할 것들이 있습니다.</p><ul><li>소변 색이 노란색인지, 눈에 보일 만큼 피가 섞였는지 기록해 둡니다.</li><li>UPC가 0.5를 훌쩍 넘는다면 방광염 하나로 설명하기 어렵다고 보고, 혈압·알부민·크레아티닌·SDMA와 신장 초음파를 그 자리에서 함께 봅니다.</li><li>물을 많이 마시거나 털이 빠지고 배가 처지는 등 쿠싱을 떠올릴 만한 모습이 있는지 살핍니다.</li><li>재검은 감염 치료가 끝난 뒤 같은 방법으로 받은 소변으로 합니다.</li></ul><p>단백뇨는 만성신장병의 진행과 연관된 신호이고, 사구체질환을 처음 알려주는 단서가 되기도 합니다. 몇 주를 미뤄서 크게 달라지지 않는 경우도 많습니다. 하지만 원인이 다른 곳에 있었다는 것을 몇 달 뒤에 아는 것은 피하고 싶습니다.</p><p>방광염은 UPC를 생각보다 조금밖에 움직이지 않습니다.</p><p>이 한 문장을 기억해 두시면, 소변 검사지의 숫자를 읽는 방식이 조금 달라질 것이라고 생각합니다.</p><p>보호자분께서 "방광염 때문에 단백뇨가 나왔대요"라는 설명을 들으셨다면, 재검 때 UPC를 꼭 다시 확인해 달라고 한 번만 말씀해 주시면 좋겠습니다. 동료 수의사분들께는 오늘 소개한 몇 편의 논문이 그 재검을 조금 앞당길 이유가 되었으면 합니다.</p><h3>참고한 논문</h3><ul><li>Lym J, Chae Y, Koo Y, Kim H, Kang BT, Yun T. Quantitative Evaluation of Urine Protein-to-Creatinine Ratio in Dogs With Sporadic Bacterial Cystitis. In Vivo. 2026;40(6):3445-3456. PMID 42957258</li><li>Fulton EA, Weir W, Czopowicz M, McBrearty AR. The relationships between sediment findings and culture results and the presence of proteinuria in canine urine samples. Journal of Small Animal Practice. 2023;64(12):749-758. PMID 37632274</li><li>Grimes M, Heseltine JC, Nabity MB, Lawhon SD, Wheeler L, Cigarroa A, Lidbury JA. Characteristics associated with bacterial growth in urine in 451 proteinuric dogs (2008-2018). Journal of Veterinary Internal Medicine. 2020;34(2):770-776. PMID 31951043</li><li>Jillings EKP, Squires RA, Azarpeykan S, Lopez-Villalobos N. Does blood contamination of urine compromise interpretation of the urine protein to creatinine ratio in dogs? New Zealand Veterinary Journal. 2019;67(2):74-78. PMID 30517829</li><li>Vientós-Plotts AI, Behrend EN, Welles EG, Chew DJ, Gaillard PR, Busler JN, Lee HP. Effect of blood contamination on results of dipstick evaluation and urine protein-to-urine creatinine ratio for urine samples from dogs and cats. American Journal of Veterinary Research. 2018;79(5):525-531. PMID 29688781</li></ul><p>읽어주셔서 감사합니다.</p><p>신장과 투석을 공부하는 수의사<br>안운찬 드림</p>
+<p><b>개인 홈페이지</b><br><a href="https://www.ahnwoonchan.com/">https://www.ahnwoonchan.com/</a></p>
+<p>※ 이 글은 동물의 신장질환과 혈액투석에 관한 일반적인 정보를 전달하기 위한 글입니다. 개별 환자의 치료 필요성과 예후는 검사 결과와 전신 상태를 종합하여 담당 수의사와 상담해 판단해야 합니다.</p>
+  </article>
+</div>
+<script>
+function flash(btn, label) {
+  var old = btn.textContent;
+  btn.textContent = label;
+  setTimeout(function () { btn.textContent = old; }, 1500);
+}
+document.getElementById("copyTitle").addEventListener("click", function () {
+  var t = document.getElementById("title").textContent;
+  navigator.clipboard.writeText(t).then(flash(this, "복사되었습니다"));
+});
+document.getElementById("copyBody").addEventListener("click", function () {
+  var el = document.getElementById("body");
+  var htmlBlob = new Blob([el.innerHTML], { type: "text/html" });
+  var textBlob = new Blob([el.innerText], { type: "text/plain" });
+  var btn = this;
+  if (window.ClipboardItem) {
+    navigator.clipboard.write([new ClipboardItem({ "text/html": htmlBlob, "text/plain": textBlob })])
+      .then(function () { flash(btn, "복사되었습니다"); },
+            function () { navigator.clipboard.writeText(el.innerText).then(function () { flash(btn, "텍스트로 복사됨"); }); });
+  } else {
+    navigator.clipboard.writeText(el.innerText).then(function () { flash(btn, "텍스트로 복사됨"); });
+  }
+});
+</script>
+</body>
+</html>
