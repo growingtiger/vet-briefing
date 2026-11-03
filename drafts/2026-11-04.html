@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>블로그 초안 2026-11-04</title>
+<style>
+  :root { --ink:#22303b; --soft:#5b6b76; --accent:#0e7490; --line:#dde4e7; --bg:#fafaf8; }
+  @media (prefers-color-scheme: dark) {
+    :root { --ink:#d9e2e8; --soft:#8fa1ac; --accent:#4cc4dd; --line:#26333d; --bg:#10171d; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); line-height:1.8;
+    font-family:"Apple SD Gothic Neo","Pretendard","Noto Sans KR",sans-serif; }
+  .wrap { max-width:42rem; margin:0 auto; padding:1.5rem 1.25rem 4rem; }
+  .meta { font-size:0.85rem; color:var(--soft); border:1px solid var(--line);
+    border-radius:10px; padding:0.8rem 1rem; margin-bottom:1.2rem; }
+  .btns { display:flex; gap:0.6rem; flex-wrap:wrap; margin-bottom:1.6rem; }
+  button { font:inherit; font-size:0.9rem; font-weight:600; color:#fff;
+    background:var(--accent); border:none; border-radius:8px;
+    padding:0.6rem 1.1rem; cursor:pointer; }
+  button.secondary { color:var(--accent); background:transparent;
+    border:1.5px solid var(--accent); }
+  h1 { font-size:1.5rem; line-height:1.4; }
+  article h3 { font-size:1.1rem; margin-top:2em; }
+  article p { margin:1em 0; }
+  article blockquote { margin:1.4em 0; padding:0.2em 1em; border-left:3px solid var(--accent); color:var(--soft); }
+  article img { max-width:100%; height:auto; border:1px solid var(--line); border-radius:8px; }
+  article table { border-collapse:collapse; width:100%; margin:1.2em 0; font-size:0.92em; }
+  article th, article td { border:1px solid var(--line); padding:0.5em 0.7em; text-align:left; }
+  article th { background:rgba(14,116,144,0.08); }
+  hr { border:none; border-top:1px solid var(--line); margin:2rem 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="meta">
+    블로그 글 초안 · 2026-11-04 · 카테고리 제안: 가슴 뛰는 신장·중환자·투석<br>
+    검토 후 수정할 부분이 있으면 편하게 고쳐서 올려주세요.<br>
+    그림이 붙여넣기에 포함되지 않으면, 그림을 길게 눌러(또는 우클릭) 저장한 뒤 에디터에서 삽입해 주세요.
+  </div>
+  <div class="btns">
+    <button id="copyTitle" type="button">제목 복사</button>
+    <button id="copyBody" class="secondary" type="button">본문 복사 (서식 유지)</button>
+  </div>
+  <h1 id="title">같은 속도로 들어가는 수액인데 나트륨은 세 배 넘게 다릅니다 — 유지 수액의 &#x27;농도&#x27;를 신장 쪽에서 다시 봅니다</h1>
+  <hr>
+  <article id="body">
+<p>안녕하세요. 신장질환과 혈액투석, 응급중환자 진료를 하는 수의사 안운찬입니다.</p><p>입원한 아이의 처방표에는 보통 수액 이름 하나와 속도 하나가 적힙니다. 수액 이야기를 할 때 흔히 듣는 질문도 속도에 관한 것입니다.</p><p>"수액은 하루에 얼마나 들어가요?"</p><p>그런데 신장을 보는 사람에게는 같은 질문이 하나 더 남습니다. 그 물에 소금이 얼마나 녹아 있느냐는 것입니다. 지난달 Frontiers in Veterinary Science에 이 질문을 건강한 개에서 직접 확인한 연구가 실렸습니다. 오하이오 주립대에서 수행된 연구입니다.</p><p>결론부터 말씀드리면, 생각보다 극적인 차이는 없었습니다. 다만 차이가 드러난 자리가 신장이었습니다.</p><h3>유지 수액은 '부족한 물'을 채우는 수액입니다</h3><p>수액 치료는 흔히 세 단계로 나눕니다. 쇼크를 되돌리는 소생, 이미 빠진 수분을 채우는 재수화, 그리고 먹고 마시지 못하는 동안 매일 잃는 물을 대신 넣어 주는 유지입니다. 2024년 AAHA 수액 치료 가이드라인도 이 세 단계로 나누어 설명합니다.</p><p>유지 단계에서 몸에 필요한 것은 주로 물입니다. 그래서 혈장과 나트륨 농도가 비슷한 등장성 수액을 유지 속도로 넣으면 나트륨이 필요량을 넘을 수 있다는 지적이 있습니다. 다만 유지 수액으로 어느 쪽이 맞는지는 아직 논쟁 중입니다.</p><p>실제 진료에서는 등장성 수액을 많이 씁니다. 2018년 Hopper 등이 Veterinary Information Network 회원 소동물 수의사 1,496명에게 물은 온라인 설문에서도, 제시된 모든 임상 상황에서 가장 많이 고른 수액은 등장성 균형 정질액이었습니다. 유지 속도로는 60 mL/kg/일을 쓴다는 답이 57%로 가장 많았습니다.</p><p>저장성 수액을 망설이는 이유도 분명히 있습니다. 혈청 나트륨이 떨어질까 걱정되기 때문입니다. 사람 소아에서는 입원 중 저장성 수액과 저나트륨혈증의 연관이 보고되어, 지금 소아 가이드라인은 생후 28일부터 18세까지 등장성 수액을 권합니다.</p><p>개에서는 이 둘을 깨어 있는 상태로 직접 비교한 대조 연구가 없었다는 것이 저자들의 설명입니다.</p><h3>비글 9마리가 두 수액을 48시간씩 맞았습니다</h3><p>Her 등은 건강한 수컷 비글 9마리(1~3세, 평균 12.6 kg)에게 두 가지 유지 수액을 48시간씩 정맥으로 주었습니다. 두 기간 사이에는 10일을 쉬었습니다. 수액 속도는 체중으로 계산한 같은 유지 속도였고, 그 48시간 동안은 먹이와 물을 주지 않았습니다.</p><ul><li>등장성: 젖산링거액 + 5% 포도당 + KCl 26 mEq/L (나트륨 130 mEq/L)</li><li>저장성: Normosol-M과 5% 포도당 + KCl 17 mEq/L (나트륨 40 mEq/L)</li></ul><p>두 수액 모두 최종 칼륨은 30 mEq/L로 맞췄습니다. 12시간마다 체중, 소변량, 혈액과 소변의 전해질, 알도스테론과 항이뇨호르몬을 쟀습니다.</p><img src="https://vet-briefing.vercel.app/drafts/img/2026-11-04-maintenance-fluid-sodium.png" alt="등장성 유지 수액(나트륨 130 mEq/L)과 저장성 유지 수액(40 mEq/L), 개 혈청 나트륨 기준 하한 145 mEq/L 비교 막대그림"><p>Her 등(2026, Front Vet Sci) 원문 표 1의 조성값을 바탕으로 자체 제작한 그림입니다. 혈청 기준 범위는 이 연구 검사실의 값입니다.</p><p>같은 속도로 들어가도, 1 L에 담긴 나트륨은 130과 40입니다. 세 배가 넘습니다.</p><h3>몸무게보다 소변이 먼저 차이를 보였습니다</h3><p>연구진의 가설은 등장성 수액을 맞으면 물이 더 많이 남는다는 것이었습니다. 결과는 기대만큼 선명하지 않았습니다.</p><table><tr><th>항목</th><th>등장성 쪽에서 본 차이</th><th>읽을 때 주의할 점</th></tr><tr><td>체중으로 계산한 수분 평형</td><td>36시간째에만 356 mL 더 양(+) (95% CI 105–606)</td><td>전체 시간 경과로는 유의하지 않음, 48시간째 두 군 모두 기준선 쪽으로 복귀</td></tr><tr><td>소변량</td><td>12시간 누적량만 더 많았음</td><td>48시간 전체로는 차이 없음</td></tr><tr><td>소변 나트륨·염소</td><td>모든 시점에서 유의하게 높음</td><td>나트륨 분획배설률(FENa)도 모든 시점에서 높음</td></tr><tr><td>누적 나트륨 평형(투여량 − 소변 배설량)</td><td>48시간째 약 51 mEq 더 양(+)</td><td>저장성과의 상대 차이이며, 몸에 남은 절대량은 아님</td></tr><tr><td>혈청 나트륨</td><td>저장성 쪽이 24시간째 낮았음</td><td>최저 137 mEq/L, 36~48시간째 회복</td></tr></table><p>Her 등(2026) 원문 표 2와 결과 본문의 수치를 정리한 표입니다.</p><p>건강한 비글의 신장은 소금을 열심히 내보냈습니다. 소변으로 나트륨을 더 많이 버렸고, 그 과정에서 전해질이 섞이지 않은 순수한 물은 오히려 몸에 붙잡아 두는 쪽으로 움직였습니다. 그래도 48시간 누적 나트륨 평형(들어간 양에서 소변으로 나간 양을 뺀 값)은 저장성 때보다 등장성 쪽이 약 51 mEq 더 양(+)이었습니다.</p><p>소변의 양은 비슷했지만 소변에 담긴 것이 달랐다는 것이 저자들의 정리입니다.</p><h3>저장성 수액에서 나트륨은 얼마나 떨어졌을까요</h3><p>저장성 수액을 맞는 동안 혈청 나트륨 평균은 24시간째 142 mEq/L로 가장 낮았다가 36~48시간째 원래 쪽으로 돌아왔습니다. 가장 낮게 잰 값은 한 마리의 137 mEq/L였습니다. 12시간 사이 가장 크게 떨어진 폭은 7 mEq/L로, 시간당 평균 0.58 mEq/L였습니다.</p><p>흥미로운 것은 등장성 수액을 맞는 동안에도 9마리 중 8마리가 한 번 이상 기준 하한인 145 mEq/L 아래로 내려갔다는 점입니다. 저장성에서는 9마리 모두였습니다. 저자들은 굶긴 상태와 포도당이 든 수액이 주는 자유수가 두 기간에 공통으로 작용했을 것으로 보았습니다.</p><p>저나트륨혈증에 의한 임상 증상을 보인 개는 없었습니다.</p><h3>이 결과를 신장 환자에게 바로 옮길 수는 없습니다</h3><p>이 연구의 개들은 건강했습니다. 그리고 저자들 스스로 한계를 여러 겹 적었습니다.</p><ul><li>두 수액은 등장성 다음 저장성의 고정된 순서로 들어갔습니다. 무작위가 아니어서 순서와 시기의 영향을 완전히 떼어 낼 수 없습니다. 실제로 저장성 기간 시작 전에 항이뇨호르몬과 알도스테론 기준값이 더 높았고, 각 기간의 기준값 대비 변화로 다시 보면 두 호르몬의 차이는 사라졌습니다.</li><li>두 수액은 나트륨만 다른 것이 아니라 염소, 칼슘, 마그네슘, 완충제 성분도 달랐습니다. 어느 차이가 어느 성분 때문인지 하나로 짚을 수 없습니다.</li><li>여러 시점과 지표를 보정 없이 비교했으므로 시점별 결과는 탐색적입니다.</li><li>혈청 나트륨은 12시간마다만 재서, 그 사이의 빠른 변동은 놓쳤을 수 있습니다.</li></ul><p>저자들은 오히려 반대 방향의 경고도 함께 적었습니다. 통증, 약물, 전신마취, 양압 환기, 불안처럼 삼투압과 무관하게 항이뇨호르몬을 올리는 상황에서는, 사람 소아에서처럼 저장성 수액이 저나트륨혈증의 위험이 될 수 있다는 것입니다.</p><h3>그래도 신장을 보는 사람에게 남는 질문이 있습니다</h3><p>건강한 신장으로도 48시간 누적 나트륨 평형은 등장성 쪽이 51 mEq 더 양(+)이었습니다. 그렇다면 그 소금을 내보내야 할 신장이 지쳐 있는 환자에게서는 어떨까요.</p><p>이 연구는 그 답을 주지 않습니다. 저자들도 입원한 개를 대상으로 한 연구가 필요하다고 맺었습니다.</p><p>다만 함께 떠올릴 자료는 있습니다. 2025년 Tufts 대학 Pfaff 등의 후향 연구에서, 입원 중 수액 과부하 징후가 생긴 개 136마리는 그렇지 않은 개 109마리보다 심혈관 질환, 단백소실성 신병증, 만성신장병, 급성신손상을 가진 경우가 유의하게 많았습니다. 그런데 정맥으로 들어간 수액의 총량은 두 군이 다르지 않았습니다.</p><p>같은 양을 받아도 붓는 아이와 붓지 않는 아이가 갈렸고, 그 차이는 받은 양보다 아이가 가진 기저 질환 쪽에 있었습니다. 다만 그 연구가 수액의 나트륨 농도를 따로 본 것은 아니어서, 두 연구를 곧바로 이어 붙일 수는 없습니다.</p><blockquote>수액의 양은 처방표에 적혀 있지만, 그 안에 든 소금을 처리하는 것은 신장입니다.</blockquote><p>그래서 이 논문을 읽고 나서 정리한 질문은 이렇습니다.</p><ul><li>이 아이는 지금 소생·재수화 단계인가, 유지 단계인가</li><li>유지 단계라면, 처음 고른 등장성 수액을 그대로 이어 갈 이유가 있는가</li><li>나트륨을 내보내기 어려운 상태(급성신손상, 진행된 만성신장병, 심장병, 단백소실성 신병증)인가</li><li>반대로 통증, 마취, 약물처럼 항이뇨호르몬을 올리는 요인이 있어 저장성 수액이 위험할 수 있는가</li><li>어느 쪽을 고르든 혈청 나트륨을 얼마 간격으로 다시 잴 것인가</li></ul><p>정답은 아직 환자 연구로 나오지 않았습니다. 건강한 개 9마리의 결과로 처방을 바꾸라고 말씀드릴 수는 없습니다. 다만 유지 수액을 고를 때 속도만큼 농도도 한 번 들여다볼 이유는 충분하다고 생각합니다.</p><h3>보호자께 드리고 싶은 말씀</h3><p>입원 중에 수액이 바뀌었다는 말씀을 들으실 수 있습니다. 속도는 그대로인데 수액 이름만 달라지기도 합니다.</p><p>대개는 아이의 단계가 바뀌었거나, 혈액검사에서 전해질이 움직였기 때문입니다. 궁금하시면 왜 바꾸었는지 편하게 물어보셔도 됩니다. 담당 수의사는 그 질문에 답할 이유를 가지고 수액을 고르고 있을 것입니다.</p><p>이 글이 수액 처방표를 쓰는 동료 수의사 한 분께, 수액 이름 옆의 숫자를 한 번 더 보게 하는 계기가 되었으면 합니다.</p><p>읽어주셔서 감사합니다.</p><p>신장과 투석을 공부하는 수의사<br>안운찬 드림</p><h3>참고 문헌</h3><ul><li>Her J, Gordon D, Kim K, Wallinger J, Langston C. Fluid balance, electrolyte, and neurohormonal responses to isotonic vs. hypotonic maintenance crystalloids in healthy Beagle dogs. Frontiers in Veterinary Science. 2026;13:1948054.</li><li>Pardo M, Spencer E, Odunayo A, et al. 2024 AAHA Fluid Therapy Guidelines for Dogs and Cats. Journal of the American Animal Hospital Association. 2024;60(4):131-163.</li><li>Hopper K, Garcia Rojas A, Barter L. An online survey of small animal veterinarians regarding current fluid therapy practices in dogs and cats. Journal of the American Veterinary Medical Association. 2018;252(5):553-559.</li><li>Pfaff A, Butty EM, Rozanski EA, et al. Retrospective Evaluation of Risk Factors and Outcome in Dogs With and Without Fluid Overload During Hospitalization. Journal of Veterinary Internal Medicine. 2025;39(4):e70132.</li></ul>
+<p><b>개인 홈페이지</b><br><a href="https://www.ahnwoonchan.com/">https://www.ahnwoonchan.com/</a></p>
+<p>※ 이 글은 동물의 신장질환과 혈액투석에 관한 일반적인 정보를 전달하기 위한 글입니다. 개별 환자의 치료 필요성과 예후는 검사 결과와 전신 상태를 종합하여 담당 수의사와 상담해 판단해야 합니다.</p>
+  </article>
+</div>
+<script>
+function flash(btn, label) {
+  var old = btn.textContent;
+  btn.textContent = label;
+  setTimeout(function () { btn.textContent = old; }, 1500);
+}
+document.getElementById("copyTitle").addEventListener("click", function () {
+  var t = document.getElementById("title").textContent;
+  navigator.clipboard.writeText(t).then(flash(this, "복사되었습니다"));
+});
+document.getElementById("copyBody").addEventListener("click", function () {
+  var el = document.getElementById("body");
+  var htmlBlob = new Blob([el.innerHTML], { type: "text/html" });
+  var textBlob = new Blob([el.innerText], { type: "text/plain" });
+  var btn = this;
+  if (window.ClipboardItem) {
+    navigator.clipboard.write([new ClipboardItem({ "text/html": htmlBlob, "text/plain": textBlob })])
+      .then(function () { flash(btn, "복사되었습니다"); },
+            function () { navigator.clipboard.writeText(el.innerText).then(function () { flash(btn, "텍스트로 복사됨"); }); });
+  } else {
+    navigator.clipboard.writeText(el.innerText).then(function () { flash(btn, "텍스트로 복사됨"); });
+  }
+});
+</script>
+</body>
+</html>
