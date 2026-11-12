@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>블로그 초안 2026-11-13</title>
+<style>
+  :root { --ink:#22303b; --soft:#5b6b76; --accent:#0e7490; --line:#dde4e7; --bg:#fafaf8; }
+  @media (prefers-color-scheme: dark) {
+    :root { --ink:#d9e2e8; --soft:#8fa1ac; --accent:#4cc4dd; --line:#26333d; --bg:#10171d; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); line-height:1.8;
+    font-family:"Apple SD Gothic Neo","Pretendard","Noto Sans KR",sans-serif; }
+  .wrap { max-width:42rem; margin:0 auto; padding:1.5rem 1.25rem 4rem; }
+  .meta { font-size:0.85rem; color:var(--soft); border:1px solid var(--line);
+    border-radius:10px; padding:0.8rem 1rem; margin-bottom:1.2rem; }
+  .btns { display:flex; gap:0.6rem; flex-wrap:wrap; margin-bottom:1.6rem; }
+  button { font:inherit; font-size:0.9rem; font-weight:600; color:#fff;
+    background:var(--accent); border:none; border-radius:8px;
+    padding:0.6rem 1.1rem; cursor:pointer; }
+  button.secondary { color:var(--accent); background:transparent;
+    border:1.5px solid var(--accent); }
+  h1 { font-size:1.5rem; line-height:1.4; }
+  article h3 { font-size:1.1rem; margin-top:2em; }
+  article p { margin:1em 0; }
+  article blockquote { margin:1.4em 0; padding:0.2em 1em; border-left:3px solid var(--accent); color:var(--soft); }
+  article img { max-width:100%; height:auto; border:1px solid var(--line); border-radius:8px; }
+  article table { border-collapse:collapse; width:100%; margin:1.2em 0; font-size:0.92em; }
+  article th, article td { border:1px solid var(--line); padding:0.5em 0.7em; text-align:left; }
+  article th { background:rgba(14,116,144,0.08); }
+  hr { border:none; border-top:1px solid var(--line); margin:2rem 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="meta">
+    블로그 글 초안 · 2026-11-13 · 카테고리 제안: 배움의 끈, 주간 저널클럽<br>
+    검토 후 수정할 부분이 있으면 편하게 고쳐서 올려주세요.<br>
+    그림이 붙여넣기에 포함되지 않으면, 그림을 길게 눌러(또는 우클릭) 저장한 뒤 에디터에서 삽입해 주세요.
+  </div>
+  <div class="btns">
+    <button id="copyTitle" type="button">제목 복사</button>
+    <button id="copyBody" class="secondary" type="button">본문 복사 (서식 유지)</button>
+  </div>
+  <h1 id="title">먹는 항생제가 거의 남지 않은 결과지 — 다제내성 요로 대장균 34주에 fosfomycin과 pivmecillinam을 시험한 연구</h1>
+  <hr>
+  <article id="body">
+<p>안녕하세요. 신장질환과 혈액투석, 응급중환자 진료를 하는 수의사 안운찬입니다.</p><p>소변 배양 결과지를 받았는데, 감수성 칸이 거의 R로 채워져 있는 경우가 있습니다.</p><p>amoxicillin-clavulanate도, 세팔로스포린 계열도, fluoroquinolone도 내성입니다. 남은 것은 주사로만 쓸 수 있는 약 한두 가지이고, 아이는 집에서 약을 먹으며 지내야 합니다.</p><p>이럴 때 결과지 앞에서 하게 되는 질문은 하나입니다.</p><p>그래서 무엇을 먹일 수 있을까요.</p><p>이번 주에 읽은 논문은 이 질문에 쓸 수 있는 후보 두 가지를 시험관에서 확인한 연구입니다. 결론만 가져가기에는 아까운 부분이 있어서, 검사 방법 이야기까지 함께 적어 봅니다.</p><h3>다제내성 대장균 34주를 다시 꺼내 검사했습니다</h3><p>미국 UC Davis 미생물검사실에 냉동 보관되어 있던, 개 33마리의 소변에서 나온 대장균(E. coli) 34주를 대상으로 했습니다. 모두 다제내성(MDR)이거나 광범위 베타락탐분해효소(ESBL)를 만드는 균주였습니다.</p><ul><li>대상: 요로감염(UTI) 환자와 무증상 세균뇨 환자의 분리주가 함께 포함</li><li>시험 약물: fosfomycin, 그리고 pivmecillinam의 활성형인 mecillinam</li><li>mecillinam은 한천 희석법(agar dilution)과 그라디언트 스트립법(gradient strip), 두 방법으로 최소억제농도(MIC)를 측정해 비교</li><li>fosfomycin은 그라디언트 스트립법으로 측정</li><li>mecillinam에 내성인 균주는 유전체 분석으로 내성 유전자를 확인</li></ul><p>결과는 이렇습니다.</p><ul><li>fosfomycin: 34주 모두 감수성</li><li>mecillinam: 한천 희석법 31주, 그라디언트 스트립법 32주 감수성</li><li>같은 균주를 두 방법으로 쟀을 때, 한천 희석법의 MIC가 의미 있게 더 높게 나옴</li></ul><p>저자들의 결론은 두 약 모두 다제내성·ESBL 대장균 요로감염의 치료 후보가 될 수 있고, mecillinam 감수성은 한천 희석법으로 검사하는 편이 낫다는 것입니다.</p><h3>시험관에서 듣는다는 것과 개에게 듣는다는 것은 다릅니다</h3><p>이 연구는 균을 배지 위에서 시험한 연구입니다. 이 약들을 실제로 개에게 먹이고 소변이 깨끗해졌는지를 본 연구가 아닙니다.</p><p>특히 pivmecillinam은 사람 요로감염에 쓰이는 약입니다. 이번에 PubMed에서 찾아본 범위에서는 개에 대한 자료가 1970~80년대 약동학·조직 분포 연구 몇 편이었고, 요로감염 개를 치료한 성적은 찾지 못했습니다. 용량도, 부작용도, 실제 반응도 아직 개에서 쌓인 근거가 부족합니다.</p><p>그래서 저는 이 결과를 "이제 쓸 약이 생겼다"보다는 "결과지에서 이 두 칸을 확인해 볼 이유가 생겼다"로 읽습니다.</p><h3>fosfomycin은 개에서 조금 더 자료가 있습니다</h3><p>fosfomycin은 개에서 먼저 시험된 자료가 몇 편 있습니다.</p><ul><li>2011년 미국 연구: 개 유래 157주, 고양이 유래 43주, 합계 200주(165주가 요로 유래) 중 197주가 감수성이었습니다. 200주 가운데 다제내성(MDR)이 74주, 저자들이 극단적 내성(XDR)으로 분류한 균주가 17주 들어 있었습니다.</li><li>2020년 일본 연구: 건강한 개 6마리에게 80 mg/kg을 한 번 먹인 뒤 소변 농도를 쟀습니다. 투약 후 0~4시간 평균 1348 µg/mL, 8~12시간에도 661 µg/mL였습니다. 저자들은 하루 두 번 투여가 MIC 128 µg/mL 이하인 ESBL 대장균에 맞을 수 있다고 제안했습니다.</li><li>2024년 국내 연구(건국대학교): 재발성 감염으로 먹는 약 선택지가 남지 않았던 개 2마리에게 fosfomycin을 2주간 투여했고, 두 마리 모두 소변 배양이 음성으로 돌아왔습니다.</li></ul><p>다만 일본 연구의 숫자는 신장이 건강한 개 여섯 마리에서 나온 것입니다. fosfomycin은 사구체 여과로 소변에 배설되는 약이어서, 신장 기능이 떨어진 개에서도 같은 소변 농도가 나오는지는 이 자료로 알 수 없습니다.</p><p>제가 신장 환자에서 이 약을 볼 때 가장 먼저 걸리는 부분이 여기입니다.</p><h3>같은 균, 같은 숫자인데 판정이 뒤집혔습니다</h3><p>국내 연구에서 가장 오래 들여다본 결과는 따로 있습니다.</p><p>개 소변에서 나온 대장균 18주의 fosfomycin MIC를 한천 희석법으로 쟀습니다. 측정값은 하나인데, 이것을 어느 기준표로 판정하느냐에 따라 내성률이 크게 달라졌습니다.</p><p><img src="https://vet-briefing.vercel.app/drafts/img/2026-11-13-mdr-ecoli-fosfomycin.png" alt="개 요로 분리주 fosfomycin 내성률을 판정 기준별로 비교한 막대그림. 대장균 18주는 CLSI 기준 11.1%, EUCAST 기준 88.9%, 폐렴막대균 5주는 두 기준 모두 100%"></p><p>Lee 등(Front Vet Sci, 2024)의 개 요로 분리주 한천 희석법 결과를 바탕으로 자체 제작한 그림입니다.</p><p>미국 기준(CLSI)으로는 18주 중 2주만 내성이었고, 유럽 기준(EUCAST)으로는 16주가 내성이었습니다. 저자들도 수의학에서는 fosfomycin의 MIC 판정 기준이 아직 정해져 있지 않다고 적었습니다.</p><p>폐렴막대균(Klebsiella pneumoniae)은 사정이 달랐습니다. 5주 모두 MIC가 256 mg/L를 넘었고, 전부 염색체에 fosA 유전자를 갖고 있었습니다. 대장균에서 보인 결과를 요로 병원균 전체로 넓혀 읽으면 안 되는 이유입니다.</p><p>이번 UC Davis 연구에서 mecillinam의 두 검사법이 다른 값을 낸 것과 같은 이야기입니다. 감수성 결과지에 적힌 S 하나는 어떤 방법으로 재고 어떤 기준으로 판정했는지에 따라 무게가 달라집니다.</p><table><tr><th>연구</th><th>대상</th><th>검사 방법</th><th>주요 결과</th></tr><tr><td>Pohlmann 등, 2026 (미국)</td><td>개 33마리, 다제내성·ESBL 대장균 34주</td><td>fosfomycin: 그라디언트 스트립<br>mecillinam: 한천 희석·스트립</td><td>fosfomycin 34/34 감수성<br>mecillinam 31/34(한천), 32/34(스트립)</td></tr><tr><td>Hubka와 Boothe, 2011 (미국)</td><td>개·고양이 대장균 200주</td><td>E-test(그라디언트 스트립)</td><td>fosfomycin 197/200 감수성</td></tr><tr><td>Jariyapamornkoon 등, 2024 (태국)</td><td>개 요로감염 대장균 79주</td><td>한천 희석</td><td>fosfomycin 감수성 86.06%</td></tr><tr><td>Lee 등, 2024 (한국)</td><td>개 27마리, 요로 분리주 37주</td><td>한천 희석</td><td>대장균 내성 11.1%(CLSI)·88.9%(EUCAST)<br>폐렴막대균 5/5 내성</td></tr></table><h3>신장 환자에게 이 문제가 더 가깝습니다</h3><p>국내 연구의 개 27마리 중 10마리는 부신피질기능항진증, 4마리는 만성신장병을 함께 갖고 있었습니다. 폐렴막대균이 나온 개들은 모두 재발성 요로감염으로 여러 항생제에 반복 노출된 환자였습니다.</p><p>기저질환 때문에 감염이 반복되는 환자는 그때마다 항생제를 다시 쓰게 됩니다. 그렇게 결과지의 R이 하나씩 늘어 갑니다.</p><p>그리고 쓸 수 있는 약이 줄어들수록, 남은 약 중에는 신장으로 배설되는 약이나 신장에 부담이 되는 약이 섞여 있습니다. 감염을 잡는 일과 신장을 지키는 일을 함께 저울에 올려야 하는 순간이 옵니다.</p><h3>이 결과를 진료실로 가져갈 때</h3><p>제가 이 논문들을 읽고 정리한 순서는 이렇습니다.</p><ul><li>먼저 무증상 세균뇨인지, 증상이 있는 감염인지부터 구분합니다. 이번 연구의 분리주에도 무증상 세균뇨가 섞여 있었습니다.</li><li>다제내성 대장균이고 증상이 있는 감염이라면, 검사실에 fosfomycin과 mecillinam 감수성을 추가로 요청할 수 있는지 물어봅니다.</li><li>결과를 받으면 검사 방법과 판정 기준을 함께 확인합니다. mecillinam은 한천 희석법 결과를 우선합니다.</li><li>균종을 다시 봅니다. 국내 연구에서는 폐렴막대균 5주가 모두 높은 수준의 fosfomycin 내성이었습니다. 대장균의 결과를 그대로 옮겨 적용하지 않습니다.</li><li>신장 기능이 떨어진 환자라면, 건강한 개에서 얻은 소변 농도 자료를 그대로 적용하지 않고 치료 후 재배양으로 반응을 확인합니다.</li></ul><p>어느 단계에서도 "이 약이면 된다"고 말할 근거는 아직 없습니다. 하지만 결과지에 R이 가득할 때 아무것도 할 수 없다고 생각하는 것도 이제는 정확하지 않습니다.</p><h3>이 연구들이 답하지 않는 것</h3><p>34주는 한 대학 검사실에 보관된 균주입니다. 다른 지역, 다른 병원의 다제내성 대장균에서도 같은 감수성이 나온다는 보장은 없습니다.</p><p>개에게 pivmecillinam을 먹였을 때 소변 농도가 얼마나 되는지, 얼마 동안 먹여야 하는지, 위장관 부작용은 어떤지도 이 연구는 다루지 않았습니다.</p><p>그리고 좋은 후보일수록 아껴 써야 한다는 점도 함께 적어 둡니다. 감수성 결과 없이 처음부터 꺼내 쓰기 시작하면, 몇 년 뒤의 결과지에는 이 두 칸도 R로 채워져 있을 수 있습니다.</p><h3>보호자께, 그리고 동료 수의사께</h3><p>보호자께는 이 말씀을 드리고 싶습니다. 요로감염이 반복된다면 증상이 좋아졌는지만 보지 마시고, 소변 배양 검사를 다시 하자는 제안을 번거롭게 여기지 말아 주십시오. 다음 약을 고르는 근거가 그 검사에서 나옵니다.</p><p>동료 수의사께는 이렇게 말씀드리고 싶습니다. R이 가득한 결과지를 받으셨다면 검사실에 한 번 더 물어볼 칸이 두 개 있습니다. 그리고 그 결과가 어떤 방법으로 나온 숫자인지까지 함께 확인해 주시면 좋겠습니다.</p><p>항생제 감수성 결과지는 정답지가 아니라, 다음 판단을 위한 자료입니다.</p><p>읽어주셔서 감사합니다.</p><p>신장과 투석을 공부하는 수의사<br>안운찬 드림</p><h3>참고 문헌</h3><ul><li>Pohlmann M, LeCuyer TE, Woerde D, Palm C, Westropp JL. In vitro susceptibility of antimicrobial resistant strains of Escherichia coli isolated from the urine of dogs to pivmecillinam and fosfomycin. Journal of Veterinary Internal Medicine, 2026;40(6). doi:10.1093/jvimsj/aalag266</li><li>Lee DE, Hyeon JY, Kang SW, Lee DY, Kim JH. Antibiotic efficacy and resistance patterns of urinary tract infection-causing bacteria in dogs and resistome of multidrug-resistant Klebsiella pneumoniae via whole genome sequencing in South Korea. Frontiers in Veterinary Science, 2024;11:1455021. doi:10.3389/fvets.2024.1455021</li><li>Harada K, Shimizu T, Kawaguchi K, Furuhashi T, Ishihara G. Urinary pharmacokinetic and pharmacodynamic profiles of fosfomycin against extended-spectrum β-lactamase-producing Escherichia coli with canine ex vivo modeling: a pilot study. Antibiotics, 2020;9(5):230. doi:10.3390/antibiotics9050230</li><li>Hubka P, Boothe DM. In vitro susceptibility of canine and feline Escherichia coli to fosfomycin. Veterinary Microbiology, 2011;149(1-2):277-282. doi:10.1016/j.vetmic.2010.10.025</li><li>Jariyapamornkoon N, Nuanualsuwan S, Suanpairintr N. In vitro antibacterial activities of fosfomycin against Escherichia coli isolates from canine urinary tract infection. Animals, 2024;14(13):1916. doi:10.3390/ani14131916</li></ul>
+<p><b>개인 홈페이지</b><br><a href="https://www.ahnwoonchan.com/">https://www.ahnwoonchan.com/</a></p>
+<p>※ 이 글은 동물의 신장질환과 혈액투석에 관한 일반적인 정보를 전달하기 위한 글입니다. 개별 환자의 치료 필요성과 예후는 검사 결과와 전신 상태를 종합하여 담당 수의사와 상담해 판단해야 합니다.</p>
+  </article>
+</div>
+<script>
+function flash(btn, label) {
+  var old = btn.textContent;
+  btn.textContent = label;
+  setTimeout(function () { btn.textContent = old; }, 1500);
+}
+document.getElementById("copyTitle").addEventListener("click", function () {
+  var t = document.getElementById("title").textContent;
+  navigator.clipboard.writeText(t).then(flash(this, "복사되었습니다"));
+});
+document.getElementById("copyBody").addEventListener("click", function () {
+  var el = document.getElementById("body");
+  var htmlBlob = new Blob([el.innerHTML], { type: "text/html" });
+  var textBlob = new Blob([el.innerText], { type: "text/plain" });
+  var btn = this;
+  if (window.ClipboardItem) {
+    navigator.clipboard.write([new ClipboardItem({ "text/html": htmlBlob, "text/plain": textBlob })])
+      .then(function () { flash(btn, "복사되었습니다"); },
+            function () { navigator.clipboard.writeText(el.innerText).then(function () { flash(btn, "텍스트로 복사됨"); }); });
+  } else {
+    navigator.clipboard.writeText(el.innerText).then(function () { flash(btn, "텍스트로 복사됨"); });
+  }
+});
+</script>
+</body>
+</html>
