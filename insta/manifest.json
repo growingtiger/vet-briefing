@@ -451,7 +451,9 @@
     },
     {
       "date": "2026-11-28",
-      "cards": 6
+      "cards": 6,
+      "story": true,
+      "en": true
     }
   ]
 }

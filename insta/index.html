@@ -37,6 +37,10 @@
     color: var(--ink); background: var(--surface); border: 1px solid var(--line);
     border-radius: 10px; padding: 0.8rem; resize: vertical; }
   .cap-label { font-size: 0.85rem; font-weight: 700; margin-bottom: 0.4rem; }
+  .modes { display: none; gap: 0.4rem; margin-bottom: 1rem; flex-wrap: wrap; }
+  .modes button { font: inherit; font-size: 0.88rem; font-weight: 600; color: var(--ink-soft); background: var(--surface);
+    border: 1px solid var(--line); border-radius: 999px; padding: 0.45rem 0.95rem; cursor: pointer; }
+  .modes button[aria-pressed="true"] { color: #fff; background: var(--accent); border-color: var(--accent); }
 </style>
 </head>
 <body>
@@ -49,7 +53,13 @@
   </div>
 </header>
 <main>
-  <div class="hint">이미지를 저장한 뒤 인스타그램에서 여러 장 선택(캐러셀)으로 업로드하세요. 표지가 첫 장입니다. 한 장씩 저장하려면 이미지를 길게 누르세요.</div>
+  <div class="modes" id="modes" role="group" aria-label="보기 선택">
+    <button type="button" data-mode="ko" aria-pressed="true">한글 카드</button>
+    <button type="button" data-mode="story" aria-pressed="false">한글 스토리</button>
+    <button type="button" data-mode="en" aria-pressed="false">English 카드</button>
+    <button type="button" data-mode="enstory" aria-pressed="false">English 스토리</button>
+  </div>
+  <div class="hint" id="hint">이미지를 저장한 뒤 인스타그램에서 여러 장 선택(캐러셀)으로 업로드하세요. 표지가 첫 장입니다. 한 장씩 저장하려면 이미지를 길게 누르세요.</div>
   <div class="toolbar">
     <a id="zipBtn" class="btn" href="#" download>이미지 전체 다운로드 (ZIP)</a>
     <button id="capBtn" class="btn secondary" type="button" style="display:none">게시글 텍스트 복사</button>
@@ -72,6 +82,29 @@
   var capBtn = document.getElementById("capBtn");
   var captionBox = document.getElementById("captionBox");
   var captionText = document.getElementById("captionText");
+  var modes = document.getElementById("modes");
+  var hint = document.getElementById("hint");
+  var mode = "ko", current = null;
+  // 보기 네 가지: 한글 카드 / 한글 스토리 / 영문 카드 / 영문 스토리 (2026-11-28 스토리·영문판 추가).
+  // manifest 항목에 "story": true, "en": true 가 있는 날짜에만 해당 버튼이 보인다.
+  var MODES = {
+    ko:      { dir: "",          story: false, zip: "briefing-cards-",      hint: "이미지를 저장한 뒤 인스타그램에서 여러 장 선택(캐러셀)으로 업로드하세요. 표지가 첫 장입니다. 한 장씩 저장하려면 이미지를 길게 누르세요." },
+    story:   { dir: "/story",    story: true,  zip: "briefing-story-",      hint: "이미지를 저장해 인스타그램 스토리에 차례대로 올려 주십시오. 위아래 여백은 인스타 화면에 가려지는 자리라 비워 두었습니다." },
+    en:      { dir: "/en",       story: false, zip: "briefing-cards-en-",   hint: "영문 게시물입니다. 한글 게시물과 따로 올려 주십시오. 아래 게시글 본문도 영문입니다." },
+    enstory: { dir: "/en/story", story: true,  zip: "briefing-story-en-",   hint: "영문 스토리입니다. 이미지를 저장해 차례대로 올려 주십시오." }
+  };
+  function fileNames(n, story) {
+    var out = [];
+    for (var i = 0; i < n; i++) {
+      var k = (i < 10 ? "0" + i : "" + i);
+      out.push(story ? "story-" + k + ".png" : (i === 0 ? "00-cover.png" : k + ".png"));
+    }
+    return out;
+  }
+  function available(entry, m) { return m === "ko" || (m === "story" && entry.story) || (m === "en" && entry.en) || (m === "enstory" && entry.en && entry.story); }
+  Array.prototype.forEach.call(modes.querySelectorAll("button"), function (b) {
+    b.addEventListener("click", function () { mode = b.dataset.mode; if (current) load(current); });
+  });
 
   capBtn.addEventListener("click", function () {
     captionText.select();
@@ -86,9 +119,10 @@
     ev.preventDefault();
     var d = zipBtn.dataset.date, n = Number(zipBtn.dataset.n || 0), label = zipBtn.textContent;
     if (!d || !window.JSZip) { status.textContent = "잠시 후 다시 눌러 주십시오."; return; }
-    var files = ["00-cover.png"];
-    for (var i = 1; i < n; i++) files.push((i < 10 ? "0" + i : "" + i) + ".png");
-    files.push("caption.txt");
+    var M = MODES[mode];
+    var files = fileNames(n, M.story);
+    if (!M.story) files.push("caption.txt");
+    d = d + M.dir;
     zipBtn.textContent = "묶는 중...";
     var zip = new JSZip();
     Promise.all(files.map(function (f) {
@@ -96,7 +130,7 @@
     })).then(function () { return zip.generateAsync({ type: "blob" }); }).then(function (blob) {
       var a = document.createElement("a");
       a.href = URL.createObjectURL(blob);
-      a.download = zipBtn.getAttribute("download") || ("cards-" + d + ".zip");
+      a.download = zipBtn.getAttribute("download") || "cards.zip";
       document.body.appendChild(a); a.click(); a.remove();
       setTimeout(function () { URL.revokeObjectURL(a.href); }, 5000);
       zipBtn.textContent = label;
@@ -106,12 +140,21 @@
   function load(entry) {
     cards.innerHTML = "";
     status.textContent = "";
+    current = entry;
+    if (!available(entry, mode)) mode = "ko";
+    var M = MODES[mode], base = entry.date + M.dir;
+    modes.style.display = (entry.story || entry.en) ? "flex" : "none";
+    Array.prototype.forEach.call(modes.querySelectorAll("button"), function (b) {
+      b.style.display = available(entry, b.dataset.mode) ? "" : "none";
+      b.setAttribute("aria-pressed", b.dataset.mode === mode ? "true" : "false");
+    });
+    hint.textContent = M.hint;
     zipBtn.dataset.date = entry.date; zipBtn.dataset.n = entry.cards;
-    zipBtn.setAttribute("download", "briefing-cards-" + entry.date + ".zip");
+    zipBtn.setAttribute("download", M.zip + entry.date + ".zip");
 
     capBtn.style.display = "none";
     captionBox.style.display = "none";
-    fetch(entry.date + "/caption.txt", { cache: "no-store" })
+    (M.story ? Promise.reject() : fetch(base + "/caption.txt", { cache: "no-store" }))
       .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
       .then(function (t) {
         captionText.value = t;
@@ -120,11 +163,9 @@
       })
       .catch(function () {});
 
-    var names = ["00-cover.png"];
-    for (var i = 1; i < entry.cards; i++) names.push((i < 10 ? "0" + i : "" + i) + ".png");
-    names.forEach(function (n) {
+    fileNames(entry.cards, M.story).forEach(function (n) {
       var img = document.createElement("img");
-      img.src = entry.date + "/" + n;
+      img.src = base + "/" + n;
       img.alt = entry.date + " 카드 " + n;
       img.className = "card";
       img.loading = "lazy";
@@ -146,6 +187,8 @@
         var e = entries.filter(function (x) { return x.date === d; })[0] || entries[0];
         load(e);
       }
+      var q = new URLSearchParams(location.search).get("v");
+      if (MODES[q]) mode = q;
       picker.value = m.latest;
       picker.addEventListener("change", function () { pick(picker.value); });
       pick(m.latest);
